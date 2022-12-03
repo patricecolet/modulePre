@@ -5,6 +5,26 @@ modulePre is a computer cluster made of raspberry PI equiped with a speaker and 
 This repository is used on both raspberry and remote computer.
 Remote computer Operating System must be linux or MacOS.
 
+git clone this repository to control and edit modulePre PureData patches:
+>git clone git@github.com:patricecolet/modulePre.git
+
+PureData and externals have to be installed from https://puredata.info/downloads/pure-data
+
+For installing externals, PureData has a tool named deken that upload the external for the architecture of the machine where PureData has been installed. Actually, externals have to be installed one by one from menu help->install, but we work on some batch install...
+The most important externals are:
+>ggee
+>purest_json version >= 2.0.0
+>list_abs
+>zexy
+
+The compositions available in this repository needs those externals:
+>flite
+>hcs
+>hid
+
+Raspberry OS uses externals from debian packages repository listed into PureData/externals.txt and last version of purest_json
+
+
 ## cirmrasp
 cirmrasp contains a node server for controlling raspberry cluster containing a node client and OpenStageControl for OSC communication with PureData.
 Each raspberry is identified with mac address and it's number is the last byte of IP address.
@@ -116,6 +136,11 @@ sudo ln -s /usr/local/bin/pd /usr/bin/pd <br />
 Install PureData externals:  <br />
 >cd ~/modulePre/PureData   <br />
 < externals.txt xargs sudo apt-get install -y
+
+for having those externals available into this fresh compiled PureData version add into ~/.pdsettings this line under path1:
+>path2: /usr/lib/pd/extra
+
+or open PureData in graphical mode and add this path into preferences.
 
 `purest_json`external is necessary for parsing `config.json` and must be last version (>=2.0.0).
  For installing it open pd by typing `pd` in terminal 
