@@ -1,0 +1,412 @@
+// ne pas utiliser de point-virgule ni de virgule !
+
+# computer_1 : // Module 35
+	/ musician Julien 
+	/ Instrument gametrak // n°1 // il faudrait enlever la majuscule
+	/ CLX 20 4095 0 1 / CLY 0 4030 0 1 / CLZ 4050 0 0 1
+	/ CRX 60 4095 0 1 / CRY 60 4030 0 1 / CRZ 4050 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj2
+	3 Mdj2
+	4 Mdj1
+	5 Mdj1
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+ 
+ # computer_2 : // Module 36
+ 	/ musician Paul 
+	/ Instrument gametrak // n°2
+	/ CLX 20 4060 0 1 / CLY 0 4030 0 1 / CLZ 4060 0 0 1
+	/ CRX 0 4095 0 1 / CRY 20 4095 0 1 / CRZ 4090 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj2
+	3 Mdj2
+	4 Mdj1
+	5 Mdj1
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_3 : // Module 37
+	/ Instrument gametrak // n°3
+	/ CLX 0 4050 0 1 / CLY 0 4030 0 1 / CLZ 4050 200 0 1
+	/ CRX 20 4095 0 1 / CRY 30 4095 0 1 / CRZ 4000 10 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj2
+	3 Mdj2
+	4 Mdj1
+	5 Mdj1
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_4 : // Module 38
+	/ Instrument gametrak // n°4
+	/ CLX 0 4050 0 1 / CLY 0 4030 0 1 / CLZ 3500 0 0 1
+	/ CRX 30 4095 0 1 / CRY 47 4095 0 1 / CRZ 4064 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj2
+	3 Mdj2
+	4 Mdj1
+	5 Mdj1
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_5 : // Module 39
+	/ Instrument gametrak // n°5
+	/ CLX 0 4070 0 1 / CLY 0 4030 0 1 / CLZ 4000 0 0 1
+	/ CRX 40 4095 0 1 / CRY 40 4095 0 1 / CRZ 4060 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj2
+	7 off
+	8 off
+	9 off
+
+# computer_6 : // Module 40
+	/ Instrument gametrak // n°7
+	/ CLX 0 4060 0 1 / CLY 0 4030 0 1 / CLZ 4060 0 0 1
+	/ CRX 40 4095 0 1 / CRY 50 4095 0 1 / CRZ 4060 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj2
+	7 off
+	8 off
+	9 off
+
+# computer_7 : // Module 41
+	/ Instrument gametrak // n°8
+	/ CLX 0 4060 0 1 / CLY 0 4030 0 1 / CLZ 4040 0 0 1
+	/ CRX 50 4095 0 1 / CRY 50 4095 0 1 / CRZ 4000 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_8 : // Module 42
+	/ Instrument gametrak // n°10
+	/ CLX 20 4060 0 1 / CLY 0 4030 0 1 / CLZ 4060 0 0 1
+	/ CRX 10 4095 0 1 / CRY 20 4095 0 1 / CRZ 4060 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_9 : // Module 43
+	/ Instrument gametrak // n°11
+	/ CLX 10 4060 0 1 / CLY 0 4030 0 1 / CLZ 4060 0 0 1
+	/ CRX 10 4095 0 1 / CRY 20 4095 0 1 / CRZ 4070 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj2
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_10 : // Module 44
+	/ musician Bertrand
+	/ Instrument gametrak // n°12
+	/ CLX 0 4060 0 1 / CLY 0 4030 0 1 / CLZ 4048 0 0 1
+	/ CRX 60 4080 0 1 / CRY 60 4095 0 1 / CRZ 4048 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj2
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_11 : // Module 45
+	/ Instrument gametrak // n°14
+	/ CLX 0 4095 0 1 / CLY 0 4030 0 1 / CLZ 4056 0 0 1
+	/ CRX 50 4095 0 1 / CRY 50 4095 0 1 / CRZ 4040 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj2
+	3 Mdj2
+	4 Mdj1
+	5 Mdj1
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_12 : // Module 46
+	/ Instrument gametrak // n°16
+	/ CLX 0 4070 0 1 / CLY 0 4030 0 1 / CLZ 4064 0 0 1
+	/ CRX 40 4095 0 1 / CRY 50 4095 0 1 / CRZ 4064 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj2
+	3 Mdj2
+	4 Mdj1
+	5 Mdj1
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_13 : // Module 47
+	/ Instrument gametrak // n°17
+	/ CLX 0 4070 0 1 / CLY 0 4030 0 1 / CLZ 4056 0 0 1
+	/ CRX 50 4095 0 1 / CRY 50 4095 0 1 / CRZ 4070 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_14 : // Module 48
+	/ Instrument gametrak // n°19
+	/ CLX 0 4060 0 1 / CLY 0 4030 0 1 / CLZ 4050 0 0 1
+	/ CRX 50 4095 0 1 / CRY 40 4095 0 1 / CRZ 4070 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_15 : // Module 49
+	/ Instrument gametrak // n°20
+	/ CLX 0 4060 0 1 / CLY 0 4030 0 1 / CLZ 4056 0 0 1
+	/ CRX 50 4095 0 1 / CRY 60 4095 0 1 / CRZ 4056 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_16 : // Module 50
+	/ Instrument gametrak // n°21
+	/ CLX 0 4060 0 1 / CLY 0 4030 0 1 / CLZ 3400 0 0 1
+	/ CRX 50 4095 0 1 / CRY 60 4095 0 1 / CRZ 4056 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_17 : // Module 51
+	/ Instrument gametrak // n°22
+	/ CLX 0 4070 0 1 / CLY 0 4030 0 1 / CLZ 4068 60 0 1
+	/ CRX 50 4080 0 1 / CRY 50 4095 0 1 / CRZ 4056 3 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_18 : // Module 52
+	/ Instrument gametrak // n°24
+	/ CLX 0 4050 0 1 / CLY 0 4030 0 1 / CLZ 4058 0 0 1
+	/ CRX 50 4095 0 1 / CRY 50 4095 0 1 / CRZ 4050 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_19 : // Module 53
+	/ Instrument gametrak // n°25
+	/ CLX 0 4050 0 1 / CLY 0 4030 0 1 / CLZ 3900 0 0 1
+	/ CRX 20 4090 0 1 / CRY 40 4095 0 1 / CRZ 4064 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj3
+	4 Mdj3
+	5 Mdj1
+	6 Mdj3
+	7 off
+	8 off
+	9 off
+
+# computer_20 : // Module 54
+	/ Instrument gametrak // n°26
+	/ CLX 0 4050 0 1 / CLY 0 4020 0 1 / CLZ 4056 0 0 1
+	/ CRX 15 4095 0 1 / CRY 35 4095 0 1 / CRZ 4056 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj3
+	4 Mdj3
+	5 Mdj1
+	6 Mdj3
+	7 off
+	8 off
+	9 off
+
+# computer_21 : // Module 55
+	/ Instrument gametrak // n°30
+	/ CLX 0 4060 0 1 / CLY 0 4030 0 1 / CLZ 4064 0 0 1
+	/ CRX 10 4095 0 1 / CRY 30 4095 0 1 / CRZ 4080 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_22 : // Module 60
+	/ Instrument gametrak // n°31
+	/ CLX 0 4060 0 1 / CLY 0 4030 0 1 / CLZ 4060 0 0 1
+	/ CRX 50 4095 0 1 / CRY 50 4095 0 1 / CRZ 4058 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj2
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+
+# computer_23 : // Module 61
+	/ Instrument gametrak // n°9
+	/ CLX 0 4060 0 1 / CLY 150 4030 0 1 / CLZ 4030 15 0 1
+	/ CRX 40 4095 0 1 / CRY 20 4095 0 1 / CRZ 4000 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj1
+	6 Mdj1
+	7 off
+	8 off
+	9 off
+	
+# computer_24 : // Module 62
+	/ Instrument gametrak // n°6
+	/ CLX 0 4070 0 1 / CLY 0 4030 0 1 / CLZ 4080 0 0 1
+	/ CRX 40 4095 0 1 / CRY 55 4095 0 1 / CRZ 4070 0 0 1
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj1
+	3 Mdj2
+	4 Mdj2
+	5 Mdj1
+	6 Mdj1
+	7 off
+	8 off
+	9 off

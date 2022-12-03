@@ -1,0 +1,10 @@
+Button press detected on pin: 5 label: A
+received message: 
+
+Button press detected on pin: 5 label: A
+received message: track 0
+
+Traceback (most recent call last):
+  File "/home/patch/modulePre/PureData/script/python/display.py", line 72, in <module>
+    track = data[2]
+IndexError: list index out of range

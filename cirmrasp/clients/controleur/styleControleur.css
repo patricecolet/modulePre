@@ -1,0 +1,54 @@
+body {
+  padding-top: 10px;
+  background-color: grey;
+}
+
+[class*="col-"], footer {
+  background-color: grey;
+  border: 2px solid grey;
+  border-radius: 0px;
+/*  line-height: 40px;*/
+  /* text-align: center; */
+}
+
+.em {
+  font-style: normal;
+  color: white;
+/*  font-size: 20px;*/
+  font-family: "Arial", Georgia, Serif;
+}
+
+.infoRasp{
+  width:400px;
+}
+
+.raspButton {
+  width:250px;
+}
+
+.raspButtonOK {
+  width:250px;
+  background-color: green;
+}
+
+.raspButtonBAD {
+  width:250px;
+  background-color: #b43d3d;
+}
+
+.raspCommand {
+  background-color: cyan;
+}
+
+.raspRestart {
+  background-color: teal;
+}
+
+.raspWarning {
+  background-color: red;
+}
+
+.raspDefault {
+
+}
+

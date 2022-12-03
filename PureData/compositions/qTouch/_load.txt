@@ -1,0 +1,16 @@
+// ne pas utiliser de point-virgule ni de virgule !
+
+# computer_1 : // Module 34
+	/ musician Patko
+
+	/ cue_list
+	0 off
+	1 Mdj1
+	2 Mdj2
+	3 Mdj2
+	4 Mdj1
+	5 Mdj1
+	6 Mdj1
+	7 off
+	8 off
+	9 off

@@ -1,0 +1,104 @@
+<html>
+  <head>
+      <link href="./bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
+      <link href="./clients/controleur/styleControleur.css" rel="stylesheet">
+      <script src="./clients/controleur/controleurbundle.js"></script>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta charset="UTF-8" name="viewport" content="width=device-width, height=device-height, shrink-to-fit=yes, intial-scale=1" />
+      <title>Raspberry Controler</title>
+  </head>
+
+  <body onload="initWSocket(window.location.hostname);">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Controleur</a>
+          <a style="display:none" id="aliveFlag" href="#">@</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-sm">
+
+      <div>
+       <h3>Etats Raspberry</h3>
+      </div>
+
+      <div class="row border">
+        <div id="raspList" class="list-group col-xs"></div>
+      </div>
+
+      <div>
+       <h3>Controle un Raspberry</h3>
+      </div>
+
+      <div class="row align-items-end border">
+        <div class="col-12">
+          <select name="raspIPs" class="raspDefault" id="raspConfig" onchange="selectIP();"></select>
+        </div>
+
+        <div class="col-8">
+          <div id="sendSound" class="raspDefault" >
+            <input type="text" id="chooseFile" onchange="" size="32" placeholder="Fichier son">
+          </div>
+        </div>
+        <div class="col-4">
+          <button id="buttonSend" class="raspCommand" onclick="sendSoundFile();">Envoyer fichier</button>
+        </div>
+
+        <div class="col-4">
+          <input type="text" id="sendOSCMessage"   placeholder="Message OSC"
+            class="raspDefault" name="sendOSCMessage" required
+            minlength="4" maxlength="16" size="16">
+        </div>
+
+        <div class="col-4">
+            <input type="text" id="sendOSCValue"  placeholder="Valeur OSC"
+              class="raspDefault" name="sendOSCValue" required
+              minlength="4" maxlength="16" size="8">
+        </div>       
+
+        <div class="col-4">
+          <button id="buttonSendOSCMessage" class="raspCommand" onclick="sendOSCMessage();">Envoyer OSC</button>
+        </div>
+
+        <div class="col-12">
+          <button id="buttonRestartNode" class="raspRestart" onclick="restartNode();">Restart Node</button>
+        </div>
+      </div>
+
+
+      <div>
+       <h3>Broadcast OSC</h3>
+      </div>
+
+      <div class="row align-items-end border">
+        <div class="col-4">
+          <input type="text" id="OSCMessage"   placeholder="Message OSC"
+            class="raspDefault" name="OSCMessage" required
+            minlength="4" maxlength="16" size="16">
+        </div>    
+
+        <div class="col-4">
+          <input type="text" id="OSCValue"  placeholder="Valeur OSC"
+            class="raspDefault" name="OSCValue" required
+            minlength="4" maxlength="16" size="8">
+        </div>
+        <div class="col-4">
+           <button id="buttonSendOSCMessage" class="raspCommand" onclick="broadcastOSCMessage();">Envoyer OSC</button>
+        </div>
+      </div>
+      
+      <div>
+       <h3>Controle général</h3>
+      </div>
+
+      <div class="row align-items-end border">
+        <button id="shutdownGlobal" class="raspWarning" onclick="broadcastShutdown();">Eteint tous les raspberries
+        </button>
+      </div>
+
+    <script src="./bootstrap/js/jquery.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

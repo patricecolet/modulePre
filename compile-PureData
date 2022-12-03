@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# this script installs last PureData version in patchboxOS
+# go to user directory
+cd ~
+# create git directory
+mkdir repo
+# enter into git directory
+cd repo
+# clone PureData repository
+git clone https://github.com/pure-data/pure-data.git
+# install build dependencies
+sudo apt-get install fftw3-dev autoconf libtool gettext
+# enter into pd directory
+cd PureData
+# build PureData
+./autogen.sh
+./configure --enable-jack --enable-fftw
+make
+# install puredata
+sudo make install
+# replace patchbox pd version with the compiled one
+sudo mv /usr/bin/pd /usr/bin/pd.old
+sudo ln -s /usr/local/bin/pd /usr/bin/pd
+
+# install externals
+cd ~/modulePre/PureData
+< externals.txt xargs sudo apt-get install -y
+# install node
+sudo apt-get install nodejs
+# install jq commandline for parsing JSON
+sudo apt-get install jq
+# setup crontab for loading pd and node at start
+line="@reboot /home/patch/modulePre/PureData/script/startPureData.sh"
+(crontab -u patch -l; echo "$line" ) | crontab -u patch -
+line="@reboot /home/patch/modulePre/cirmrasp/clients/raspberry/startcirmrasp.sh"
+(crontab -u patch -l; echo "$line" ) | crontab -u patch -
+#enlever pour l'instant
+line="@reboot /home/patch/modulePre/PureData/script/installSouncard.sh"
+(sudo crontab -u root -l; echo "$line" ) | sudo crontab -u root -
+# install pirate audio
+sudo apt-get install python3-pip
+cd ~/repo
+git clone https://github.com/pimoroni/pirate-audio
+cd pirate-audio/mopidy
+sudo ./install.sh
+sudo systemctl disable mopidy

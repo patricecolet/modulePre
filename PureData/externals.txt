@@ -1,0 +1,7 @@
+pd-ableton-link pd-ambix pd-arraysize pd-autopreset pd-bassemu pd-beatpipe
+pd-bsaylor pd-chaos pd-cmos pd-comport pd-creb pd-csound pd-cxc pd-cyclone
+pd-earplug pd-ekext pd-ext13 pd-fftease pd-flite pd-freeverb pd-ggee
+pd-hcs pd-hid pd-iemambi pd-iemlib pd-iemmatrix pd-iemnet pd-iemutils pd-jsusfx pd-kollabs pd-list-abs pd-log pd-lyonpotpourri
+pd-mapping pd-markex pd-maxlib pd-mediasettings pd-mjlib pd-moonlib
+pd-motex pd-mrpeach pd-mrpeach-net pd-nusmuk pd-pan pd-pdstring pd-pduino pd-readanysf pd-rtclib pd-sigpack pd-smlib pd-upp pd-vbap 
+pd-windowing pd-xbee pd-xsample pd-zexy

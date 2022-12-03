@@ -1,0 +1,9 @@
+{
+	"serverIPAddress": "192.168.1.2",
+	"webserveurPort": 8080,
+	"websocketServeurPort": 8383,
+	"myRaspBerryAddress": "192.168.1.2",
+	"broadcastOSCAddress": "192.168.1.255",
+	"OSCPort": 4000,
+	"openStagePort": 5000
+}

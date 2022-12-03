@@ -1,0 +1,76 @@
+#N canvas 0 50 1144 642 12;
+#X obj 117 162 netreceive -u -b 5006;
+#X obj 117 187 route 65 66 88 89;
+#X obj 84 244 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 85 293 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 231 287 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 231 245 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 17 245 up left;
+#X text 13 291 down left;
+#X text 279 245 up right;
+#X text 275 291 down right;
+#X text 115 121 buttons receive;
+#X text 285 16 set "display" : "mopidy" in config.json computerInfo
+to enable python server;
+#X msg 681 299 connect localhost 5005;
+#X msg 127 281 upLeft;
+#X msg 148 320 downLeft;
+#X msg 280 318 upRight;
+#X msg 280 367 downRight;
+#X obj 419 264 list prepend send;
+#X obj 419 289 list trim;
+#X obj 429 357 netsend -u;
+#X msg 581 212 list cue \$1;
+#X floatatom 581 181 5 0 0 0 - - -;
+#X obj 825 263 shell;
+#X obj 823 212 getdir;
+#X obj 681 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 823 237 python3 \$1/../script/python/display.py;
+#X msg 397 163 track 1 helloWorld;
+#X obj 681 268 delay 5000;
+#X obj 452 387 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 812 126 python server is launched by shell object;
+#X obj 127 420 s \$0buttons;
+#X obj 27 610 outlet;
+#X obj 27 454 r \$0button;
+#X obj 27 479 list prepend button;
+#X obj 27 585 list trim;
+#X text 427 119 send to screen;
+#X msg 408 188 track foo bar;
+#X text 731 172 launch python server and connect Pd client;
+#X text 15 10 patko2022;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X connect 2 0 13 0;
+#X connect 3 0 14 0;
+#X connect 4 0 16 0;
+#X connect 5 0 15 0;
+#X connect 12 0 19 0;
+#X connect 13 0 30 0;
+#X connect 14 0 30 0;
+#X connect 15 0 30 0;
+#X connect 16 0 30 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 28 0;
+#X connect 20 0 17 0;
+#X connect 21 0 20 0;
+#X connect 23 0 25 0;
+#X connect 24 0 23 0;
+#X connect 24 0 27 0;
+#X connect 25 0 22 0;
+#X connect 26 0 17 0;
+#X connect 27 0 12 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 31 0;
+#X connect 36 0 17 0;

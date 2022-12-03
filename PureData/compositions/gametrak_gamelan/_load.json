@@ -1,0 +1,152 @@
+{
+  "computer_1":
+  {
+    "config":
+    {
+      "musician":"Julien",
+      "instrument":"gametrak",
+      "CLX":"20 4095 0 1",
+      "CLY":"0 4030 0 1",
+      "CLZ":"4050 0 0 1",
+      "CRX":"60 4095 0 1",
+      "CRY":"60 4030 0 1",
+      "CRZ":"4050 0 0 1",
+      "comment":"gametrak n°1",
+      "comment":"Module 35"
+    },
+    "cue_list":
+    {
+      "0":"off",
+      "1":"Mdj1",
+      "2":"Mdj2",
+      "3":"Mdj2",
+      "4":"Mdj1",
+      "5":"Mdj1",
+      "6":"Mdj1",
+      "7":"off",
+      "8":"off",
+      "9":"off",
+      "10":"off"
+    }
+  },
+  "computer_2":
+  {
+    "config":
+    {
+      "musician":"Paul",
+      "instrument":"gametrak",
+      "CLX":"20 4060 0 1",
+      "CLY":"0 4030 0 1",
+      "CLZ":"4060 0 0 1",
+      "CRX":"60 4095 0 1",
+      "CRY":"60 4095 0 1",
+      "CRZ":"4090 0 0 1",
+      "comment":"gametrak n°2",
+      "comment":"Module 36"
+    },
+    "cue_list":
+    {
+      "0":"off",
+      "1":"Mdj1",
+      "2":"Mdj2",
+      "3":"Mdj2",
+      "4":"Mdj1",
+      "5":"Mdj1",
+      "6":"Mdj1",
+      "7":"off",
+      "8":"off",
+      "9":"off",
+      "10":"off"
+    }
+  },
+  "computer_3":
+  {
+    "config":
+    {
+      "musician":"",
+      "instrument":"gametrak",
+      "CLX":"20 4050 0 1",
+      "CLY":"0 4030 0 1",
+      "CLZ":"4050 200 0 1",
+      "CRX":"20 4095 0 1",
+      "CRY":"30 4095 0 1",
+      "CRZ":"4000 10 0 1",
+      "comment":"gametrak n°3",
+      "comment":"Module 37"
+    },
+    "cue_list":
+    {
+      "0":"off",
+      "1":"Mdj1",
+      "2":"Mdj2",
+      "3":"Mdj2",
+      "4":"Mdj1",
+      "5":"Mdj1",
+      "6":"Mdj1",
+      "7":"off",
+      "8":"off",
+      "9":"off",
+      "10":"off"
+    }
+  },
+  "computer_4":
+  {
+    "config":
+    {
+      "musician":"",
+      "instrument":"gametrak",
+      "CLX":"0 4050 0 1",
+      "CLY":"0 4030 0 1",
+      "CLZ":"3050 0 0 1",
+      "CRX":"30 4095 0 1",
+      "CRY":"47 4095 0 1",
+      "CRZ":"4064 10 0 1",
+      "comment":"gametrak n°4",
+      "comment":"Module 38"
+    },
+    "cue_list":
+    {
+      "0":"off",
+      "1":"Mdj1",
+      "2":"Mdj2",
+      "3":"Mdj2",
+      "4":"Mdj1",
+      "5":"Mdj1",
+      "6":"Mdj1",
+      "7":"off",
+      "8":"off",
+      "9":"off",
+      "10":"off"
+    }
+  },
+  "computer_5":
+  {
+    "config":
+    {
+      "musician":"",
+      "instrument":"gametrak",
+      "CLX":"0 4070 0 1",
+      "CLY":"0 4030 0 1",
+      "CLZ":"4000 0 0 1",
+      "CRX":"40 4095 0 1",
+      "CRY":"40 4095 0 1",
+      "CRZ":"4060 10 0 1",
+      "comment":"gametrak n°5",
+      "comment":"Module 39"
+    },
+    "cue_list":
+    {
+      "0":"off",
+      "1":"Mdj1",
+      "2":"Mdj2",
+      "3":"Mdj2",
+      "4":"Mdj1",
+      "5":"Mdj1",
+      "6":"Mdj1",
+      "7":"off",
+      "8":"off",
+      "9":"off",
+      "10":"off"
+    }
+  }
+}
