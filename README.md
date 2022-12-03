@@ -46,7 +46,7 @@ play `son<sound number>.wav` at 12db from 500 milliseconds until the end of soun
 ### /skini/test 112 500 1000
 play `son<sound number>.wav` at 12db from 500 milliseconds during 1000 milliseconds.
 
-A 50ms fade out is happening at the end of sound.
+A 50ms fade out is processed at the end of sound.
 
 ### /skini/level "float"
 output volume of the patch from 0 to 127db
