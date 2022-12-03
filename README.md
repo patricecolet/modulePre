@@ -29,12 +29,12 @@ composition index from config.json composition list
 ### /cue "integer"
 cue index through a composition
 
-The composition patch named `skini` broadcast wav files localised in ~/modulePre/PureData/compositions/skini/sons synchronised with the help of ableton_link.
+The composition patch named `skini` broadcast wav files localised in ~/modulePre/PureData/compositions/skini/sons synchronised with the help of ableton_link. <br />
 The wav file must have same samplerate configured into pd settings, and must be named `son<sound index>.wav`.
 
 skini can be controlled with following OSC messages:
 
-### /skini/test 'sound number'
+### /skini/test 'sound index'
 play `son<sound number>.wav` entirely at 0db.
 
 ### /skini/test 112
