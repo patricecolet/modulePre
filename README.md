@@ -89,13 +89,13 @@ username is `patch` and password is `blokaslabs`  <br />
 
 in the first run change password to `raspberry`  <br />
 
-git clone into /home/patch directory on raspberry and anywhere you like on remote computer. <br />
->cd ~
+git clone into /home/patch directory on raspberry and anywhere you like on remote computer: <br />
+>cd ~   <br />
 git clone git@github.com:patricecolet/modulePre.git
 
-raspberry ideal config is available in this repository.
-copy config.txt to /boot/  <br />
->cp ~/modulePre/config.txt /boot  <br />
+Raspberry ideal config is available in this repository.
+Copy config.txt to /boot:  <br />
+>cp ~/modulePre/config.txt /boot
 
 PureData version in patchboxOS is a bit too old then we need to compile PureData:
 
@@ -112,30 +112,30 @@ sudo make install <br />
 sudo mv /usr/bin/pd /usr/bin/pd.old <br />
 sudo ln -s /usr/local/bin/pd /usr/bin/pd <br />
 
-install PureData externals  <br />
-`cd ~/modulePre/PureData`   <br />
-`< externals.txt xargs sudo apt-get install -y`   <br />
+Install PureData externals:  <br />
+>cd ~/modulePre/PureData   <br />
+< externals.txt xargs sudo apt-get install -y
 
-install node   <br />
-`sudo apt-get install nodejs`   <br />
+Install nodejs:   <br />
+>sudo apt-get install nodejs
 
-install jq commandline for parsing JSON   <br />
-`sudo apt-get install jq`   <br />
+Install jq commandline for parsing JSON:   <br />
+>sudo apt-get install jq   <br />
 
 setup crontab for loading pd and node at start   <br />
-`line="@reboot /home/patch/modulePre/PureData/script/startPureData.sh"`   <br />
-`(crontab -u patch -l; echo "$line" ) | crontab -u patch -`   <br />
-`line="@reboot /home/patch/modulePre/cirmrasp/clients/raspberry/startcirmrasp.sh"`   <br />
-`(crontab -u patch -l; echo "$line" ) | crontab -u patch -`   <br />
+>line="@reboot /home/patch/modulePre/PureData/script/startPureData.sh"   <br />
+(crontab -u patch -l; echo "$line" ) | crontab -u patch -   <br />
+line="@reboot /home/patch/modulePre/cirmrasp/clients/raspberry/startcirmrasp.sh"   <br />
+(crontab -u patch -l; echo "$line" ) | crontab -u patch -   <br />
 
-This script install soundcard automatically
-`line="@reboot /home/patch/modulePre/PureData/script/installSouncard.sh"`   <br />
-`(sudo crontab -u root -l; echo "$line" ) | sudo crontab -u root -`   <br />
+This script install soundcard automatically, it must be loaded by root:
+>line="@reboot /home/patch/modulePre/PureData/script/installSouncard.sh"   <br />
+(sudo crontab -u root -l; echo "$line" ) | sudo crontab -u root -   <br />
 
-install pirate audio   <br />
-`sudo apt-get install python3-pip`   <br />
-`cd ~/repo`   <br />
-`git clone https://github.com/pimoroni/pirate-audio`  <br />
-`cd pirate-audio/mopidy`  <br />
-`sudo ./install.sh`  <br />
-`sudo systemctl disable mopidy`  <br />
+Install pirate audio:   <br />
+sudo apt-get install python3-pip   <br />
+cd ~/repo   <br />
+git clone https://github.com/pimoroni/pirate-audio  <br />
+cd pirate-audio/mopidy  <br />
+sudo ./install.sh  <br />
+sudo systemctl disable mopidy  <br />
