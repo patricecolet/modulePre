@@ -101,7 +101,7 @@ copy config.txt to /boot/  <br />
 PureData version in patchboxOS is a bit too old then we need to compile PureData:
 
 go to user directory: <br />
-`cd ~`  <br />
+>cd ~  <br />
 create git directory: <br />
 `mkdir repo` <br />
 enter into git directory: <br />
