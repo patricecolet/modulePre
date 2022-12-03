@@ -39,7 +39,7 @@ The file `config.json` contains PureData settings, raspberry informations like m
 
 ## OSC Communication
 
-The main patch receives following OSC messages:
+The main patch receives following OSC messages on port 4000:
 
 ### /volume "float"
  from -inf to +27db
