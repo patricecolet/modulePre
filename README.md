@@ -11,7 +11,8 @@ Each raspberry is identified with mac address and it's number is the last byte o
 The node client installed into raspberry provides IP address to the node server.
 
 ## PureData
-PureData `_load_on_boot.pd` patch uses a configuration file named `config.json`
+PureData `_load_on_boot.pd` patch uses a configuration file named `config.json`.
+JSON format is human readable and computer friendly, this file is also used by node and batch scripts.
 
 This contains PureData settings, raspberry informations like mac address and ip address, used soundcard, machine model, computer number,some comments, and composition list.
 
@@ -116,14 +117,14 @@ Install PureData externals:  <br />
 >cd ~/modulePre/PureData   <br />
 < externals.txt xargs sudo apt-get install -y
 
-`purest_json`external is necessary for parsing config.json and must be last version (>=2.0.0).
+`purest_json`external is necessary for parsing `config.json` and must be last version (>=2.0.0).
  For installing it open pd by typing `pd` in terminal 
 and go to menu->help->install, search for `purest_json` and install.
 
 Install nodejs:   <br />
 >sudo apt-get install nodejs
 
-Install jq commandline for parsing JSON:   <br />
+Install jq commandline for parsing JSON in bash scripts:   <br />
 >sudo apt-get install jq   <br />
 
 setup crontab for loading pd and node at start   <br />
