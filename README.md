@@ -90,13 +90,12 @@ username is `patch` and password is `blokaslabs`  <br />
 in the first run change password to `raspberry`  <br />
 
 git clone into /home/patch directory on raspberry and anywhere you like on remote computer. <br />
-`cd ~` <br />
-`git clone git@github.com:patricecolet/modulePre.git`  <br />
+>cd ~
+git clone git@github.com:patricecolet/modulePre.git
 
 raspberry ideal config is available in this repository.
 copy config.txt to /boot/  <br />
-`cd ~/modulePre`  <br />
-`cp config.txt /boot`  <br />
+>cp ~/modulePre/config.txt /boot  <br />
 
 PureData version in patchboxOS is a bit too old then we need to compile PureData:
 
