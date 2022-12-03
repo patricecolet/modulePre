@@ -18,7 +18,7 @@ This contains PureData settings, raspberry informations like mac address and ip 
 The main patch receives following OSC messages:
 
 ### /volume "float"
- from 0 to 127db
+ from -inf to +27db
  
 ### /mute "boolean"
  1 mutes the sound
@@ -49,7 +49,7 @@ play `son<sound number>.wav` at 12db from 500 milliseconds during 1000 milliseco
 A 50ms fade out is processed at the end of sound.
 
 ### /skini/level "float"
-output volume of the patch from 0 to 127db
+output volume of the patch from -inf to 127db
 default = 100 (0db)
 
 ### /skini/offset "integer"
