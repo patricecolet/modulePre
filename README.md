@@ -205,4 +205,4 @@ First exit ssh session by typing on target computer:
 
 And then we're back on remote terminal, now we can use rsync command using target's ip address:
 > cd modulePre <br />
-rsync -avuP patch@"<raspberry ip address>":/home/patch/modulePre/PureData/compositions/myComposition/myPatch.pd PureData/compositions/"<myComposition>"/
+rsync -avuP patch@"raspberry ip address":/home/patch/modulePre/PureData/compositions/myComposition/myPatch.pd PureData/compositions/"myComposition"/
