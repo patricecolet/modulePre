@@ -15,7 +15,7 @@ The node client installed into raspberry provides IP address to the node server.
 
 ## PureData
 
-PureData and externals have to be installed from https://puredata.info/downloads/pure-data
+PureData have to be installed from https://puredata.info/downloads/pure-data
 
 For installing externals, PureData has a tool named deken that upload the external for the architecture of the machine where PureData has been installed. Actually, externals have to be installed one by one from menu help->install, but we work on some batch install...
 The most important externals are:
