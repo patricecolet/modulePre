@@ -12,7 +12,8 @@ Raspberry recommended OS is `patchbox OS` available here:
 
 https://blokas.io/patchbox-os/
 
-git clone into /home/<user> directory on raspberry and anywhere you like on remote computer.
+git clone into /home/patch directory on raspberry and anywhere you like on remote computer.
+`git clone`  <br />
 
 copy config.txt to /boot/
 
