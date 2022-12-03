@@ -771,7 +771,7 @@
 #X connect 9 0 8 0;
 #X coords 0 -1 1 1 192 140 2 300 100;
 #X restore 432 65 pd computer_received_infos;
-#N canvas 98 328 638 474 OSC 0;
+#N canvas 808 82 638 474 OSC 0;
 #X obj 125 11 netreceive -u -b 4000;
 #X obj 125 36 oscparse;
 #X obj 125 61 route list;
@@ -1078,8 +1078,8 @@
 #X obj 434 532 declare -path purest_json;
 #X msg 8 526 \; pd dsp 1;
 #X text 21 291 Réceptionne l'audio pour l'envoyer à la sortie, f 24;
-#N canvas 54 528 317 158 current_composition 1;
-#X obj 10 10 compositions/skini/_load;
+#N canvas 54 528 317 158 current_composition 0;
+#X obj 10 10 compositions/flite/_load;
 #X restore 44 251 pd current_composition;
 #X text 17 356 configuration MIDI;
 #X obj 20 75 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
