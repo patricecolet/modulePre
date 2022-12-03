@@ -37,14 +37,14 @@ skini can be controlled with following OSC messages:
 ### /skini/test 'sound index'
 play `son<sound number>.wav` entirely at 0db.
 
-### /skini/test 112
-play `son<sound number>.wav` entirely at +12db.
+### /skini/test 'sound index' 112
+play `son<sound index>.wav` entirely at +12db.
 
-### /skini/test 112 500
-play `son<sound number>.wav` at +12db from 500 milliseconds until the end of sound.
+### /skini/test 'sound index' 112 500
+play `son<sound index>.wav` at +12db from 500 milliseconds until the end of sound.
 
-### /skini/test 112 500 1000
-play `son<sound number>.wav` at +12db from 500 milliseconds during 1000 milliseconds.
+### /skini/test 'sound index' 112 500 1000
+play `son<sound index>.wav` at +12db from 500 milliseconds during 1000 milliseconds.
 
 A 50ms fade out is processed at the end of sound.
 
