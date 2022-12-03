@@ -19,14 +19,14 @@ PureData and externals have to be installed from https://puredata.info/downloads
 
 For installing externals, PureData has a tool named deken that upload the external for the architecture of the machine where PureData has been installed. Actually, externals have to be installed one by one from menu help->install, but we work on some batch install...
 The most important externals are:
->ggee
-purest_json version >= 2.0.0
-list_abs
-zexy
+>ggee <br />
+purest_json version >= 2.0.0 <br />
+list_abs <br />
+zexy 
 
 The compositions available in this repository needs those externals:
->flite
-hcs
+>flite <br />
+hcs <br />
 hid
 
 Raspberry OS uses externals from debian packages repository listed into PureData/externals.txt and last version of purest_json
