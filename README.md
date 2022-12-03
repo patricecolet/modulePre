@@ -34,7 +34,7 @@ enter into pd directory <br />
 `cd PureData` <br />
 build PureData: <br />
 `./autogen.sh` <br />
-./configure --enable-jack --enable-fft` <br />
+`./configure --enable-jack --enable-fft` <br />
 `make` <br />
 install puredata: <br />
 `sudo make install` <br />
