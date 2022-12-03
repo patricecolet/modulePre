@@ -62,7 +62,7 @@ empty FIFO buffer and stop playing sound
 set polyphony, from 0 to 16, 0 disabling polyphony  <br />
 default = 16
 
-### /skini/quantize integer
+### /skini/quantize "integer"
 0 = no quantize  <br />
 1 = quantize to beat  <br />
 2 = quantize to bar  <br />
@@ -131,6 +131,8 @@ line="@reboot /home/patch/modulePre/cirmrasp/clients/raspberry/startcirmrasp.sh"
 This script install soundcard automatically, it must be loaded by root:
 >line="@reboot /home/patch/modulePre/PureData/script/installSouncard.sh"   <br />
 (sudo crontab -u root -l; echo "$line" ) | sudo crontab -u root -   <br />
+
+note: The soundcard driver is defined in config.json, the default driver is `hifiberry-dacplus`, if you install another soundcard, the raspberry needs to be rebooted after first boot with the new soundcard.
 
 Install pirate audio:   <br />
 >sudo apt-get install python3-pip   <br />
