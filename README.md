@@ -57,18 +57,23 @@ replace patchbox pd version with the compiled one: <br />
 install PureData externals  <br />
 `cd ~/modulePre/PureData`   <br />
 `< externals.txt xargs sudo apt-get install -y`   <br />
+
 install node   <br />
 `sudo apt-get install nodejs`   <br />
+
 install jq commandline for parsing JSON   <br />
 `sudo apt-get install jq`   <br />
+
 setup crontab for loading pd and node at start   <br />
 `line="@reboot /home/patch/modulePre/PureData/script/startPureData.sh"`   <br />
 `(crontab -u patch -l; echo "$line" ) | crontab -u patch -`   <br />
 `line="@reboot /home/patch/modulePre/cirmrasp/clients/raspberry/startcirmrasp.sh"`   <br />
 `(crontab -u patch -l; echo "$line" ) | crontab -u patch -`   <br />
 
+This script install soundcard automatically
 `line="@reboot /home/patch/modulePre/PureData/script/installSouncard.sh"`   <br />
 `(sudo crontab -u root -l; echo "$line" ) | sudo crontab -u root -`   <br />
+
 install pirate audio   <br />
 `sudo apt-get install python3-pip`   <br />
 `cd ~/repo`   <br />
