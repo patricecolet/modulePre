@@ -59,17 +59,17 @@ add an offset to the ableton_link sync
 empty FIFO buffer and stop playing sound
 
 ### /skini/poly "integer"
-set polyphony, from 0 to 16, 0 disabling polyphony 
+set polyphony, from 0 to 16, 0 disabling polyphony  <br />
 default = 16
 
 ### /skini/quantize integer
-0 = no quantize
-1 = quantize to beat
-2 = quantize to bar
+0 = no quantize  <br />
+1 = quantize to beat  <br />
+2 = quantize to bar  <br />
 default = 2
 
 ### /skini/startDSP boolean
-turn on/off DSP in patch
+turn on/off DSP in patch 
 
 
 ## Install from scratch
