@@ -8,6 +8,13 @@ Remote computer Operating System must be linux or MacOS.
 git clone this repository to control and edit modulePre PureData patches:
 >git clone git@github.com:patricecolet/modulePre.git
 
+## cirmrasp
+cirmrasp contains a node server for controlling raspberry cluster containing a node client and OpenStageControl for OSC communication with PureData.
+Each raspberry is identified with mac address and it's number is the last byte of IP address.
+The node client installed into raspberry provides IP address to the node server.
+
+## PureData
+
 PureData and externals have to be installed from https://puredata.info/downloads/pure-data
 
 For installing externals, PureData has a tool named deken that upload the external for the architecture of the machine where PureData has been installed. Actually, externals have to be installed one by one from menu help->install, but we work on some batch install...
@@ -25,16 +32,12 @@ The compositions available in this repository needs those externals:
 Raspberry OS uses externals from debian packages repository listed into PureData/externals.txt and last version of purest_json
 
 
-## cirmrasp
-cirmrasp contains a node server for controlling raspberry cluster containing a node client and OpenStageControl for OSC communication with PureData.
-Each raspberry is identified with mac address and it's number is the last byte of IP address.
-The node client installed into raspberry provides IP address to the node server.
-
-## PureData
 PureData `_load_on_boot.pd` patch uses a configuration file named `config.json`.
 JSON format is human readable and computer friendly, this file is also used by node and batch scripts.
 
-This contains PureData settings, raspberry informations like mac address and ip address, used soundcard, machine model, computer number,some comments, and composition list.
+The file `config.json` contains PureData settings, raspberry informations like mac address and ip address, used soundcard, machine model, computer number,some comments, and composition list.
+
+## OSC Communication
 
 The main patch receives following OSC messages:
 
