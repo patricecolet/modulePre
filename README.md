@@ -38,13 +38,13 @@ skini can be controlled with following OSC messages:
 play `son<sound number>.wav` entirely at 0db.
 
 ### /skini/test 112
-play `son<sound number>.wav` entirely at 12db.
+play `son<sound number>.wav` entirely at +12db.
 
 ### /skini/test 112 500
-play `son<sound number>.wav` at 12db from 500 milliseconds until the end of sound.
+play `son<sound number>.wav` at +12db from 500 milliseconds until the end of sound.
 
 ### /skini/test 112 500 1000
-play `son<sound number>.wav` at 12db from 500 milliseconds during 1000 milliseconds.
+play `son<sound number>.wav` at +12db from 500 milliseconds during 1000 milliseconds.
 
 A 50ms fade out is processed at the end of sound.
 
@@ -163,3 +163,11 @@ Before starting PureData for editing patches we need to end this pd process runn
 
 Then start PureData:
 >pd
+
+For retrieving the work made on a raspberry we can use rsync command on remote computer.
+First exit ssh session by typing on target computer:
+>exit
+
+And then we're back on remote terminal, now we can use rsync command using target's ip address:
+> cd modulePre
+rsync -avuP patch@"raspberry ip address":/home/patch/modulePre/PureData/compositions/myComposition/myPatch.pd PureData/compositions/myComposition/
