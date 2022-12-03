@@ -142,3 +142,24 @@ sudo systemctl disable mopidy  <br />
 
 Finally reboot raspberry:
 >sudo reboot
+
+## SSH X11 Forwarding
+
+A remote ssh session can be launched with X11 forwarding, with following command:
+
+>ssh -XY patch@"ip of the raspberry"
+
+The graphical interface will appear on remote computer, this is usefull for modifying PureData patches without using a VNC session or without connecting a screen, a mouse and a keyboard to the target raspberry.
+Then on terminal you can check if PureData is running:
+> ps aux | grep pd
+
+if PureData is running the command result should display those lines:
+
+>patch      701 12.3 12.3 133264 117272 ?       SLl  12:57   0:02 pd -nogui -alsamidi -jack -r 48000 -audiobuf 2 /home/patch/modulePre/PureData/_load_on_boot.pd
+patch      729  0.0  0.0   1928   428 ?        S    12:57   0:00 /usr/local/lib/pd/bin/pd-watchdog
+
+Before starting PureData for editing patches we need to end this pd process running on the background:
+>killall pd
+
+Then start PureData:
+>pd
