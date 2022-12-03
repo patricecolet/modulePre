@@ -139,3 +139,6 @@ git clone https://github.com/pimoroni/pirate-audio  <br />
 cd pirate-audio/mopidy  <br />
 sudo ./install.sh  <br />
 sudo systemctl disable mopidy  <br />
+
+Finally reboot raspberry:
+>sudo reboot
