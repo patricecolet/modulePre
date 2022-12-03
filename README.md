@@ -12,12 +12,19 @@ Raspberry recommended OS is `patchbox OS` available here:
 
 https://blokas.io/patchbox-os/
 
-git clone into /home/patch directory on raspberry and anywhere you like on remote computer.
-`git clone`  <br />
+Copy the image into an sdcard. <br />
+An then connect to raspberry. <br />
 
-copy config.txt to /boot/
+For ssh remote session wpa_supplicant.conf can be copied into /boot partition from any computer. <br />
 
-copy wpa_supplicant.conf to /etc/wpa_supplicant
+git clone into /home/patch directory on raspberry and anywhere you like on remote computer. <br />
+`cd ~` <br />
+`git clone git@github.com:patricecolet/modulePre.git`  <br />
+
+raspberry ideal config is available in this repository.
+copy config.txt to /boot/  <br />
+`cd ~/modulePre`  <br />
+`cp config.txt /boot`  <br />
 
 PureData version in patchboxOS is a bit too old then we need to compile PureData:
 
