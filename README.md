@@ -116,6 +116,10 @@ Install PureData externals:  <br />
 >cd ~/modulePre/PureData   <br />
 < externals.txt xargs sudo apt-get install -y
 
+`purest_json`external is necessary for parsing config.json and must be last version (>=2.0.0).
+ For installing it open pd by typing `pd` in terminal 
+and go to menu->help->install, search for `purest_json` and install.
+
 Install nodejs:   <br />
 >sudo apt-get install nodejs
 
