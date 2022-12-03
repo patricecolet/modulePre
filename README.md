@@ -21,23 +21,23 @@ copy wpa_supplicant.conf to /etc/wpa_supplicant
 PureData version in patchboxOS is a bit too old then we need to compile PureData:
 
 go to user directory: <br />
-`cd ~`
+`cd ~`  <br />
 create git directory: <br />
-`mkdir repo`
+`mkdir repo` <br />
 enter into git directory: <br />
-`cd repo`
+`cd repo` <br />
 clone PureData repository: <br />
-`git clone https://github.com/pure-data/pure-data.git`
+`git clone https://github.com/pure-data/pure-data.git` <br />
 install build dependencies: <br />
-`sudo apt-get install fftw3-dev autoconf libtool gettext`
+`sudo apt-get install fftw3-dev autoconf libtool gettext` <br />
 enter into pd directory <br />
-`cd PureData`
+`cd PureData` <br />
 build PureData: <br />
-`./autogen.sh`
-./configure --enable-jack --enable-fft`
-`make`
+`./autogen.sh` <br />
+./configure --enable-jack --enable-fft` <br />
+`make` <br />
 install puredata: <br />
-`sudo make install`
+`sudo make install` <br />
 replace patchbox pd version with the compiled one: <br />
-`sudo mv /usr/bin/pd /usr/bin/pd.old`
-`sudo ln -s /usr/local/bin/pd /usr/bin/pd`
+`sudo mv /usr/bin/pd /usr/bin/pd.old` <br />
+`sudo ln -s /usr/local/bin/pd /usr/bin/pd` <br />
