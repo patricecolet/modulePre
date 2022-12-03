@@ -133,7 +133,7 @@ This script install soundcard automatically, it must be loaded by root:
 (sudo crontab -u root -l; echo "$line" ) | sudo crontab -u root -   <br />
 
 Install pirate audio:   <br />
-sudo apt-get install python3-pip   <br />
+>sudo apt-get install python3-pip   <br />
 cd ~/repo   <br />
 git clone https://github.com/pimoroni/pirate-audio  <br />
 cd pirate-audio/mopidy  <br />
