@@ -111,9 +111,10 @@ For ssh remote session wpa_supplicant.conf can be copied into /boot partition fr
 
 username is `patch` and password is `blokaslabs`  <br />
 
-in the first run change password to `raspberry`  <br />
+At the first run change password to `raspberry`, and set boot to auto login+console  <br />
+The command `startx` in console will launch Xserver (the graphical interface) <br />
 
-git clone into /home/patch directory on raspberry and anywhere you like on remote computer: <br />
+In terminal git clone into /home/patch directory on raspberry and anywhere you like on remote computer: <br />
 >cd ~   <br />
 git clone git@github.com:patricecolet/modulePre.git
 
