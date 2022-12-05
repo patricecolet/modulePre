@@ -6,14 +6,19 @@
 # ex: ./update_config.sh 1 7
 
 # echo "Bash version ${BASH_VERSION}"
+# get script path
+_DIR=$(dirname "$0");
+# get absolute script path
+_DIR=$(readlink -f "$_DIR")
+# get modulePre root path
+_DIR=$(dirname $(dirname $_DIR));
+# include namespace variables
+. "$_DIR/namespace.sh";
+# rsync is the command for updating files
+_COPY_COMMAND="rsync -avuPe ssh";
 
-dir=$(dirname "$0")
-. "$dir/../../namespace.sh"
-
-_COPY_COMMAND="rsync -avuPe ssh"
-
-_PD_CONFIG=config.json
-
+_PD_CONFIG="config.json";
+# check if command has at least two args
 if ! [ -z "$2" ]
 then
 
@@ -21,8 +26,8 @@ then
 	fin=$2;
 	for((c=${debut}; c<=${fin}; c++))
 	do
-		echo sshpass -p$_PASSWORD $_COPY_COMMAND $_PD_CONFIG $_ADDRESS_HEADER.$c:$_NAMESPACE/$_PD_CONFIG
-		sshpass -p$_PASSWORD $_COPY_COMMAND $_PD_CONFIG $_ADDRESS_HEADER.$c:$_NAMESPACE/$_PD_CONFIG
+		echo sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$_PD_CONFIG $_ADDRESS_HEADER.$c:$_NAMESPACE/$_PD_CONFIG
+		sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$_PD_CONFIG $_ADDRESS_HEADER.$c:$_NAMESPACE/$_PD_CONFIG
 	done
 else
 

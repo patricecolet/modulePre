@@ -6,8 +6,14 @@
 # ex: ./_delete_track.sh test_tone 1 7
 
 
-dir=$(dirname "$0")
-. "$dir/../../namespace.sh"
+# get script path
+_DIR=$(dirname "$0");
+# get absolute script path
+_DIR=$(readlink -f "$_DIR")
+# get modulePre root path
+_DIR=$(dirname $(dirname $_DIR));
+# include namespace variables
+. "$_DIR/namespace.sh";
 
 
 if ! [ -z "$3" ]

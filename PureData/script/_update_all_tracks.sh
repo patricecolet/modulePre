@@ -7,12 +7,18 @@
 # ex: ./_update_all_tracks.sh 1 7
 
 
-dir=$(dirname "$0")
-. "$dir/../../namespace.sh"
+# get script path
+_DIR=$(dirname "$0");
+# get absolute script path
+_DIR=$(readlink -f "$_DIR")
+# get modulePre root path
+_DIR=$(dirname $(dirname $_DIR));
+# include namespace variables
+. "$_DIR/namespace.sh";
 
 _COPY_COMMAND="rsync -avuPe ssh"
 
-_DIR=PureData/compositions;
+COMPO_DIR=PureData/compositions;
 
 if ! [ -z "$2" ]
 then
@@ -21,10 +27,10 @@ debut=$1
 fin=$2
 for((c=${debut}; c<=${fin}; c++))
 do
-	echo sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r $_NAMESPACE/$_DIR
-	sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r $_NAMESPACE/$_DIR
-	echo sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR $_ADDRESS_HEADER.$c:$_NAMESPACE/PureData
-	sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR $_ADDRESS_HEADER.$c:$_NAMESPACE/PureData
+	echo sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r $_NAMESPACE/$COMPO_DIR
+	sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r $_NAMESPACE/$COMPO_DIR
+	echo sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/COMPO_DIR $_ADDRESS_HEADER.$c:$_NAMESPACE/PureData
+	sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/COMPO_DIR $_ADDRESS_HEADER.$c:$_NAMESPACE/PureData
 done
 else
 

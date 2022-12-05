@@ -1,4 +1,4 @@
-#N canvas 787 201 653 574 12;
+#N canvas 540 147 653 574 12;
 #X declare -lib zexy;
 #X declare -path ggee;
 #X declare -path abs;
@@ -10,7 +10,7 @@
 #X obj 549 413 print comment;
 #X symbolatom 66 133 20 0 0 0 - - - 0;
 #X symbolatom 56 186 19 0 0 0 - - - 0;
-#X msg 37 440 \; ID 50:ed:3c:17:51:65 HIBEKOHIKEDO_hodike_bokoho mac silicon 192.168.67.70 computer_1 \; comment MacBook Air de Patko \;, f 66;
+#X msg 37 440 \; ID 50:ed:3c:17:51:65 HIBEKOHIKEDO_hodike_bokoho mac silicon 192.168.86.70 computer_1 \; comment MacBook Air de Patko \;, f 66;
 #X symbolatom 56 234 30 0 0 0 - - - 0;
 #X obj 13 10 inlet;
 #X obj 538 53 r ID;
@@ -1078,8 +1078,8 @@
 #X obj 434 532 declare -path purest_json;
 #X msg 8 526 \; pd dsp 1;
 #X text 21 291 Réceptionne l'audio pour l'envoyer à la sortie, f 24;
-#N canvas 54 528 317 158 current_composition 0;
-#X obj 10 10 compositions/flite/_load;
+#N canvas 54 528 317 158 current_composition 1;
+#X obj 10 10 compositions/skini/_load;
 #X restore 44 251 pd current_composition;
 #X text 17 356 configuration MIDI;
 #X obj 20 75 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;

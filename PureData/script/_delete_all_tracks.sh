@@ -5,9 +5,14 @@
 # en 2eme position num du dernier raspberry.
 # ex: ./_delete_all_tracks.sh 1 7
 
-echo "Bash version ${BASH_VERSION}"
-dir=$(dirname "$0")
-. "$dir/namespace.sh"
+# get script path
+_DIR=$(dirname "$0");
+# get absolute script path
+_DIR=$(readlink -f "$_DIR")
+# get modulePre root path
+_DIR=$(dirname $(dirname $_DIR));
+# include namespace variables
+. "$_DIR/namespace.sh";
 
 
 if ! [ -z "$2" ]

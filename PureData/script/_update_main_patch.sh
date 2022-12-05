@@ -5,9 +5,14 @@
 # en 3eme position num du dernier raspberry.
 # ex: ./update_main_patch.sh 1 7
 
-
-dir=$(dirname "$0")
-. "$dir/../../namespace.sh"
+# get script path
+_DIR=$(dirname "$0");
+# get absolute script path
+_DIR=$(readlink -f "$_DIR")
+# get modulePre root path
+_DIR=$(dirname $(dirname $_DIR));
+# include namespace variables
+. "$_DIR/namespace.sh";
 
 _COPY_COMMAND="rsync -avuPe ssh"
 
@@ -20,8 +25,8 @@ debut=$1
 fin=$2
 for((c=${debut}; c<=${fin}; c++))
 do
-	echo sshpass  -p$_PASSWORD $_COPY_COMMAND $_MAIN_PATCH $_ADDRESS_HEADER.$c:$_NAMESPACE/$_MAIN_PATCH
-	sshpass -p$_PASSWORD $_COPY_COMMAND $_MAIN_PATCH $_ADDRESS_HEADER.$c:$_NAMESPACE/$_MAIN_PATCH
+	echo sshpass  -p$_PASSWORD $_COPY_COMMAND $_DIR/$_MAIN_PATCH $_ADDRESS_HEADER.$c:$_NAMESPACE/$_MAIN_PATCH
+	sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$_MAIN_PATCH $_ADDRESS_HEADER.$c:$_NAMESPACE/$_MAIN_PATCH
 done
 else
 

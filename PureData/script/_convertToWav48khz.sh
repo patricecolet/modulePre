@@ -1,7 +1,13 @@
 #!/bin/bash
 
+# get script path
+_DIR=$(dirname "$0");
+# get absolute script path
+_DIR=$(readlink -f "$_DIR")
+# get modulePre root path
+_DIR=$(dirname $(dirname $_DIR));
 
-dir=$(dirname "$0")/../compositions/$1/sons
+dir=$_DIR/PureData/compositions/$1/sons
 
 mkdir $dir/temp
 if ! [ -z "$1" ]

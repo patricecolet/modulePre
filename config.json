@@ -16,20 +16,16 @@
 				"comment":"Load skini patch"
 			},
 			{
+				"title":"pirateAudio",
+				"comment":"example patch for pirate audio soundcard and display"
+			},
+			{
 				"title":"qTouch",
 				"comment":"SAMD21 usbmidi"
 			},
 			{
 				"title":"BLTMIDI",
 				"comment":"esp32-C3 bluetooth midi"
-			},
-			{
-				"title":"gametrak_gamelan",
-				"comment":""
-			},
-			{
-				"title":"spectrum",
-				"comment":"test fft spreading"
 			},
 			{
 				"title":"blank",
@@ -263,7 +259,7 @@
 				"comment" : "macbook air gael pour test (indiquer le machineId de la rpi à émuler)"
 			},
 			{
-				"ipAddress" : "192.168.67.70",
+				"ipAddress" : "192.168.86.70",
 				"macAddress": "50:ed:3c:17:51:65",
 				"bibi_binaire" : "HIBEKOHIKEDO_hodike_bokoho",
 				"machine"	:	"mac",
@@ -272,7 +268,7 @@
 				"comment" : "MacBook Air de Patko"
 			},
 			{
-				"ipAddress" : "192.168.1.34",
+				"ipAddress" : "192.168.86.31",
 				"macAddress": "b8:27:eb:a6:97:18",
 				"bibi_binaire" : "KIKOHEBIDEKI_kebeka_bihako",
 				"machine"	:	"rpi",
@@ -282,7 +278,7 @@
 				"comment" : "module pré confié par Camille"
 			},
 			{
-				"ipAddress" : "192.168.1.2",
+				"ipAddress" : "192.168.86.34",
 				"macAddress": "b8:27:eb:18:0f:31",
 				"bibi_binaire" : "KIKOHEBIDEKI_hakoho_dihiha",
 				"machine"	:	"rpi",
@@ -290,6 +286,6 @@
 				"soundcard" : "hifiberry-dac",
 				"machineId": "computer_4",
 				"display" : "mopidy",
-				"comment" : "module pré pirate-audio utilisé comme serveur"
+				"comment" : "raspberry de patrice avec pirate-audio utilisé comme serveur"
 			}
 		]}

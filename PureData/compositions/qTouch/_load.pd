@@ -14,10 +14,8 @@
 #X obj 220 203 touche \$0 45 5;
 #X obj 220 225 touche \$0 47 6;
 #X obj 96 202 swap;
-#X obj 85 14 cue_list;
-#X obj 51 61 init_track qTouch;
 #X obj 19 38 t b b;
-#N canvas 92 117 587 298 setupQtouch 1;
+#N canvas 92 117 587 298 setupQtouch 0;
 #X obj 111 21 inlet;
 #X obj 111 125 t b b;
 #X obj 122 259 ctlout;
@@ -37,7 +35,7 @@
 #X connect 7 0 4 0;
 #X connect 8 0 1 0;
 #X restore 19 124 pd setupQtouch;
-#X connect 0 0 17 0;
+#X connect 0 0 15 0;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 2 0 3 0;
@@ -46,5 +44,4 @@
 #X connect 5 1 14 1;
 #X connect 14 0 4 0;
 #X connect 14 1 4 1;
-#X connect 17 0 18 0;
-#X connect 17 1 16 0;
+#X connect 15 0 16 0;
