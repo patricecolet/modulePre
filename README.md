@@ -17,7 +17,7 @@ The node client installed into raspberry provides IP address to the node server.
 
 PureData have to be installed from https://puredata.info/downloads/pure-data
 
-For installing externals, PureData has a tool named deken that upload the external for the architecture of the machine where PureData has been installed. Actually, externals have to be installed one by one from menu help->install, but we work on some batch install...
+For installing externals, PureData has a tool named deken for uploading the external. Actually, externals have to be installed one by one from menu help->install, but we work on some batch install...
 The most important externals are:
 >ggee <br />
 purest_json version >= 2.0.0 <br />
@@ -42,7 +42,7 @@ The file `config.json` contains PureData settings, raspberry informations like m
 The main patch receives following OSC messages on port 4000:
 
 ### /volume "float"
- from -inf to +27db
+ from 0 to 127 (100=0db)
  
 ### /mute "boolean"
  1 mutes the sound
@@ -64,11 +64,11 @@ play `son<sound number>.wav` entirely at 0db.
 ### /skini/test 'sound index' 112
 play `son<sound index>.wav` entirely at +12db.
 
-### /skini/test 'sound index' 112 500
-play `son<sound index>.wav` at +12db from 500 milliseconds until the end of sound.
+### /skini/test 'sound index' 90 500
+play `son<sound index>.wav` at -10db from 500 milliseconds until the end of sound.
 
-### /skini/test 'sound index' 112 500 1000
-play `son<sound index>.wav` at +12db from 500 milliseconds during 1000 milliseconds.
+### /skini/test 'sound index' 100 500 1000
+play `son<sound index>.wav` at 0db from 500 milliseconds during 1000 milliseconds.
 
 A 50ms fade out is processed at the end of sound.
 
