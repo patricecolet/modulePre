@@ -81,8 +81,8 @@
 #X obj 87 390 > 0;
 #X obj 390 155 s \$0trigEvent;
 #X obj 186 426 receive \$0trigEvent;
-#X obj 128 274 route test level offset clear poly quantize startDSP;
 #X obj 282 350 s \$1clear;
+#X obj 128 274 route play level offset clear poly quantize startDSP;
 #X connect 0 0 14 0;
 #X connect 1 0 6 0;
 #X connect 2 0 19 0;
@@ -97,7 +97,7 @@
 #X connect 14 0 21 0;
 #X connect 14 1 16 0;
 #X connect 14 2 17 0;
-#X connect 18 0 41 0;
+#X connect 18 0 42 0;
 #X connect 20 0 3 0;
 #X connect 22 0 11 0;
 #X connect 26 0 5 0;
@@ -112,10 +112,10 @@
 #X connect 36 0 38 0;
 #X connect 38 0 26 1;
 #X connect 40 0 28 0;
-#X connect 41 0 26 0;
-#X connect 41 1 1 0;
-#X connect 41 2 2 0;
-#X connect 41 3 42 0;
-#X connect 41 4 24 0;
-#X connect 41 5 37 0;
-#X connect 41 6 13 0;
+#X connect 42 0 26 0;
+#X connect 42 1 1 0;
+#X connect 42 2 2 0;
+#X connect 42 3 41 0;
+#X connect 42 4 24 0;
+#X connect 42 5 37 0;
+#X connect 42 6 13 0;
