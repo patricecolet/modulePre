@@ -156,15 +156,13 @@ Install nodejs:   <br />
 Install jq commandline for parsing JSON in bash scripts:   <br />
 >sudo apt-get install jq   <br />
 
-We need to set jackd samplerate, `/etc/jackdrc` should look like this:
+We need to set jackd samplerate, `/etc/jackdrc` should look like this:    <br />
 
->#!/bin/sh
-# We need to know samplerate from pdsettings 
-CONFIG_FILE='/home/patch/modulePre/config.json'
-pdsettings=$(cat $CONFIG_DIR/config.json | jq '.pdsettings');
-samplerate=$(echo $pdsettings | jq -r '.samplerate');
-# exec is used to 'morph' the shell interpreter process into jackd process, saving some system resources.
-exec /usr/bin/jackd -t 2000 -R -P 95 -d alsa  -r $samplerate -p 64 -n 2 -X seq -s -S 
+>#!/bin/sh    <br />   <br />
+CONFIG_FILE='/home/patch/modulePre/config.json'    <br />
+pdsettings=$(cat $CONFIG_DIR/config.json | jq '.pdsettings');   <br />
+samplerate=$(echo $pdsettings | jq -r '.samplerate');   <br />
+exec /usr/bin/jackd -t 2000 -R -P 95 -d alsa  -r $samplerate -p 64 -n 2 -X seq -s -S    <br />
 
 setup crontab for loading pd and node at start   <br />
 >line="@reboot /home/patch/modulePre/PureData/script/startPureData.sh"   <br />
