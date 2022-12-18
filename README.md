@@ -53,46 +53,75 @@ composition index from config.json composition list
 ### /cue "integer"
 cue index through a composition
 
+default composition list is defined in "config.json":
+
+>	"compositions":[
+			{
+				"title":"flite",
+				"comment":"Load at boot"
+			},
+			{
+				"title":"skini",
+				"comment":"Load skini patch"
+			},
+			{
+				"title":"pirateAudio",
+				"comment":"example patch for pirate audio soundcard and display"
+			},
+			{
+				"title":"qTouch",
+				"comment":"SAMD21 usbmidi"
+			},
+			{
+				"title":"BLTMIDI",
+				"comment":"esp32-C3 bluetooth midi"
+			},
+			{
+				"title":"blank",
+				"comment":"template patch"
+			}
+	]
+
 The composition patch named `skini` broadcast wav files localised in ~/modulePre/PureData/compositions/skini/sons synchronised with the help of ableton_link. <br />
 The wav file must have same samplerate configured into config.json's pdsettings, and must be named `son<sound index>.wav`.
 
 skini can be controlled with following OSC messages:
 
-### /skini/test 'sound index'
+### /play 'sound index'
 play `son<sound number>.wav` entirely at 0db.
 
-### /skini/test 'sound index' 112
+### /play 'sound index' 112
 play `son<sound index>.wav` entirely at +12db.
 
-### /skini/test 'sound index' 90 500
+###  /play 'sound index' 90 500
 play `son<sound index>.wav` at -10db from 500 milliseconds until the end of sound.
 
-### /skini/test 'sound index' 100 500 1000
+### /play 'sound index' 100 500 1000
 play `son<sound index>.wav` at 0db from 500 milliseconds during 1000 milliseconds.
 
 A 50ms fade out is processed at the end of sound.
 
-### /skini/level "float"
+### /play "float"
 output volume of the patch from -inf to 127db
 default = 100 (0db)
 
-### /skini/offset "integer"
+### /offset "integer"
 add an offset to the ableton_link sync
 
-### /skini/clear bang
+### /clear bang
 empty FIFO buffer and stop playing sound
 
-### /skini/poly "integer"
+### /poly "integer"
 set polyphony, from 0 to 16, 0 disabling polyphony  <br />
 default = 16
 
-### /skini/quantize "integer"
+### /quantize "integer"
 0 = no quantize  <br />
 1 = quantize to beat  <br />
 2 = quantize to bar  <br />
 default = 2
 
-### /skini/startDSP boolean
+### /startDSP boolean
 turn on/off DSP in patch 
 
 
