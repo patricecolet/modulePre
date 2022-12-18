@@ -16,7 +16,7 @@
 #X obj 333 44 loadbang;
 #X obj 243 494 text define sonInfo;
 #X obj 243 426 r sonInfo-r;
-#X obj 70 518 throw~ L_out;
+#X obj 70 548 throw~ L_out;
 #N canvas 0 330 1370 374 lisPlusieursSons 0;
 #X obj 5 4 inlet;
 #X obj 5 123 pack f f f;
@@ -82,7 +82,7 @@
 #X connect 23 0 1 0;
 #X connect 23 1 1 1;
 #X connect 23 2 1 2;
-#X restore 71 396 pd lisPlusieursSons;
+#X restore 71 426 pd lisPlusieursSons;
 #N canvas 717 469 450 300 addVelo 0;
 #X obj 84 39 inlet;
 #X text 36 12 Si il n'y a pas de vélocité on en rajoute une à 127;
@@ -106,15 +106,15 @@
 #X connect 8 0 6 1;
 #X connect 9 0 5 0;
 #X restore 11 262 pd addVelo;
-#X obj 70 496 *~;
-#X obj 89 470 sig~ 1;
-#X obj 11 358 demux 0 1;
+#X obj 70 526 *~;
+#X obj 89 500 sig~ 1;
+#X obj 11 388 demux 0 1;
 #X obj 71 336 r \$0poly;
 #X obj 43 45 synchroSkini \$0;
 #X obj 94 94 s \$0niveau;
 #X obj 471 375 r \$0niveau;
 #X obj 436 527 s \$0niveauDB;
-#X obj 89 446 r \$0niveauDB;
+#X obj 89 476 r \$0niveauDB;
 #X obj 265 269 s \$0poly;
 #X obj 11 285 list split 2;
 #X obj 51 307 s \$0samplePos;
@@ -191,12 +191,12 @@
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;
 #X restore 241 523 pd chargementDesSons;
-#X obj 11 420 lisUnSon \$0;
+#X obj 11 450 lisUnSon \$0;
 #X obj 320 217 s \$0quantize;
 #X obj 269 304 r \$0poly;
 #X obj 269 328 sel 0;
 #X obj 269 352 s \$0clearPoly;
-#X text 89 377 Polyphonie 16 voix;
+#X text 89 407 Polyphonie 16 voix;
 #X msg 321 171 1;
 #X obj 321 149 loadbang;
 #X obj 14 198 s \$0clear;
@@ -237,6 +237,8 @@
 #X text 301 247 polyphony \, 0 = disabled \, max = 16;
 #X obj 703 521 declare -lib zexy;
 #X obj 704 545 declare -path ggee;
+#X obj 139 386 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 71 366 > 0;
 #X connect 0 0 5 0;
 #X connect 1 0 6 0;
 #X connect 2 0 25 0;
@@ -253,7 +255,8 @@
 #X connect 19 0 18 1;
 #X connect 20 0 31 0;
 #X connect 20 1 16 0;
-#X connect 21 0 20 1;
+#X connect 20 1 77 0;
+#X connect 21 0 78 0;
 #X connect 22 0 42 0;
 #X connect 22 1 23 0;
 #X connect 22 2 10 0;
@@ -288,3 +291,4 @@
 #X connect 70 0 32 0;
 #X connect 72 0 27 0;
 #X connect 73 0 72 0;
+#X connect 78 0 20 1;
