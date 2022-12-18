@@ -53,34 +53,36 @@ composition index from config.json composition list
 ### /cue "integer"
 cue index through a composition
 
-default composition list is defined in "config.json":
+default composition list is defined like this:
 
->	"compositions":[
-			{
-				"title":"flite",
-				"comment":"Load at boot"
-			},
-			{
-				"title":"skini",
-				"comment":"Load skini patch"
-			},
-			{
-				"title":"pirateAudio",
-				"comment":"example patch for pirate audio soundcard and display"
-			},
-			{
-				"title":"qTouch",
-				"comment":"SAMD21 usbmidi"
-			},
-			{
-				"title":"BLTMIDI",
-				"comment":"esp32-C3 bluetooth midi"
-			},
-			{
-				"title":"blank",
-				"comment":"template patch"
-			}
-	]
+>	"compositions":[ <br />
+			{ <br />
+				"title":"flite", <br />
+				"comment":"Load at boot" <br />
+			}, <br />
+			{ <br />
+				"title":"skini", <br />
+				"comment":"Load skini patch" <br />
+			}, <br />
+			{ <br />
+				"title":"pirateAudio", <br />
+				"comment":"example patch for pirate audio soundcard and display" <br />
+			}, <br />
+			{ <br />
+				"title":"qTouch", <br />
+				"comment":"SAMD21 usbmidi" <br />
+			}, <br />
+			{ <br />
+				"title":"BLTMIDI", <br />
+				"comment":"esp32-C3 bluetooth midi" <br />
+			}, <br />
+			{ <br />
+				"title":"blank", <br />
+				"comment":"template patch" <br />
+			} <br />
+	] <br />
+
+The composition `flite`reads computer number and mac adress and speak it at boot.
 
 The composition patch named `skini` broadcast wav files localised in ~/modulePre/PureData/compositions/skini/sons synchronised with the help of ableton_link. <br />
 The wav file must have same samplerate configured into config.json's pdsettings, and must be named `son<sound index>.wav`.
