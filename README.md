@@ -81,8 +81,20 @@ default composition list is defined like this:
 				"comment":"template patch" <br />
 			} <br />
 	] <br />
+	
+## composition 0 : flite
 
 The composition `flite`reads computer number and mac adress and speak it at boot.
+It receives following commands:
+
+### /speak 'Hello world'
+text to speech.
+
+### /computer_number bang
+speaks computer number.
+
+
+## composition 1 : skini
 
 The composition patch named `skini` broadcast wav files localised in ~/modulePre/PureData/compositions/skini/sons synchronised with the help of ableton_link. <br />
 The wav file must have same samplerate configured into config.json's pdsettings, and must be named `son<sound index>.wav`.
@@ -103,7 +115,7 @@ play `son<sound index>.wav` at 0db from 500 milliseconds during 1000 millisecond
 
 A 50ms fade out is processed at the end of sound.
 
-### /play "float"
+### /level "float"
 output volume of the patch from -inf to 127db
 default = 100 (0db)
 
@@ -126,6 +138,10 @@ default = 2
 ### /startDSP boolean
 turn on/off DSP in patch 
 
+
+## composition 2 : pirateAudio
+
+This is a fork of skini with pirate audio raspberry shield's display and buttons handling.
 
 ## Install from scratch
 
