@@ -1,10 +1,13 @@
 #!/bin/bash
-
-
+while [ ! -d /run/user/1000/pulse ] 
+do
+      sleep 0.2
+done
+#export XDG_RUNTIME_DIR="/run/user/1000"
 # Wait a while for jack to start for launching puredata
-echo '5s'
+#echo '5s'
 env sleep 5
-echo 'fin 5s'
+#echo 'fin 5s'
 
 SCRIPT_PATH=`readlink -f ${BASH_SOURCE:-$0}`
 PD_PATCH_DIR=$(dirname $(dirname "$SCRIPT_PATH"))
@@ -23,4 +26,4 @@ blocksize=$(echo $pdsettings | jq -r '.blocksize');
 echo "$pdsettings";
 # start PureData
 echo "pd -nogui  -$midiAPI -$audioAPI -r $samplerate -audiobuf $audiobuf -blocksize $blocksize $PD_PATCH_DIR/_load_on_boot.pd "
-pd -nogui  -$midiAPI -$audioAPI -r $samplerate -audiobuf $audiobuf -blocksize $blocksize $PD_PATCH_DIR/_load_on_boot.pd >> $LOG_FILE 2>&1 &
+pd -nogui -noadc -alsaadd default -$midiAPI -$audioAPI -r $samplerate -audiobuf $audiobuf -blocksize $blocksize $PD_PATCH_DIR/_load_on_boot.pd >> $LOG_FILE 2>&1 &

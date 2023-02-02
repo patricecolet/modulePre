@@ -5,7 +5,7 @@
 # patco2022
 
 # Redirect stdout ( > ) into a named pipe ( >() ) running "tee"
-exec > >(tee -i logfile.txt)
+exec > >(tee  logfile.txt)
 # adding stderr.
 exec 2>&1
 
@@ -13,21 +13,21 @@ scriptPath=$(dirname "$0");
 
 # Installing soundcord via /boot/config.txt file requires rebooting twice
 # to complete soundcard configuration, we use a textfile to store the reboot status
-rebootFile=$scriptPath/rebootFile;
-rebootStatus=`cat $rebootFile`;
+# rebootFile=$scriptPath/rebootFile;
+# rebootStatus=`cat $rebootFile`;
 
-if [ $rebootStatus == 1 ];
-then
-	echo "reboot a second time"
-	sleep  10;
-	echo 0 | tee $rebootFile;
-	reboot;
-else
+#if [ $rebootStatus == 1 ];
+#then
+#	echo "reboot a second time"
+#	sleep  10;
+#	echo 0 | tee $rebootFile;
+#	reboot;
+#else
 
 	computerConfig=$(cat $scriptPath/../../config.json | jq '.computerInfo');
 	hostname=`uname -n`
 
-	if [ $hostname == "patchbox" ];
+	if [ $hostname == "raspberrypi" ];
 	then
 	        echo "hostname: $hostname";
 	        driver=`awk -F: '/^dtoverlay/{print substr($1,RSTART+11);exit}' /boot/config.txt`;
@@ -39,7 +39,7 @@ else
 	        thisComputer=-1;
 	        for i in $( eval echo {0..$computerNumber} )
 	        do
-	                if [ $mac == $(echo $computerConfig | jq -r --argjson n $i '.[$n] | .macAddress') ];
+	                if [[ $mac == $(echo $computerConfig | jq -r --argjson n $i '.[$n] | .macAddress') ]];
 	                then 
 	                        echo "$mac found in computerInfo $i";
 	                        soundcard=$(echo $computerConfig | jq -r --argjson n $i '.[$n] | .soundcard');
@@ -52,10 +52,10 @@ else
 					echo "installing $soundcard ...";
 					sed -i "s/${driver}/${soundcard}/" /boot/config.txt;
 	                                echo "rebooting...";
-					echo 1 | tee $rebootFile;
-					reboot;
+				#	echo 1 | tee $rebootFile;
+					/sbin/reboot;
 	                        fi
 	                fi 
 	        done
 	fi
-fi
+#fi

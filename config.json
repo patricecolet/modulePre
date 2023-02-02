@@ -1,18 +1,18 @@
 {
 	"pdsettings" : {
 		"samplerate" : "48000",
-		"audiobuf" : "2",
+		"audiobuf" : "25",
 		"blocksize" : "64",
-		"audioAPI"	:	"jack",
+		"audioAPI"	:	"alsa",
 		"midiAPI"	:	"alsamidi"
 	},
 	"compositions":[
 			{
-				"title":"flite",
+				"title":"skini",
 				"comment":"Load at boot"
 			},
 			{
-				"title":"skini",
+				"title":"flite",
 				"comment":"Load skini patch"
 			},
 			{
@@ -33,13 +33,137 @@
 			}
 	],
 	"computerInfo":[
+
+		{
+			"ipAddress" : "192.168.1.18",
+			"macAddress": "b8:27:eb:30:93:b6",
+			"bibi_binaire" : "",
+			"machine"	:	"rpi",
+			"model"	: "3a+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_18",
+			"comment" : ""
+		},
+		{
+			"ipAddress" : "192.168.1.19",
+			"macAddress": "b8:27:eb:02:a7:ae",
+			"bibi_binaire" : "",
+			"machine"	:	"rpi",
+			"model"	: "3a+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_19",
+			"comment" : ""
+		},
+		{
+			"ipAddress" : "192.168.1.20",
+			"macAddress": "",
+			"bibi_binaire" : "",
+			"machine"	:	"rpi",
+			"model"	: "3a+",
+			"soundcard" : "iqaudio-dacplus,unmute_amp",
+			"machineId": "computer_20",
+			"comment" : ""
+		},
+		{
+			"ipAddress" : "192.168.1.24",
+			"macAddress": "b8:27:eb:bf:36:b6",
+			"bibi_binaire" : "",
+			"machine"	:	"rpi",
+			"model"	: "3a+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_24",
+			"comment" : ""
+		},
+		{
+			"ipAddress" : "192.168.1.25",
+			"macAddress": "b8:27:eb:dc:db:95",
+			"bibi_binaire" : "",
+			"machine"	:	"rpi",
+			"model"	: "3a+",
+			"soundcard" : "iqaudio-dacplus,unmute_amp",
+			"machineId": "computer_25",
+			"comment" : ""
+		},
+		{
+			"ipAddress" : "192.168.1.28",
+			"macAddress": "b8:27:eb:4a:dd:95",
+			"bibi_binaire" : "",
+			"machine"	:	"rpi",
+			"model"	: "3a+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_28",
+			"comment" : ""
+		},
+		{
+			"ipAddress" : "192.168.1.29",
+			"macAddress": "b8:27:eb:f3:fd:cb",
+			"bibi_binaire" : "",
+			"machine"	:	"rpi",
+			"model"	: "3a+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_29",
+			"comment" : ""
+		},
+		{
+			"ipAddress" : "192.168.1.30",
+			"macAddress": "b8:27:eb:87:18:2b",
+			"bibi_binaire" : "",
+			"machine"	:	"rpi",
+			"model"	: "3a+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_30",
+			"comment" : ""
+		},
+		{
+			"ipAddress" : "192.168.1.31",
+			"macAddress": "b8:27:eb:c0:68:64",
+			"bibi_binaire" : "",
+			"machine"	:	"rpi",
+			"model"	: "3a+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_31",
+			"comment" : ""
+		},
+		{
+			"ipAddress" : "192.168.1.32",
+			"macAddress": "b8:27:eb:77:59:57",
+			"bibi_binaire" : "KIKOHEBIDEKI_hakoho_dihiha",
+			"machine"	:	"rpi",
+			"model"	: "3b+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_32",
+			"display" : "",
+			"comment" : "config janvier 2023"
+		},
+		{
+			"ipAddress" : "192.168.1.33",
+			"macAddress": "b8:27:eb:9b:82:1d",
+			"bibi_binaire" : "KIKOHEBIDEKI_hakoho_dihiha",
+			"machine"	:	"rpi",
+			"model"	: "3b+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_33",
+			"display" : "",
+			"comment" : "config janvier 2023"
+		},
+		{
+			"ipAddress" : "192.168.1.34",
+			"macAddress": "b8:27:eb:a6:97:18",
+			"bibi_binaire" : "KIKOHEBIDEKI_kebeka_bihako",
+			"machine"	:	"rpi",
+			"model"	: "3b+",
+			"soundcard" : "hifiberry-dacplus",
+			"machineId": "computer_34",
+			"comment" : "module pré confié par Camille"
+		},
 			{
 				"ipAddress" : "192.168.1.35",
 				"macAddress": "b8:27:eb:4f:74:68",
 				"bibi_binaire" : "KIKOHEBIDEKI_bodibi_bobeko",
 				"machine"	:	"rpi",
 				"model"	: "3b+",
-				"machineId": "computer_1",
+				"machineId": "computer_35",
+				"soundcard" : "hifiberry-dacplus",
 				"comment" : ""
 			},
 			{
@@ -48,7 +172,8 @@
 				"bibi_binaire" : "KIKOHEBIDEKI_dikiko_kakide",
 				"machine"	:	"rpi",
 				"model"	: "3b+",
-				"machineId": "computer_2",
+				"machineId": "computer_36",
+				"soundcard" : "hifiberry-dacplus",
 				"comment" : ""
 			},
 			{
@@ -57,7 +182,8 @@
 				"bibi_binaire" : "KIKOHEBIDEKI_bodida_dehedi",
 				"machine"	:	"rpi",
 				"model"	: "3b+",
-				"machineId": "computer_3",
+				"machineId": "computer_37",
+				"soundcard" : "hifiberry-dacplus",
 				"comment" : ""
 			},
 			{
@@ -66,7 +192,8 @@
 				"bibi_binaire" : "KIKOHEBIDEKI_boheko_dohede",
 				"machine"	:	"rpi",
 				"model"	: "3b+",
-				"machineId": "computer_4",
+				"machineId": "computer_38",
+				"soundcard" : "hifiberry-dacplus",
 				"comment" : ""
 			},
 			{
@@ -75,7 +202,8 @@
 				"bibi_binaire" : "KIKOHEBIDEKI_bebede_bobabo",
 				"machine"	:	"rpi",
 				"model"	: "3b+",
-				"machineId": "computer_5",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_39",
 				"comment" : ""
 			},
 			{
@@ -84,7 +212,8 @@
 				"bibi_binaire" : "KIKOHEBIDEKI_beboke_bekeke",
 				"machine"	:	"rpi",
 				"model"	: "3b+",
-				"machineId": "computer_6",
+				"machineId": "computer_40",
+				"soundcard" : "hifiberry-dacplus",
 				"comment" : ""
 			},
 			{
@@ -93,7 +222,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_behabi_dehibe",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_7",
+				"machineId": "computer_41",
+				"soundcard" : "hifiberry-dacplus",
 				"comment" : ""
 			},
 			{
@@ -102,7 +232,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_dokike_dibiko",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_8",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_42",
 				"comment" : ""
 			},
 			{
@@ -111,7 +242,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_behabi_didiko",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_9",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_43",
 				"comment" : ""
 			},
 			{
@@ -120,7 +252,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_hohike_dikabo",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_10",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_44",
 				"comment" : ""
 			},
 			{
@@ -129,7 +262,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_dokike_dibode",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_11",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_45",
 				"comment" : ""
 			},
 			{
@@ -138,7 +272,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_behabi_kihabe",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_12",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_46",
 				"comment" : ""
 			},
 			{
@@ -147,7 +282,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_behabi_bahehi",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_13",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_47",
 				"comment" : ""
 			},
 			{
@@ -156,7 +292,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_badido_hobeho",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_14",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_48",
 				"comment" : ""
 			},
 			{
@@ -165,7 +302,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_dokike_dekidi",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_15",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_49",
 				"comment" : ""
 			},
 			{
@@ -174,7 +312,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_dokike_debade",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_16",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_50",
 				"comment" : ""
 			},
 			{
@@ -183,7 +322,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_dokiki_hohake",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_17",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_51",
 				"comment" : ""
 			},
 			{
@@ -192,7 +332,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_dokike_didodi",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_18",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_52",
 				"comment" : ""
 			},
 			{
@@ -201,7 +342,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_dokike_dibedo",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_19",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_53",
 				"comment" : ""
 			},
 			{
@@ -210,7 +352,8 @@
 				"bibi_binaire" : "DADOKEBEHIHE_dokike_didaba",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_20",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_54",
 				"comment" : ""
 			},
 			{
@@ -219,7 +362,18 @@
 				"bibi_binaire" : "DADOKEBEHIHE_dokike_didako",
 				"machine"	:	"rpi",
 				"model"	: "4b+",
-				"machineId": "computer_21",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_55",
+				"comment" : ""
+			},
+			{
+				"ipAddress" : "192.168.1.57",
+				"macAddress": "e4:5f:01:9d:e3:03",
+				"bibi_binaire" : "DADOKEBEHIHE_dokike_didako",
+				"machine"	:	"rpi",
+				"model"	: "4b+",
+				"soundcard" : "iqaudio-dacplus,unmute_amp",
+				"machineId": "computer_57",
 				"comment" : ""
 			},
 			{
@@ -228,7 +382,8 @@
 				"bibi_binaire" : "KIKOHEBIDEKI_boheho_hiboki",
 				"machine"	:	"rpi",
 				"model"	: "3a+",
-				"machineId": "computer_22",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_60",
 				"comment" : ""
 			},
 			{
@@ -237,29 +392,32 @@
 				"bibi_binaire" : "KIKOHEBIDEKI_bohabi_hedika",
 				"machine"	:	"rpi",
 				"model"	: "3a+",
-				"machineId": "computer_23",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_61",
 				"comment" : ""
 			},
 			{
 				"ipAddress" : "192.168.1.62",
-				"macAddress": "b8:27:eb:41:72:f9",
+				"macAddress": "b8:27:eb:8d:a0:c1",
 				"bibi_binaire" : "KIKOHEBIDEKI_kodake_hodoha",
 				"machine"	:	"rpi",
 				"model"	: "3a+",
-				"machineId": "computer_24",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_62",
 				"comment" : ""
 			},
 			{
-				"ipAddress" : "192.168.1.37",
-				"macAddress": "38:f9:d3:ea:a6:7e",
-				"bibi_binaire" : "HIKODIKADAHI_dekeke_bebide",
-				"machine"	:	"mac",
-				"model"	: "intel",
-				"machineId": "computer_3",
-				"comment" : "macbook air gael pour test (indiquer le machineId de la rpi à émuler)"
+				"ipAddress" : "192.168.1.64",
+				"macAddress": "b8:27:eb:cc:2f:98",
+				"bibi_binaire" : "",
+				"machine"	:	"rpi",
+				"model"	: "3a+",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_63",
+				"comment" : ""
 			},
 			{
-				"ipAddress" : "192.168.86.70",
+				"ipAddress" : "192.168.1.70",
 				"macAddress": "50:ed:3c:17:51:65",
 				"bibi_binaire" : "HIBEKOHIKEDO_hodike_bokoho",
 				"machine"	:	"mac",
@@ -268,17 +426,7 @@
 				"comment" : "MacBook Air de Patko"
 			},
 			{
-				"ipAddress" : "192.168.86.31",
-				"macAddress": "b8:27:eb:a6:97:18",
-				"bibi_binaire" : "KIKOHEBIDEKI_kebeka_bihako",
-				"machine"	:	"rpi",
-				"model"	: "3b+",
-				"soundcard" : "hifiberry-dacplus",
-				"machineId": "computer_2",
-				"comment" : "module pré confié par Camille"
-			},
-			{
-				"ipAddress" : "192.168.86.34",
+				"ipAddress" : "192.168.1.71",
 				"macAddress": "b8:27:eb:18:0f:31",
 				"bibi_binaire" : "KIKOHEBIDEKI_hakoho_dihiha",
 				"machine"	:	"rpi",
@@ -286,6 +434,26 @@
 				"soundcard" : "hifiberry-dac",
 				"machineId": "computer_4",
 				"display" : "mopidy",
-				"comment" : "raspberry de patrice avec pirate-audio utilisé comme serveur"
+				"comment" : "raspberry de patrice avec pirate-audio"
+			},
+			{
+				"ipAddress" : "192.168.1.72",
+				"macAddress": "38:f9:d3:ea:a6:7e",
+				"bibi_binaire" : "HIKODIKADAHI_dekeke_bebide",
+				"machine"	:	"mac",
+				"model"	: "intel",
+				"machineId": "computer_3",
+				"comment" : "macbook air gael pour test (indiquer le machineId de la rpi à émuler)"
+			},
+			{
+				"ipAddress" : "192.168.1.101",
+				"macAddress": "b8:27:eb:f0:dd:29",
+				"bibi_binaire" : "KIKOHEBIDEKI_hakoho_dihiha",
+				"machine"	:	"rpi",
+				"model"	: "3b+",
+				"soundcard" : "hifiberry-dacplus",
+				"machineId": "computer_32",
+				"display" : "",
+				"comment" : "config janvier 2023"
 			}
 		]}

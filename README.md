@@ -22,7 +22,7 @@ The most important externals are:
 >ggee <br />
 purest_json version >= 2.0.0 <br />
 list_abs <br />
-zexy 
+zexy
 
 The compositions available in this repository needs those externals:
 >flite <br />
@@ -43,10 +43,10 @@ The main patch receives following OSC messages on port 4000:
 
 ### /volume "float"
  from 0 to 127 (100=0db)
- 
+
 ### /mute "boolean"
  1 mutes the sound
- 
+
 ### /composition "integer"
 composition index from config.json composition list
 
@@ -57,13 +57,13 @@ default composition list is defined like this:
 
 >	"compositions":[ <br />
 			{ <br />
-				"title":"flite", <br />
-				"comment":"Load at boot" <br />
-			}, <br />
-			{ <br />
 				"title":"skini", <br />
 				"comment":"Load skini patch" <br />
 			}, <br />
+      { <br />
+        "title":"flite", <br />
+        "comment":"Load at boot" <br />
+      }, <br />
 			{ <br />
 				"title":"pirateAudio", <br />
 				"comment":"example patch for pirate audio soundcard and display" <br />
@@ -81,20 +81,8 @@ default composition list is defined like this:
 				"comment":"template patch" <br />
 			} <br />
 	] <br />
-	
-## composition 0 : flite
 
-The composition `flite`reads computer number and mac adress and speak it at boot.
-It receives following commands:
-
-### /speak 'Hello world'
-text to speech.
-
-### /computer_number bang
-speaks computer number.
-
-
-## composition 1 : skini
+## composition 0 : skini
 
 The composition patch named `skini` broadcast wav files localised in ~/modulePre/PureData/compositions/skini/sons synchronised with the help of ableton_link. <br />
 The wav file must have same samplerate configured into config.json's pdsettings, and must be named `son<sound index>.wav`.
@@ -131,12 +119,24 @@ default = 16
 
 ### /quantize "integer"
 0 = no quantize  <br />
-1 = quantize to beat  <br />
-2 = quantize to bar  <br />
-default = 2
+1 = quantize to bar  <br />
+2 = quantize to beat  <br />
+default = 1
 
 ### /startDSP boolean
-turn on/off DSP in patch 
+turn on/off DSP in patch
+
+## composition 1 : flite
+
+The composition `flite`reads computer number and mac adress and speak it at boot.
+It receives following commands:
+
+### /speak 'Hello world'
+text to speech.
+
+### /computer_number bang
+speaks computer number.
+
 
 
 ## composition 2 : pirateAudio
@@ -147,63 +147,147 @@ This is a fork of skini with pirate audio raspberry shield's display and buttons
 
 If you want to start from scratch without prepared sdcard follow these instructions:
 
-Raspberry recommended OS is `patchbox OS` available here:
+Raspberry recommended OS is `Raspberry Pi OS Lite 64bit` available here:
 
-https://blokas.io/patchbox-os/
+https://www.raspberrypi.com/software/operating-systems/
 
 Copy the image into an sdcard. <br />
-An then connect to raspberry. <br />
+An then connect a screen and keyboard to raspberry. <br />
 
-For ssh remote session wpa_supplicant.conf can be copied into /boot partition from any computer. <br />
+At the first run, set language, username to  `pi` and password to `raspberry` <br />
+launch raspi-config to enable wifi and needed interfaces: <br />
 
-username is `patch` and password is `blokaslabs`  <br />
+>$: sudo raspi-config
 
-At the first run change password to `raspberry`, and set boot to auto login+console  <br />
-The command `startx` in console will launch Xserver (the graphical interface) <br />
+The OS doesn't come with a graphic server, we recommend xfce4 a light desktop manager: <br />
 
-In terminal git clone into /home/patch directory on raspberry and anywhere you like on remote computer: <br />
->cd ~   <br />
-git clone git@github.com:patricecolet/modulePre.git
+>$: sudo apt install xfce4
 
-Raspberry ideal config is available in this repository.
-Copy config.txt to /boot:  <br />
->cp ~/modulePre/config.txt /boot
+Reboot the raspberry to see if everything is okay
 
-PureData version in patchboxOS is a bit too old then we need to compile PureData:
+>$: sudo reboot
 
->cd ~  <br />
-mkdir repo <br />
-cd repo <br />
-git clone https://github.com/pure-data/pure-data.git <br />
-sudo apt-get install fftw3-dev autoconf libtool gettext <br />
-cd PureData <br />
-./autogen.sh <br />
-./configure --enable-jack --enable-fft <br />
-make <br />
-sudo make install <br />
-sudo mv /usr/bin/pd /usr/bin/pd.old <br />
-sudo ln -s /usr/local/bin/pd /usr/bin/pd <br />
+Then login with `pi` username and `raspberry` password <br />
 
-Install PureData externals:  <br />
->cd ~/modulePre/PureData   <br />
-< externals.txt xargs sudo apt-get install -y
+The command `startx` in console will launch the graphical mode <br />
+
+To ease PureData install we recommend using a remote computer.
+
+From your mac or linux machine copy modulePre folder to /home/pi directory:
+
+>rsync -avuP modulePre pi@"raspberry ip":/home/pi
+
+Don't forget to replace "raspberry ip" with the right ip adress... <br />
+
+On macos we recommend homebrew for using command line tools, see https://brew.sh/ <br />
+
+From linux the command `arp` should tell the ip of your raspberrypi. <br />
+From mac the command `netstat -rn | grep en0` should show the ip of your raspberrypi. <br />
+
+Then start an ssh session, see [SSH section](## SSH X11 Forwarding) <br />
+
+PureData version in Debian bulleyes packages is a bit too old, compile PureData is easier than switching to Debian Sid :
+
+>$: cd ~  <br />
+$: mkdir repo && cd repo <br />
+$: sudo apt install git autoconf libtool gettext tcl-dev tk alsa-tools libasound2-dev <br />
+$: git clone https://github.com/pure-data/pure-data.git && cd pure-data <br />
+$: ./autogen.sh <br />
+$: ./configure <br />
+$: make <br />
+$: sudo make install <br />
+
+
+
+Install PureData externals:
+>$: cd ~/modulePre/PureData   <br />
+$: < externals.txt xargs sudo apt-get install -y
 
 for having those externals available into this fresh compiled PureData version add into ~/.pdsettings this line under path1:
 >path2: /usr/lib/pd/extra
 
-or open PureData in graphical mode and add this path into preferences.
+or open PureData in graphical mode and add this path into preferences. <br />
+
 
 `purest_json`external is necessary for parsing `config.json` and must be last version (>=2.0.0).
- For installing it open pd by typing `pd` in terminal 
-and go to menu->help->install, search for `purest_json` and install.
+
+PureData have a package manager for installing externals and it will ask to choose a directory, we recommend to make directory in /home/pi called pd-externals
+
+>$: mkdir ~/pd-externals
+
+The launch PureData by typing `pd` in terminal and go to menu->help->install, search for `purest_json` and install after choosing pd-externals directory.
+
 
 Install nodejs:   <br />
->sudo apt-get install nodejs
+>$: sudo apt install nodejs
 
 Install jq commandline for parsing JSON in bash scripts:   <br />
->sudo apt-get install jq   <br />
+>$: sudo apt install jq   <br />
 
-We need to set jackd samplerate, `/etc/jackdrc` should look like this:    <br />
+setup crontab for loading pd and node at start
+>$: line="@reboot /home/pi/modulePre/PureData/script/startPureData.sh"
+$: (crontab -u pi -l; echo "$line" ) | crontab -u pi -
+>$: line="@reboot /home/pi/modulePre/cirmrasp/clients/raspberry/startcirmrasp.sh"  
+$: (crontab -u pi -l; echo "$line" ) | crontab -u pi -
+
+to visualize crontab type `crontab -e`
+
+This script install soundcard automatically, it must be loaded by root.
+If you launch those commands for the first time, the terminal will complain "no crontab for root". It's means that you need to select a text editor:
+>$: sudo select-editor
+
+Then choose your favorite editor, we recommend `nano`
+And fill crontab for root:
+>$: line="@reboot /home/pi/modulePre/PureData/script/installSouncard.sh"
+$: (sudo crontab -u root -l; echo "$line" ) | sudo crontab -u root -
+
+To visualize root crontab type `sudo crontab -e`<br />
+
+### /boot/config.txt
+
+The internal soundcard had to be removed from /boot/config.txt by commenting the line:
+
+> dtparam=audio=on
+
+The script `installSouncard.sh` looks into /boot/config.txt if the soundcard defined in config.json is installed, add this line at the top of the text file with the text editor:
+
+>dtoverlay=hifiberry-dacplus
+
+We need to disable hdmi soundcard by adding ",noaudio" to this lines
+
+>dtoverlay=vc4-kms-v3d
+
+it should look like this:
+>dtoverlay=vc4-kms-v3d,noaudio
+
+this command will show up the installed soundcard:
+
+>aplay -l
+
+For digiamp+ the result should look like This:
+>**** List of PLAYBACK Hardware Devices ****
+card 0: IQaudIODAC [IQaudIODAC], device 0: IQaudIO DAC HiFi pcm512x-hifi-0 [IQaudIO DAC HiFi pcm512x-hifi-0]
+  Subdevices: 0/1
+  Subdevice #0: subdevice #0
+
+### Pirate audio
+
+Pirate audio is a soundcard hat for raspberry used for displaying, monitoring, and controlling some modulePre cluster compositions
+
+Install pirate audio:   <br />
+>$: sudo apt-get install python3-pip   <br />
+$: cd ~/repo   <br />
+$: git clone https://github.com/pimoroni/pirate-audio  <br />
+$: cd pirate-audio/mopidy  <br />
+$: sudo ./install.sh  <br />
+$: sudo systemctl disable mopidy  <br />
+
+Finally reboot raspberry:
+>sudo reboot
+
+
+### jack
+If you have choosen to use jackd, we need to set samplerate, `/etc/jackdrc` should look like this:    <br />
 
 >#!/bin/sh    <br />   <br />
 CONFIG_FILE='/home/patch/modulePre/config.json'    <br />
@@ -211,54 +295,37 @@ pdsettings=$(cat $CONFIG_DIR/config.json | jq '.pdsettings');   <br />
 samplerate=$(echo $pdsettings | jq -r '.samplerate');   <br />
 exec /usr/bin/jackd -t 2000 -R -P 95 -d alsa  -r $samplerate -p 64 -n 2 -X seq -s -S    <br />
 
-setup crontab for loading pd and node at start   <br />
->line="@reboot /home/patch/modulePre/PureData/script/startPureData.sh"   <br />
-(crontab -u patch -l; echo "$line" ) | crontab -u patch -   <br />
-line="@reboot /home/patch/modulePre/cirmrasp/clients/raspberry/startcirmrasp.sh"   <br />
-(crontab -u patch -l; echo "$line" ) | crontab -u patch -   <br />
-
-This script install soundcard automatically, it must be loaded by root:
->line="@reboot /home/patch/modulePre/PureData/script/installSouncard.sh"   <br />
-(sudo crontab -u root -l; echo "$line" ) | sudo crontab -u root -   <br />
-
-note: The soundcard driver is defined in config.json, the default driver is `hifiberry-dacplus`, if you install another soundcard, the raspberry needs to be rebooted after first boot with the new soundcard.
-
-Install pirate audio:   <br />
->sudo apt-get install python3-pip   <br />
-cd ~/repo   <br />
-git clone https://github.com/pimoroni/pirate-audio  <br />
-cd pirate-audio/mopidy  <br />
-sudo ./install.sh  <br />
-sudo systemctl disable mopidy  <br />
-
-Finally reboot raspberry:
->sudo reboot
-
 ## SSH X11 Forwarding
+
+On macos we recommend using Xquartz, see https://formulae.brew.sh/cask/xquartz <br />
+If you have trouble, try those command lines before launching SS session:
+
+>$: launchctl start org.xquartz.startx
+$: export DISPLAY=:0
 
 A remote ssh session can be launched with X11 forwarding, with following command:
 
->ssh -XY patch@"ip of the raspberry"
+>$: ssh -XY patch@"ip of the raspberry"
 
 The graphical interface will appear on remote computer, this is usefull for modifying PureData patches without using a VNC session or without connecting a screen, a mouse and a keyboard to the target raspberry.
 Then on terminal you can check if PureData is running:
-> ps aux | grep pd
+>$: ps aux | grep pd
 
 if PureData is running the command result should display those lines:
 
->patch      701 12.3 12.3 133264 117272 ?       SLl  12:57   0:02 pd -nogui -alsamidi -jack -r 48000 -audiobuf 2 /home/patch/modulePre/PureData/_load_on_boot.pd
+>$: patch      701 12.3 12.3 133264 117272 ?       SLl  12:57   0:02 pd -nogui -alsamidi -jack -r 48000 -audiobuf 2 /home/patch/modulePre/PureData/_load_on_boot.pd
 patch      729  0.0  0.0   1928   428 ?        S    12:57   0:00 /usr/local/lib/pd/bin/pd-watchdog
 
 Before starting PureData for editing patches we need to end this pd process running on the background:
->killall pd
+>$: killall pd
 
 Then start PureData:
->pd
+>$: pd
 
 For retrieving the work made on a raspberry we can use rsync command on remote computer.
 First exit ssh session by typing on target computer:
->exit
+>$: exit
 
 And then we're back on remote terminal, now we can use rsync command using target's ip address:
-> cd modulePre <br />
-rsync -avuP patch@"raspberry ip address":/home/patch/modulePre/PureData/compositions/myComposition/myPatch.pd PureData/compositions/"myComposition"/
+>$: cd modulePre <br />
+$: rsync -avuP patch@"raspberry ip address":/home/patch/modulePre/PureData/compositions/myComposition/myPatch.pd PureData/compositions/"myComposition"/
