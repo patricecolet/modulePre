@@ -15,9 +15,10 @@ const isObject = obj => {
 }
 
 async function main() {
-  const { stdout, stderr } = await exec('node open-stage-control --port 5000');
+  const { stdout, stderr } = await exec(
+		'node open-stage-control --port 5000 --inspect');
 
-	console.log("openStage started at localhost:" + ipConfig.openStagePort);	
+	console.log("openStage started at localhost:" + ipConfig.openStagePort);
   }
 
 class OpenStageServer {
