@@ -1,0 +1,316 @@
+# dhcpd.conf
+#
+# Sample configuration file for ISC dhcpd
+#
+# Attention: If /etc/ltsp/dhcpd.conf exists, that will be used as
+# configuration file instead of this file.
+#
+
+# option definitions common to all supported networks...
+# option domain-name "example.org";
+# option domain-name-servers ns1.example.org, ns2.example.org;
+
+default-lease-time 600;
+max-lease-time 7200;
+
+option subnet-mask 255.255.255.0;
+option broadcast-address 192.168.1.255;
+option routers 192.168.1.1;
+option domain-name-servers 192.168.1.250;
+option domain-name "cirm.net";
+
+subnet 192.168.1.0 netmask 255.255.255.0 {
+    range 192.168.1.3 192.168.1.254;
+    host rasp3 {
+        hardware ethernet B8:27:EB:C8:0F:45;
+        fixed-address 192.168.1.3;
+   }
+    host rasp4 {
+        hardware ethernet B8:27:EB:3D:A2:13;
+        fixed-address 192.168.1.4;
+   }
+    host rasp5 {
+        hardware ethernet B8:27:EB:99:EC:2F;
+        fixed-address 192.168.1.5;
+   }
+    host rasp6 {
+        hardware ethernet B8:27:EB:A3:3E:3E;
+        fixed-address 192.168.1.6;
+   }
+    host rasp7 {
+        hardware ethernet B8:27:EB:31:93:C0;
+        fixed-address 192.168.1.7;
+   }
+    host rasp8 {
+        hardware ethernet B8:27:EB:3F:B6:40;
+        fixed-address 192.168.1.8;
+   }
+    host rasp9 {
+        hardware ethernet B8:27:EB:40:CD:59;
+        fixed-address 192.168.1.9;
+   }
+    host rasp10 {
+        hardware ethernet B8:27:EB:90:1B:2B;
+        fixed-address 192.168.1.10;
+   }
+    host rasp11 {
+        hardware ethernet B8:27:EB:43:29:83;
+        fixed-address 192.168.1.11;
+   }
+    host rasp12 {
+        hardware ethernet B8:27:EB:27:43:74;
+        fixed-address 192.168.1.12;
+   }
+    host rasp13 {
+        hardware ethernet B8:27:EB:37:D7:1E;
+        fixed-address 192.168.1.13;
+   }
+    host rasp14 {
+        hardware ethernet B8:27:EB:02:A6:F1;
+        fixed-address 192.168.1.14;
+   }
+    host rasp15 {
+        hardware ethernet B8:27:EB:15:24:95;
+        fixed-address 192.168.1.15;
+   }
+    host rasp16 {
+        hardware ethernet B8:27:EB:FD:16:64;
+        fixed-address 192.168.1.16;
+   }
+    host rasp17 {
+        hardware ethernet B8:27:EB:25:31:54;
+        fixed-address 192.168.1.17;
+   }
+    host rasp18 {
+        hardware ethernet B8:27:EB:30:93:B6;
+        fixed-address 192.168.1.18;
+   }
+    host rasp19 {
+        hardware ethernet B8:27:EB:02:A7:AE;
+        fixed-address 192.168.1.19;
+   }
+    host rasp20 {
+        hardware ethernet B8:27:EB:4F:74:68;
+        fixed-address 192.168.1.20;
+   }
+    host rasp21 {
+        hardware ethernet B8:27:EB:05:1E:A4;
+        fixed-address 192.168.1.21;
+   }
+    host rasp22 {
+        hardware ethernet B8:27:EB:62:79:34;
+        fixed-address 192.168.1.22;
+   }
+    host rasp23 {
+        hardware ethernet B8:27:EB:A4:95:9C;
+        fixed-address 192.168.1.23;
+   }
+    host rasp24 {
+        hardware ethernet B8:27:EB:BF:36:B6;
+        fixed-address 192.168.1.24;
+   }
+    host rasp25 {
+        hardware ethernet B8:27:EB:FB:89:BE;
+        fixed-address 192.168.1.25;
+   }
+    host rasp26 {
+        hardware ethernet B8:27:EB:4F:DE:2F;
+        fixed-address 192.168.1.26;
+   }
+    host rasp27 {
+        hardware ethernet B8:27:EB:42:8C:2E;
+        fixed-address 192.168.1.27;
+   }
+    host rasp28 {
+        hardware ethernet B8:27:EB:4A:DD:95;
+        fixed-address 192.168.1.28;
+   }
+    host rasp29 {
+        hardware ethernet B8:27:EB:F3:FD:CB;
+        fixed-address 192.168.1.29;
+   }
+    host rasp30 {
+        hardware ethernet B8:27:EB:87:18:2B;
+        fixed-address 192.168.1.30;
+   }
+    host rasp31 {
+        hardware ethernet B8:27:EB:C0:68:64;
+        fixed-address 192.168.1.31;
+   }
+    host rasp32 {
+        hardware ethernet B8:27:EB:77:59:57;
+        fixed-address 192.168.1.32;
+   }
+    host rasp33 {
+        hardware ethernet E4:5F:01:9D:E0:B4;
+        fixed-address 192.168.1.33;
+   }
+    host rasp34 {
+        hardware ethernet E4:5F:01:9D:E2:46;
+        fixed-address 192.168.1.34;
+   }
+    host rasp35 {
+        hardware ethernet B8:27:EB:74:98:CF;
+        fixed-address 192.168.1.35;
+   }
+    host rasp36 {
+        hardware ethernet B8:27:EB:DC:DB:95;
+        fixed-address 192.168.1.36;
+   }
+    host rasp37 {
+        hardware ethernet E4:5F:01:9D:DE:ED;
+        fixed-address 192.168.1.37;
+   }
+    host rasp38 {
+        hardware ethernet E4:5F:01:9D:DF:DF;
+        fixed-address 192.168.1.38;
+   }
+    host rasp39 {
+        hardware ethernet BE4:5F:01:9D:E2:5F;
+        fixed-address 192.168.1.39;
+   }
+    host rasp40 {
+        hardware ethernet B8:27:EB:64:A6:AA;
+        fixed-address 192.168.1.40;
+   }
+    host rasp41 {
+        hardware ethernet DC:A6:32:61:7E:36;
+        fixed-address 192.168.1.41;
+   }
+    host rasp42 {
+        hardware ethernet E4:5F:01:9D:E0:5A;
+        fixed-address 192.168.1.42;
+   }
+    host rasp43 {
+        hardware ethernet DC:A6:32:61:7F:F8;
+        fixed-address 192.168.1.43;
+   }
+    host rasp44 {
+        hardware ethernet E4:5F:01:9D:E1:B7;
+        fixed-address 192.168.1.44;
+   }
+    host rasp45 {
+        hardware ethernet E4:5F:01:9D:DB:F2;
+        fixed-address 192.168.1.45;
+   }
+    host rasp46 {
+        hardware ethernet DC:A6:32:61:7B:16;
+        fixed-address 192.168.1.46;
+   }
+    host rasp47 {
+        hardware ethernet DC:A6:32:61:75:23;
+        fixed-address 192.168.1.47;
+   }
+    host rasp48 {
+        hardware ethernet DC:A6:32:5F:C0:60;
+        fixed-address 192.168.1.48;
+   }
+    host rasp49 {
+        hardware ethernet E4:5F:01:9D:E2:A6;
+        fixed-address 192.168.1.49;
+   }
+    host rasp50 {
+        hardware ethernet E4:5F:01:9D:E1:08;
+        fixed-address 192.168.1.50;
+   }
+    host rasp51 {
+        hardware ethernet DC:A6:32:CB:B0:1A;
+        fixed-address 192.168.1.51;
+   }
+    host rasp52 {
+        hardware ethernet DC:A6:32:CB:AF:CF;
+        fixed-address 192.168.1.52;
+   }
+    host rasp53 {
+        hardware ethernet E4:5F:01:9D:E3:81;
+        fixed-address 192.168.1.53;
+   }
+    host rasp54 {
+        hardware ethernet E4:5F:01:9D:E1:44;
+        fixed-address 192.168.1.54;
+   }
+    host rasp55 {
+        hardware ethernet E4:5F:01:9D:E0:3C;
+        fixed-address 192.168.1.55;
+   }
+    host rasp56 {
+        hardware ethernet B8:27:EB:9B:82:1D;
+        fixed-address 192.168.1.56;
+   }
+    host rasp57 {
+        hardware ethernet E4:5F:01:9D:E3:03;
+        fixed-address 192.168.1.57;
+   }
+    host rasp58 {
+        hardware ethernet B8:27:EB:66:E4:54;
+        fixed-address 192.168.1.58;
+   }
+    host rasp59 {
+        hardware ethernet B8:27:EB:64:A6:AA;
+        fixed-address 192.168.1.59;
+   }
+    host rasp60 {
+        hardware ethernet B8:27:EB:A6:97:18;
+        fixed-address 192.168.1.60;
+   }
+    host rasp61 {
+        hardware ethernet B8:27:EB:41:72:F9;
+        fixed-address 192.168.1.61;
+   }
+    host rasp62 {
+        hardware ethernet B8:27:EB:8D:A0:C1;
+        fixed-address 192.168.1.62;
+   }
+    host rasp63 {
+        hardware ethernet B8:27:EB:42:03:4B;
+        fixed-address 192.168.1.63;
+   }
+    host rasp64 {
+        hardware ethernet B8:27:EB:CC:2F:98;
+        fixed-address 192.168.1.64;
+   }
+    host rasp101 {
+        hardware ethernet B8:27:EB:F0:DD:29;
+        fixed-address 192.168.1.101;
+   }
+    host rasp102 {
+        hardware ethernet B8:27:EB:AF:7A:35;
+        fixed-address 192.168.1.102;
+   }
+    host rasp70 {
+        hardware ethernet 50:ED:3C:17:51:65;
+        fixed-address 192.168.1.70;
+   }
+    host rasp71 {
+        hardware ethernet B8:27:EB:18:0F:31;
+        fixed-address 192.168.1.71;
+   }
+    host rasp72 {
+        hardware ethernet 38:F9:D3:EA:A6:7E;
+        fixed-address 192.168.1.72;
+   }
+
+    host EAP1 {
+        hardware ethernet 50:C7:BF:43:87:0E;
+        fixed-address 192.168.1.200;
+    }
+    host EAP2 {
+        hardware ethernet 50:C7:BF:24:A1:D8;
+        fixed-address 192.168.1.201;
+    }
+}
+
+# The ddns-updates-style parameter controls whether or not the server will
+# attempt to do a DNS update when a lease is confirmed. We default to the
+# behavior of the version 2 packages ('none', since DHCP v2 didn't'
+# have support for DDNS.)
+ddns-update-style none;
+
+# If this DHCP server is the official DHCP server for the local
+# network, the authoritative directive should be uncommented.
+#authoritative;
+
+# Use this to send dhcp log messages to a different log file (you also
+# have to hack syslog.conf to complete the redirection).
+#log-facility local7;
+

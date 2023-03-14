@@ -1,9 +1,0 @@
-hostname: raspberrypi
-driver: hifiberry-dac
-43 computer entries in config file
-./installSoundcard.sh: line 42: [: b8:27:eb:dc:db:95: unary operator expected
-b8:27:eb:dc:db:95 found in computerInfo 29
-soundcard is hifiberry-dac
-soundcard  hifiberry-dac is already installed
-./installSoundcard.sh: line 61: syntax error near unexpected token `fi'
-./installSoundcard.sh: line 61: `fi'

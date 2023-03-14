@@ -61,7 +61,7 @@ function setListRasp(listRasp){
 		var infoRasp = document.createElement("span");
 		infoRasp.id = "infoRasp-" + listRasp[i].ipAddress.replace(/\./g, "");;
 		infoRasp.setAttribute("class", "infoRasp");
-		infoRasp.innerHTML = " " + listRasp[i].comment;
+		infoRasp.innerHTML = " " + listRasp[i].macAddress;
 
 		divloc.appendChild(bouton);
 		divloc.appendChild(infoRasp);
@@ -271,7 +271,7 @@ function initWSocket(host) {
 	}
 
  	ws.onclose = function( event ) {
-		console.log( "controleur.js :onclose"); 
+		console.log( "controleur.js :onclose");
 	}
 }
 window.initWSocket = initWSocket;

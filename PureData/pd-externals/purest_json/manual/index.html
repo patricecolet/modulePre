@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Home
+  </title>
+  <style>
+   /* Page tweaks */
+    .preview-page {
+      margin-top: 64px;
+      margin-bottom: 21px;
+    }
+    /* User-content tweaks */
+    .timeline-comment-wrapper > .timeline-comment:after,
+    .timeline-comment-wrapper > .timeline-comment:before {
+      content: none;
+    }
+    /* User-content overrides */
+    .discussion-timeline.wide {
+      width: 920px;
+    }
+  </style>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="page">
+   <div class="preview-page" data-autorefresh-url="" id="preview-page">
+    <main id="js-repo-pjax-container">
+     <div class="clearfix new-discussion-timeline container-xl px-3 px-md-4 px-lg-5">
+      <div class="repository-content">
+       <div class="clearfix">
+        <div class="Layout Layout--flowRow-until-md Layout--sidebarPosition-end Layout--sidebarPosition-flowRow-end">
+         <div class="Layout-main">
+          <div class="Box md Box--responsive" id="readme">
+           <div class="Box-header d-flex border-bottom-0 flex-items-center flex-justify-between color-bg-default rounded-top-2">
+            <div class="d-flex flex-items-center">
+             <h2 class="Box-title">
+              Home
+             </h2>
+            </div>
+           </div>
+           <div class="Box-body px-5 pb-5">
+            <article class="markdown-body entry-content container-lg" id="grip-content">
+             <p>
+              PuREST JSON is a library for connecting Puredata (Pd) to HTTP services
+and encoding and decoding JSON data.
+             </p>
+             <p>
+              The library can issue HTTP statements, so consumation of RESTful services is possible, e.g. CouchDB.
+             </p>
+             <h2>
+              <a aria-hidden="true" class="anchor" href="#basic-information-for-users" id="user-content-basic-information-for-users">
+               <span aria-hidden="true" class="octicon octicon-link">
+               </span>
+              </a>
+              Basic Information for Users
+             </h2>
+             <ul>
+              <li>
+               <a href="http://ix.residuum.org/pd/purest_json.html#download" rel="nofollow">
+                Binary Downloads
+               </a>
+              </li>
+              <li>
+               <a href="Basic-Usage.html">
+                Basic Usage
+               </a>
+              </li>
+             </ul>
+             <h2>
+              <a aria-hidden="true" class="anchor" href="#usage-examples" id="user-content-usage-examples">
+               <span aria-hidden="true" class="octicon octicon-link">
+               </span>
+              </a>
+              Usage examples
+             </h2>
+             <ul>
+              <li>
+               <a href="Using-JSON-Data-as-Pitch-Generator.html">
+                Using JSON data as pitch generator
+               </a>
+              </li>
+              <li>
+               <a href="Using-Pd-as-Twitter-Client.html">
+                Using Pd as Twitter Client
+               </a>
+              </li>
+              <li>
+               <a href="https://github.com/g-roma/freesound_pd">
+                Previewing and downloading samples from Freesound.org
+               </a>
+              </li>
+             </ul>
+             <h2>
+              <a aria-hidden="true" class="anchor" href="#detailed-documentation-for-objects" id="user-content-detailed-documentation-for-objects">
+               <span aria-hidden="true" class="octicon octicon-link">
+               </span>
+              </a>
+              Detailed Documentation for Objects
+             </h2>
+             <ul>
+              <li>
+               <a href="json-decode-And-json-encode-JSON-Data-in-Pd.html">
+                [json decode] and [json encode]: JSON Data in Pd
+               </a>
+              </li>
+              <li>
+               <a href="rest-And-oauth-Making-HTTP-Requests.html">
+                [rest] and [oauth]: Making HTTP Requests
+               </a>
+              </li>
+              <li>
+               <a href="urlparams-Creating-Query-Strings.html">
+                [urlparams]: Creating Query Strings
+               </a>
+              </li>
+             </ul>
+             <h2>
+              <a aria-hidden="true" class="anchor" href="#developers" id="user-content-developers">
+               <span aria-hidden="true" class="octicon octicon-link">
+               </span>
+              </a>
+              Developers
+             </h2>
+             <ul>
+              <li>
+               <a href="Compilation.html">
+                Compilation
+               </a>
+              </li>
+              <li>
+               <a href="Contributing-and-Code-Documentation.html">
+                Contributing and Code Documentation
+               </a>
+              </li>
+             </ul>
+            </article>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </main>
+   </div>
+  </div>
+  <script>
+   function showCanonicalImages() {
+      var images = document.getElementsByTagName('img');
+      if (!images) {
+        return;
+      }
+      for (var index = 0; index < images.length; index++) {
+        var image = images[index];
+        if (image.getAttribute('data-canonical-src') && image.src !== image.getAttribute('data-canonical-src')) {
+          image.src = image.getAttribute('data-canonical-src');
+        }
+      }
+    }
+
+    function scrollToHash() {
+      if (location.hash && !document.querySelector(':target')) {
+        var element = document.getElementById('user-content-' + location.hash.slice(1));
+        if (element) {
+           element.scrollIntoView();
+        }
+      }
+    }
+
+    function autorefreshContent(eventSourceUrl) {
+      var initialTitle = document.title;
+      var contentElement = document.getElementById('grip-content');
+      var source = new EventSource(eventSourceUrl);
+      var isRendering = false;
+
+      source.onmessage = function(ev) {
+        var msg = JSON.parse(ev.data);
+        if (msg.updating) {
+          isRendering = true;
+          document.title = '(Rendering) ' + document.title;
+        } else {
+          isRendering = false;
+          document.title = initialTitle;
+          contentElement.innerHTML = msg.content;
+          showCanonicalImages();
+        }
+      }
+
+      source.onerror = function(e) {
+        if (e.readyState === EventSource.CLOSED && isRendering) {
+          isRendering = false;
+          document.title = initialTitle;
+        }
+      }
+    }
+
+    window.onhashchange = function() {
+      scrollToHash();
+    }
+
+    window.onload = function() {
+      scrollToHash();
+    }
+
+    showCanonicalImages();
+
+    var autorefreshUrl = document.getElementById('preview-page').getAttribute('data-autorefresh-url');
+    if (autorefreshUrl) {
+      autorefreshContent(autorefreshUrl);
+    }
+  </script>
+ </body>
+</html>

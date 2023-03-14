@@ -1,0 +1,8 @@
+
+- fixer OSC qui marche que après connection ssh -> raspi-confi console login
+- mise à jour cirmrasp pour open stage server
++ tester make_dhcpd.conf.sh
+- implementer proprement freetouch lib dans projet arduino
+- ajouter ordi cirm dans github
+- ajouter else external
+- implementer filtre preset

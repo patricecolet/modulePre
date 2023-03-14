@@ -25,12 +25,12 @@ var sock = dgram.createSocket('udp4', function(msg, rinfo){
 
 const WebSocketServer = require('ws');
 var ipConfig = require('./ipConfig');
-var raspConfig = require('./raspConfig');
-var testConfig = require('./../../config');
+//var raspConfig = require('./raspConfig');
+var moduleConfig = require('./../../config');
 const { exec, spawn } = require('child_process');
 
 var debug = false;
-var debug1 = false;
+var debug1 = true;
 var tempoCheck = 4000; // Tempo de check des Raspberry's
 var aliveCounter = 2;  // Nombre de tentatives de check avant de considéré le Raspberry déconnecté
 
@@ -44,6 +44,19 @@ try{
 	console.log("ERREUR:", err);
 }
 
+function makeRaspConfig() {
+	var computerInfo = moduleConfig.computerInfo;
+	var jsonData = [];
+	var keys = Object.keys(computerInfo);
+	for (let i = 0; i < keys.length; i++) {
+		var jsonObject = {};
+		jsonObject['ipAddress'] = computerInfo[keys[i]]["ipAddress"];
+		jsonObject['comment'] = computerInfo[keys[i]]["macAddress"];
+		jsonData[i] = jsonObject
+	}
+	return jsonData;
+}
+var raspConfig = makeRaspConfig();
 console.log("---------- Raspberries déclarés --------");
 console.log(raspConfig);
 console.log("--------------------------------------");
@@ -63,7 +76,6 @@ serv.broadcast = function broadcast(data) {
 		}
 	});
 }
-
 // Pour ajouter un Raspbeery dans la liste au moment de la connexion.
 // Si l'adresse du Raspberry est déjà dans la liste, c'est qu'il s'agit d'une
 // reconnexion. On met alors à jour la WS seulement.
@@ -94,7 +106,6 @@ function addRaspInList(raspIP, raspWS){
 	if(debug1) console.log("addRaspInList: RaspList ajouté dans la liste:", raspIP);
 	raspList.push(rasp);
 }
-
 function updateRaspList(msg, raspWS){
 
 	if(debug) console.log("updateRaspList: msg: ", msg);
@@ -124,11 +135,9 @@ function updateRaspList(msg, raspWS){
 	if(debug1) console.log("WARN: refreshRaspInList: RaspList pas dans la liste, mise à jour");
 	return;
 }
-
 var date = new Date();
 var time = date.getTime();
 var previousTime = time;
-
 function decreaseAliveCounters(){
 	if(debug) {
 		var date = new Date();
@@ -152,7 +161,6 @@ function decreaseAliveCounters(){
 		}
 	}
 }
-
 // Emission d'un message selon l'adresse IP du Raspberry
 function sendToRasp(raspIP, message){
 	if(debug1) console.log("sendToRasp:", raspIP, message);
@@ -170,7 +178,6 @@ function sendToRasp(raspIP, message){
 		console.log("ERR: sendToRasp: no such IP address:", raspIP);
 	}
 }
-
 function sendSoundFile(raspIP, file){
 	var filelocal = file.slice(0,5);
 
@@ -181,7 +188,6 @@ function sendSoundFile(raspIP, file){
 		console.log(stdout);
 	});
 }
-
 function restartNodeClient(raspIP){
 	console.log(`sshpass -praspberry ssh pi@${raspIP} 'killall -9 node; ' `);
 	exec(`sshpass -p 'raspberry' ssh pi@${raspIP} 'killall -9 node; node /home/pi/cirmrasp/clients/raspberry/rasp.js&'`,
@@ -190,7 +196,6 @@ function restartNodeClient(raspIP){
 		console.log(stdout);
 	});
 }
-
 function sendToControleur(message){
 	if(debug) console.log("--> sendToControleur:", message);
 	if(WScontroleur !== undefined){
@@ -201,7 +206,6 @@ function sendToControleur(message){
 		WScontroleur.send(message);
 	}
 }
-
 function sendOSCmessage(ipRasp, portRasp, message, val) { // Value = table des données
 	var buf;
 	var commandeOSC = "/" + message;
@@ -210,7 +214,6 @@ function sendOSCmessage(ipRasp, portRasp, message, val) { // Value = table des d
 	buf = osc.toBuffer({ address: commandeOSC , args: val });
 	return sock.send(buf, 0, buf.length, portRasp, ipRasp);
 }
-
 function btoa(str) {
 	var buffer;
 	if (str instanceof Buffer) {
@@ -243,11 +246,11 @@ function makeJSON(obj,key,v) {
 	JSON_RES = JSON_RES + "}";
 	//console.log(JSON_RES);
 	return JSON_RES;
-
 }
+
 function sendRaspConfig(ip) {
-	var computerInfo = testConfig.computerInfo;
-	var compositions = testConfig.compositions;
+	var computerInfo = moduleConfig.computerInfo;
+	var compositions = moduleConfig.compositions;
 	openStageServer.sendCommand("/ipAddresses", makeJSON(computerInfo,'ipAddress',''));
 	openStageServer.sendCommand("/compositions", makeJSON(compositions,'title','idx'));
 	//  console.log(JSON.stringify(compositions));
@@ -272,9 +275,9 @@ serv.on('connection', function (ws) {
 					ipConfig.OSCPort,
 					msgRecu.OSCMessage,
 					[{ type: 'integer', value: parseInt(msgRecu.OSCValue) },
-					{ type: 'integer', value: 4 },
+					{ type: 'integer', value: 100 },
 					{ type: 'integer', value: 120 }]
-				);
+				  );
 			}
 			break;
 
@@ -312,14 +315,12 @@ serv.on('connection', function (ws) {
 			case "sendOSCmessage":
 			if(debug1) console.log("--> sendOSCmessage: ", msgRecu.raspIP, msgRecu.OSCMessage, msgRecu.OSCValue);
 
-			sendOSCmessage(
+			sendOSCmessage( 
 				msgRecu.raspIP,
 				ipConfig.OSCPort,
-				msgRecu.OSCMessage,
-				[{type: 'integer', value: parseInt(msgRecu.OSCValue) },
-				{type: 'integer', value: 4},
-				{type: 'integer', value: 120}]
-			);
+				 msgRecu.OSCMessage,
+			  [{type: 'integer', value: parseInt(msgRecu.OSCValue) }]
+			 );
 			break;
 
 			case "restartNode":
