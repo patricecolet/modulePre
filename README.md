@@ -329,3 +329,9 @@ First exit ssh session by typing on target computer:
 And then we're back on remote terminal, now we can use rsync command using target's ip address:
 >$: cd modulePre <br />
 $: rsync -avuP patch@"raspberry ip address":/home/patch/modulePre/PureData/compositions/myComposition/myPatch.pd PureData/compositions/"myComposition"/
+
+### Using modulePre on macos
+
+On macos the following command will enable script execution:
+
+>%: chmod +x PureData/script/*.sh
