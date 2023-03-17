@@ -9,12 +9,10 @@
 #N canvas 24 153 1035 586 computer_infos 0;
 #X obj 549 387 r comment;
 #X obj 549 413 print comment;
-#X symbolatom 66 133 20 0 0 0 - - -, f 20;
-#X symbolatom 56 186 19 0 0 0 - - -, f 19;
-#X msg 37 440 \; ID 50:ed:3c:17:51:65 HIBEKOHIKEDO_hodike_bokoho mac
-silicon 192.168.1.70 computer_1 \; comment MacBook Air de Patko \;
-, f 66;
-#X symbolatom 56 234 30 0 0 0 - - -, f 30;
+#X symbolatom 66 133 20 0 0 0 - - - 0;
+#X symbolatom 56 186 19 0 0 0 - - - 0;
+#X msg 37 440 \; ID 50:ed:3c:17:51:65 HIBEKOHIKEDO_hodike_bokoho mac silicon 192.168.1.70 computer_1 \; comment MacBook Air de Patko \;, f 66;
+#X symbolatom 56 234 30 0 0 0 - - - 0;
 #X obj 13 10 inlet;
 #X obj 538 53 r ID;
 #N canvas 46 114 138 127 computer_ok 0;
@@ -32,8 +30,7 @@ silicon 192.168.1.70 computer_1 \; comment MacBook Air de Patko \;
 #X obj 33 85 t a b;
 #X msg 65 110 symbol .;
 #X obj 33 143 s2l;
-#X text 33 16 récupère le 4eme octet de l'adresse ipv4 pour en faire
-le numéro de machine;
+#X text 33 16 récupère le 4eme octet de l'adresse ipv4 pour en faire le numéro de machine;
 #X obj 32 168 list split 3;
 #X connect 0 0 2 0;
 #X connect 2 0 4 0;
@@ -42,14 +39,13 @@ le numéro de machine;
 #X connect 4 0 6 0;
 #X connect 6 1 1 0;
 #X restore 578 272 pd rpi_ID;
-#X symbolatom 587 323 27 0 0 0 - - -, f 27;
+#X symbolatom 587 323 27 0 0 0 - - - 0;
 #X obj 578 346 s module_ID;
 #X obj 578 297 makefilename module_%d;
 #N canvas 754 333 599 409 getIP 0;
 #X obj 96 63 inlet;
 #X obj 96 133 shell;
-#X msg 128 190 Impossible to get ip adress \, please check network
-interface;
+#X msg 128 190 Impossible to get ip adress \, please check network interface;
 #X obj 128 215 print Error;
 #X text 340 106 lance la commande;
 #X obj 142 272 print IP;
@@ -60,8 +56,7 @@ interface;
 #X obj 96 87 getdir;
 #X obj 119 309 list;
 #X msg 96 108 \$1/script/GET_IP_ADRESS.sh;
-#X text 19 5 La commande qui récupère l'adresse IP est différente
-sur macos \, on utilise donc un script pour faciliter la tache.;
+#X text 19 5 La commande qui récupère l'adresse IP est différente sur macos \, on utilise donc un script pour faciliter la tache.;
 #X connect 0 0 10 0;
 #X connect 1 0 8 0;
 #X connect 1 1 9 0;
@@ -80,12 +75,9 @@ sur macos \, on utilise donc un script pour faciliter la tache.;
 #X obj 31 171 route 0;
 #X msg 31 326 Impossible de récupérer l'adresse MAC;
 #X obj 31 351 print Erreur;
-#X text 19 5 La commande qui récupère l'adresse MAC de la machine
-locale sur macos nécessite des symboles qui sont filtrés par PureData
-\, on utilise donc un script pour faciliter la tache.;
+#X text 19 5 La commande qui récupère l'adresse MAC de la machine locale sur macos nécessite des symboles qui sont filtrés par PureData \, on utilise donc un script pour faciliter la tache.;
 #X text 277 120 lance le script;
-#X text 124 90 Récupère le chemin du dossier où se trouve le patch
-;
+#X text 124 90 Récupère le chemin du dossier où se trouve le patch;
 #X obj 109 218 print ADRESSE_MAC;
 #X obj 77 195 t a a;
 #X obj 77 279 outlet;
@@ -297,10 +289,8 @@ locale sur macos nécessite des symboles qui sont filtrés par PureData
 #X obj 229 230 t a b;
 #X obj 423 230 t b a;
 #X obj 6 8 inlet;
-#X obj 24 338 sel 48 49 50 51 52 53 54 55 56 57 65 66 67 68 69 70 97
-98 99 100 101 102, f 74;
-#X obj 584 336 sel 48 49 50 51 52 53 54 55 56 57 65 66 67 68 69 70
-97 98 99 100 101 102, f 72;
+#X obj 24 338 sel 48 49 50 51 52 53 54 55 56 57 65 66 67 68 69 70 97 98 99 100 101 102, f 74;
+#X obj 584 336 sel 48 49 50 51 52 53 54 55 56 57 65 66 67 68 69 70 97 98 99 100 101 102, f 72;
 #X obj 247 107 loadbang;
 #X obj 6 632 list;
 #X obj 6 661 outlet;
@@ -436,14 +426,12 @@ locale sur macos nécessite des symboles qui sont filtrés par PureData
 #X msg 176 255 set \, addsemi;
 #X obj 37 97 list prepend comment, f 12;
 #X obj 37 247 list trim;
-#X text 77 20 Place le symbole d'envoi des informations sur la machine
-locale \, et bang le message d'envoi.;
+#X text 77 20 Place le symbole d'envoi des informations sur la machine locale \, et bang le message d'envoi.;
 #X obj 37 168 list prepend add, f 12;
 #X text 185 179 ajoute les envois à la boite de message;
 #X obj 21 58 route bang comment ID;
 #X obj 144 96 list prepend ID, f 12;
-#X text 186 218 efface la boite de message et ajoute un point virgule
-pour indiquer que c'est un messsage FUDI;
+#X text 186 218 efface la boite de message et ajoute un point virgule pour indiquer que c'est un messsage FUDI;
 #X connect 0 0 9 0;
 #X connect 1 0 7 0;
 #X connect 1 1 3 0;
@@ -460,14 +448,10 @@ pour indiquer que c'est un messsage FUDI;
 #N canvas 0 54 450 300 prepareComputerOK 0;
 #X obj 11 70 inlet;
 #X obj 11 190 outlet;
-#X symbolatom 11 95 27 0 0 0 - - -, f 27;
+#X symbolatom 11 95 27 0 0 0 - - - 0;
 #X msg 11 120 r \$1;
-#X msg 11 145 vis 0 \, clear \, obj 10 10 r \$1 \, msg 10 40 OK \,
-obj 10 80 print \$1 \, editmode 1 \, connect 0 0 1 0 \, connect 1 0
-2 0 \, editmode 0;
-#X text 13 7 Messages internes pour construire un recepteur qui va
-indiquer dans la console si la machine est prête \, avec le message
-OK précédé du numéro de machine.;
+#X msg 11 145 vis 0 \, clear \, obj 10 10 r \$1 \, msg 10 40 OK \, obj 10 80 print \$1 \, editmode 1 \, connect 0 0 1 0 \, connect 1 0 2 0 \, editmode 0;
+#X text 13 7 Messages internes pour construire un recepteur qui va indiquer dans la console si la machine est prête \, avec le message OK précédé du numéro de machine.;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -475,7 +459,7 @@ OK précédé du numéro de machine.;
 #X restore 618 226 pd prepareComputerOK;
 #X obj 538 78 list split 4;
 #X obj 578 102 list split 1;
-#X symbolatom 618 204 27 0 0 0 - - -, f 27;
+#X symbolatom 618 204 27 0 0 0 - - - 0;
 #X obj 618 123 t a a;
 #X text 670 125 Envoie le numéro de la machine;
 #X text 746 296 Envoie le numéro de module pré;
@@ -483,8 +467,7 @@ OK précédé du numéro de machine.;
 #N canvas 658 150 600 530 getLocalMachine 0;
 #X obj 25 62 inlet;
 #X obj 25 134 route -1;
-#X msg 25 465 La machine n'est pas référencée dans le fichier de
-configuration;
+#X msg 25 465 La machine n'est pas référencée dans le fichier de configuration;
 #X obj 25 505 print Erreur;
 #X obj 78 438 outlet;
 #X obj 366 301 list prepend ID;
@@ -500,8 +483,7 @@ configuration;
 #X obj 16 395 list;
 #X obj 16 442 outlet;
 #X obj 16 43 t b b a b;
-#X msg 135 78 macAddress \, bibi_binaire \, machine \, model \, ipAddress
-\, machineId;
+#X msg 135 78 macAddress \, bibi_binaire \, machine \, model \, ipAddress \, machineId;
 #X obj 134 184 text search machineConfig 0 1;
 #X obj 187 256 text get machineConfig 2;
 #X connect 0 0 7 0;
@@ -526,9 +508,7 @@ configuration;
 #X obj 14 51 list append comment;
 #X obj 14 77 text search machineConfig 0 1;
 #X obj 67 129 text get machineConfig 2;
-#X text 73 151 La valeur des données JSON est représentée sous la
-forme d'un symbole \, pour faciliter la lecture \, elle est transformée
-en liste;
+#X text 73 151 La valeur des données JSON est représentée sous la forme d'un symbole \, pour faciliter la lecture \, elle est transformée en liste;
 #X obj 67 204 abs/rmBackslash;
 #X connect 0 0 3 0;
 #X connect 1 1 5 0;
@@ -538,15 +518,13 @@ en liste;
 #X connect 7 0 2 0;
 #X restore 195 269 pd getComment;
 #X obj 195 294 list prepend comment;
-#X text 24 25 Cherche ligne avec la bonne adresse MAC dans le buffer
-texte;
+#X text 24 25 Cherche ligne avec la bonne adresse MAC dans le buffer texte;
 #X obj 78 158 text get machineConfig 0;
 #X obj 25 110 text search machineConfig 1 2;
 #X obj 324 186 text define computerInfo;
 #N canvas 179 204 295 441 setComputerInfo 0;
 #X obj 64 11 inlet;
-#X msg 108 136 ipAddress \, macAddress \, bibi_binaire \, machine \,
-model \, machineId \, comment \, soundcard, f 23;
+#X msg 108 136 ipAddress \, macAddress \, bibi_binaire \, machine \, model \, machineId \, comment \, soundcard, f 23;
 #X obj 110 111 text delete computerInfo;
 #X obj 47 374 text set computerInfo;
 #X obj 4 247 text search machineConfig 0 1;
@@ -593,25 +571,18 @@ model \, machineId \, comment \, soundcard, f 23;
 #X restore 13 345 pd getLocalMachine;
 #X obj 56 256 print bibi_binaire;
 #X obj 650 145 list split 1;
-#X text 536 11 Les informations liées à la machine locale sont récupérées
-pour obtenir le nom de la machine et le numéro de module;
-#X text 67 529 Envoie un bang au gestionnaire de composition \, et
-charge le premier morceau.;
-#X text 117 402 Rempli la boite de message et déclenche les send au
-symbole en entête de chaque ligne après un point virgule.;
-#X text 846 244 indique dans la console que la machine est prête à
-jouer la composition, f 24;
-#X text 137 7 Charge le fichier de configuration du projet dans un
-buffer texte, f 37;
+#X text 536 11 Les informations liées à la machine locale sont récupérées pour obtenir le nom de la machine et le numéro de module;
+#X text 67 529 Envoie un bang au gestionnaire de composition \, et charge le premier morceau.;
+#X text 117 402 Rempli la boite de message et déclenche les send au symbole en entête de chaque ligne après un point virgule.;
+#X text 846 244 indique dans la console que la machine est prête à jouer la composition, f 24;
+#X text 137 7 Charge le fichier de configuration du projet dans un buffer texte, f 37;
 #X obj 220 54 r configFile;
 #N canvas 673 73 666 429 getconfig 0;
 #X obj 16 87 inlet bang;
 #X obj 16 110 t b b;
 #X msg 48 132 -1;
-#X text 57 176 Ouvre le fichier de configuration pour le stocker dans
-un buffer texte;
-#X text 87 115 Le buffer texte où est stocké la configuration est
-effacé avant de commencer;
+#X text 57 176 Ouvre le fichier de configuration pour le stocker dans un buffer texte;
+#X text 87 115 Le buffer texte où est stocké la configuration est effacé avant de commencer;
 #X obj 16 386 outlet;
 #X obj 159 338 t a b;
 #X msg 202 361 1e+15;
@@ -651,11 +622,7 @@ effacé avant de commencer;
 #X connect 14 0 11 0;
 #X restore 16 260 pd decodeJSON;
 #X msg 16 210 read ../config.json \, bang;
-#X text 12 2 config.json est le fichier de configuration où est inscrit
-l'adresse IPV4 \, l'adresse MAC \, le modèle de machine \, son numéro
-dans l'installation \, et les commentaires associés. Le format JSON
-permet d'uniformiser les données avec node-js et OpenStageControl.
-, f 89;
+#X text 12 2 config.json est le fichier de configuration où est inscrit l'adresse IPV4 \, l'adresse MAC \, le modèle de machine \, son numéro dans l'installation \, et les commentaires associés. Le format JSON permet d'uniformiser les données avec node-js et OpenStageControl., f 89;
 #X text 126 260 converti les données JSON en listes PureData;
 #X obj 48 153 text delete machineConfig;
 #X obj 159 384 text set machineConfig;
@@ -671,9 +638,7 @@ permet d'uniformiser les données avec node-js et OpenStageControl.
 #X connect 9 0 8 0;
 #X restore 13 52 pd getconfig;
 #X obj 220 78 text define machineConfig;
-#X text 54 283 Cherche dans le fichier de configuration l'adresse MAC
-de la machine locale et récupère les informations \, continue même
-si l'adresse MAC n'a pas été trouvée., f 51;
+#X text 54 283 Cherche dans le fichier de configuration l'adresse MAC de la machine locale et récupère les informations \, continue même si l'adresse MAC n'a pas été trouvée., f 51;
 #X connect 0 0 1 0;
 #X connect 3 0 19 0;
 #X connect 5 0 33 0;
@@ -774,31 +739,25 @@ si l'adresse MAC n'a pas été trouvée., f 51;
 #X connect 35 0 15 0;
 #X restore 8 354 pd audio_out;
 #X obj 289 395 s volume;
-#X obj 289 252 vsl 15 128 0 100 0 0 empty \$0volume-r empty 0 -9 0
-10 -262144 -1 -1 0 1;
-#X obj 319 325 tgl 15 0 empty \$0mute-r empty 17 7 0 10 -262144 -1
--1 0 1;
-#X msg 498 238 1;
-#X msg 467 260 2;
-#X msg 498 260 3;
-#X msg 467 283 4;
-#X msg 467 238 0;
+#X obj 289 252 vsl 15 128 0 100 0 0 empty \$0volume-r empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 319 325 tgl 15 0 empty \$0mute-r empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X msg 433 240 1;
+#X msg 402 262 2;
+#X msg 433 262 3;
+#X msg 402 285 4;
+#X msg 402 240 0;
 #X text 476 219 test;
-#X msg 498 283 5;
+#X msg 433 285 5;
 #N canvas 250 373 888 297 MIDI 0;
 #X obj 456 44 r pd;
 #X obj 456 128 list prepend set;
 #X obj 456 154 list trim;
 #X obj 456 74 route midi-dialog;
 #X obj 52 220 send pd;
-#X text 449 208 this message can be saved as part of your patch. click
-it or [loadbang] it to configure the MIDI settings. Make sure it is
-attached to a [send pd] so that Pd gets the message.;
+#X text 449 208 this message can be saved as part of your patch. click it or [loadbang] it to configure the MIDI settings. Make sure it is attached to a [send pd] so that Pd gets the message.;
 #X obj 456 102 list prepend midi-dialog;
-#X text 496 44 Open the MIDI Settings and click OK to get the data
-;
-#X msg 456 186 midi-dialog 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 4
-;
+#X text 496 44 Open the MIDI Settings and click OK to get the data;
+#X msg 456 186 midi-dialog 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 4;
 #X text 148 118 close all on mac;
 #X msg 64 192 midi-dialog 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 3;
 #X text 101 169 close all on rpi;
@@ -822,14 +781,14 @@ attached to a [send pd] so that Pd gets the message.;
 #X restore 8 411 pd MIDI;
 #N canvas 136 323 826 285 computer_received_infos 0;
 #X obj 72 11 r ID;
-#X symbolatom 301 181 27 0 0 0 - - -, f 27;
-#X symbolatom 301 121 27 0 0 0 - - -, f 27;
-#X symbolatom 301 101 27 0 0 0 - - -, f 27;
-#X symbolatom 301 141 27 0 0 0 - - -, f 27;
-#X symbolatom 301 161 27 0 0 0 - - -, f 27;
+#X symbolatom 301 181 27 0 0 0 - - - 0;
+#X symbolatom 301 121 27 0 0 0 - - - 0;
+#X symbolatom 301 101 27 0 0 0 - - - 0;
+#X symbolatom 301 141 27 0 0 0 - - - 0;
+#X symbolatom 301 161 27 0 0 0 - - - 0;
 #X obj 72 36 unpack s s s s s s;
-#X symbolatom 301 201 27 0 0 0 - - -, f 27;
-#X symbolatom 301 221 27 0 0 0 - - -, f 27;
+#X symbolatom 301 201 27 0 0 0 - - - 0;
+#X symbolatom 301 221 27 0 0 0 - - - 0;
 #X obj 51 177 r composition_name;
 #X connect 0 0 6 0;
 #X connect 6 0 2 0;
@@ -841,7 +800,7 @@ attached to a [send pd] so that Pd gets the message.;
 #X connect 9 0 8 0;
 #X coords 0 -1 1 1 192 140 2 300 100;
 #X restore 432 65 pd computer_received_infos;
-#N canvas 740 89 673 528 OSC 1;
+#N canvas 740 89 673 528 OSC 0;
 #X obj 76 29 netreceive -u -b 4000;
 #X obj 76 54 oscparse;
 #X obj 76 79 route list;
@@ -850,8 +809,7 @@ attached to a [send pd] so that Pd gets the message.;
 #X msg 295 325 disconnect;
 #X obj 185 79 print OSCtest;
 #X obj 185 57 spigot;
-#X obj 236 31 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 236 31 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 12 8 inlet;
 #X msg 117 324 connect localhost 5000;
 #X obj 491 251 r sendOSC;
@@ -861,12 +819,11 @@ attached to a [send pd] so that Pd gets the message.;
 #X obj 12 464 outlet;
 #X obj 45 270 demux 0 1;
 #X obj 198 297 t b b;
-#X obj 154 476 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 154 476 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 491 275 list split 1;
 #X obj 418 336 list;
 #X obj 418 305 t b a;
-#N canvas 47 89 526 300 duplex 1;
+#N canvas 47 89 526 300 duplex 0;
 #X obj 102 248 s sendOSC;
 #X obj 18 23 r mute;
 #X obj 100 24 r volume;
@@ -903,8 +860,7 @@ attached to a [send pd] so that Pd gets the message.;
 #X obj 270 176 s filter;
 #X obj 367 130 s fx;
 #X text 482 125 commandes envoyées aux compositions, f 19;
-#X obj 76 108 route mute volume cue composition filter noise fx cpumon
-;
+#X obj 76 108 route mute volume cue composition filter noise fx cpumon;
 #X text 418 231 commandes envoyées à l'interface;
 #X obj 416 185 s cpumon;
 #X obj 465 161 s OSC_for_composition;
@@ -946,54 +902,48 @@ attached to a [send pd] so that Pd gets the message.;
 #X restore 8 492 pd OSC;
 #X obj 460 569 declare -lib zexy;
 #X obj 461 594 declare -path ggee;
-#X text 41 69 Récupère les informations de la machine locale, f
-25;
-#X text 436 10 Les informations liées à la machine locale sont indiquées
-ici, f 25;
-#X text 429 361 externals utilisés pour faciliter la tache comme [shell]
-\, [getdir] et [list2symbol], f 27;
-#X text 26 146 Récupère la liste des patchs à jouer durant la performance
-, f 30;
+#X text 41 69 Récupère les informations de la machine locale, f 25;
+#X text 436 10 Les informations liées à la machine locale sont indiquées ici, f 25;
+#X text 421 404 externals utilisés pour faciliter la tache comme [shell] \, [getdir] et [list2symbol], f 27;
+#X text 26 146 Récupère la liste des patchs à jouer durant la performance, f 30;
 #N canvas 136 73 646 700 HELP 0;
-#X text 126 437 <MAC adress> <bibi_binaire> <Type de Machine> <Modèle
-de machine> <Adresse IP> <Numéro de machine>;
+#X text 126 477 <MAC adress> <bibi_binaire> <Type de Machine> <Modèle de machine> <Adresse IP> <Numéro de machine>;
 #X obj 61 48 s volume;
 #X text 20 10 Réglages Globaux;
 #X obj 57 120 throw~ L_out;
-#X text 275 333 nom de la piste en cours de jeu <symbol>;
-#X text 260 301 numero de machine <float>;
+#X text 275 373 nom de la piste en cours de jeu <symbol>;
+#X text 260 341 numero de machine <float>;
 #X text 140 83 mute la sortie (1/0);
-#X text 232 413 une liste de 6 symboles représentant;
-#X text 56 266 pour recevoir dans:;
-#X text 246 372 Modèle de machine sur laquelle la composition est
-en train de jouer <symbol>;
-#X text 133 42 volume de sortie en Décibels \, 100 = 0db \, 94 = -6db
-\, etc...;
+#X text 232 453 une liste de 6 symboles représentant;
+#X text 56 306 pour recevoir dans:;
+#X text 246 412 Modèle de machine sur laquelle la composition est en train de jouer <symbol>;
+#X text 133 42 volume de sortie en Décibels \, 100 = 0db \, 94 = -6db \, etc...;
 #X obj 62 85 s mute;
-#X obj 60 239 s callback;
-#X obj 49 301 r computer_number;
-#X obj 49 334 r composition_name;
-#X obj 49 375 r computer_type;
-#X obj 49 414 r computer_ID;
-#X text 34 213 parametres de la machine \, envoyer un bang dans;
-#X obj 56 495 r OSCreceive;
+#X obj 60 279 s callback;
+#X obj 49 341 r computer_number;
+#X obj 49 374 r composition_name;
+#X obj 49 415 r computer_type;
+#X obj 49 454 r computer_ID;
+#X text 34 253 parametres de la machine \, envoyer un bang dans;
+#X obj 56 535 r OSCreceive;
 #X text 163 117 pour envoyer un signal Audio en sortie gauche;
 #X obj 55 149 throw~ L_out;
 #X text 161 146 pour envoyer un signal Audio en sortie droite;
-#X obj 55 538 s OSCsend;
-#X text 172 534 émission OSC;
-#X text 167 498 réception OSC;
+#X obj 55 578 s OSCsend;
+#X text 172 574 émission OSC;
+#X text 167 538 réception OSC;
 #X obj 55 181 s cue;
 #X text 162 178 Pour gérer les cues dans une composition;
 #X obj 101 181 r cue;
+#X obj 53 217 s composition_num;
+#X text 188 218 Pour charger une composition;
 #X restore 172 13 pd HELP;
 #N canvas 274 39 981 421 composition_manager 0;
 #X obj 10 87 inlet;
 #X obj 570 151 list split 1;
 #X obj 524 364 outlet;
 #X msg 10 259 0;
-#X text 60 292 Une fois la liste chargée \, le premier morceau est
-lancé., f 51;
+#X text 60 292 Une fois la liste chargée \, le premier morceau est lancé., f 51;
 #N canvas 0 144 342 261 initCompoList 0;
 #X obj 36 14 inlet;
 #X obj 36 176 outlet;
@@ -1068,8 +1018,7 @@ lancé., f 51;
 #N canvas 382 407 514 300 deleteCompo 0;
 #X obj 41 134 del 55;
 #X text 115 87 Mute la sortie audio avant de détruire le patch;
-#X text 256 134 Le Mute nécessite une attente de 50ms+5ms d'incertitude
-liée à la taille des buffers audio pour finir son fondu, f 29;
+#X text 256 134 Le Mute nécessite une attente de 50ms+5ms d'incertitude liée à la taille des buffers audio pour finir son fondu, f 29;
 #X obj 18 205 pipe 60;
 #X obj 18 11 inlet;
 #X obj 18 229 outlet;
@@ -1095,13 +1044,10 @@ liée à la taille des buffers audio pour finir son fondu, f 29;
 #X obj 36 330 s mute;
 #X obj 110 97 makefilename %s/_load;
 #X msg 91 168 \; pd-current_composition editmode 0;
-#X msg 110 121 \; pd-current_composition obj 10 10 compositions/\$1
-;
+#X msg 110 121 \; pd-current_composition obj 10 10 compositions/\$1;
 #X obj 36 72 t b b b b a;
 #X msg 73 211 \; pd-current_composition menusave;
-#X text 87 13 Messages internes pour créer dans le sous-patch current_composition
-une abstraction du patch _load.pd qui se trouve dans le dossier du
-morceau à jouer, f 53;
+#X text 87 13 Messages internes pour créer dans le sous-patch current_composition une abstraction du patch _load.pd qui se trouve dans le dossier du morceau à jouer, f 53;
 #X connect 0 0 7 0;
 #X connect 2 0 3 0;
 #X connect 4 0 6 0;
@@ -1144,24 +1090,13 @@ morceau à jouer, f 53;
 #X connect 14 0 8 0;
 #X connect 15 0 1 1;
 #X restore 570 316 pd callbacks;
-#X text 64 196 Cet object stocke la liste des compositions jouées
-durant la performance \, en cliquant dessus on peut voir la liste;
-#X text 540 30 Receptionne l'index \, efface le contenu de [pd current_composition]
-et crée une abstraction de la composition suivante, f 41;
-#X text 671 148 Le nom de la composition est utilisé pour construire
-le nouveau patch, f 34;
+#X text 64 196 Cet object stocke la liste des compositions jouées durant la performance \, en cliquant dessus on peut voir la liste;
+#X text 540 30 Receptionne l'index \, efface le contenu de [pd current_composition] et crée une abstraction de la composition suivante, f 41;
+#X text 671 148 Le nom de la composition est utilisé pour construire le nouveau patch, f 34;
 #X obj 570 225 s composition_name;
-#X text 580 248 Les données relatives à la machine locale peuvent
-être appelées en envoyant un bang au symbole 'callbacks' et récupérées
-avec différents symboles \, voir dans le sous-patch pour plus de détails
-, f 55;
-#X text 8 12 La liste des compositions jouées durant la performance
-est indiquée dans le fichier de configuration du projet config.json.
-Cette liste est indexée et à chaque nouvel index le patch est crée
-dans le sous-patch [pd current-composition], f 66;
-#X text 131 112 au démarrage \, la liste des compositions est effacée
-ainsi que le contenu du sous-patch [pd current-compsition] du patch
-parent, f 48;
+#X text 580 248 Les données relatives à la machine locale peuvent être appelées en envoyant un bang au symbole 'callbacks' et récupérées avec différents symboles \, voir dans le sous-patch pour plus de détails, f 55;
+#X text 8 12 La liste des compositions jouées durant la performance est indiquée dans le fichier de configuration du projet config.json. Cette liste est indexée et à chaque nouvel index le patch est crée dans le sous-patch [pd current-composition], f 66;
+#X text 131 112 au démarrage \, la liste des compositions est effacée ainsi que le contenu du sous-patch [pd current-compsition] du patch parent, f 48;
 #X connect 0 0 5 0;
 #X connect 1 0 11 0;
 #X connect 3 0 12 0;
@@ -1183,24 +1118,21 @@ parent, f 48;
 #X text 297 166 Numéro de machine;
 #X text 276 186 Composition en cours;
 #X obj 459 473 declare -path abs;
-#X obj 467 330 s composition_num;
+#X obj 402 332 s composition_num;
 #X obj 319 351 s mute;
 #X obj 459 497 declare -path list-abs;
 #X obj 459 521 declare -path purest_json;
 #X msg 8 622 \; pd dsp 1;
 #N canvas 47 518 317 158 current_composition 1;
-#X obj 10 10 compositions/skini/_load;
+#X obj 10 10 compositions/qTouch/_load;
 #X restore 44 251 pd current_composition;
 #X text 17 386 configuration MIDI;
-#X obj 20 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 20 75 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 38 213 La composition en cours se trouve ici:, f 24;
-#X text 21 439 Réceptionne les messages OpenSoundControl envoyés
-par un client web comme openStageControl, f 33;
-#X text 19 516 Quand toutes les procédures sont terminées \, allume
-le DSP, f 32;
-#X msg 469 304 6;
-#X msg 500 304 7;
+#X text 21 439 Réceptionne les messages OpenSoundControl envoyés par un client web comme openStageControl, f 33;
+#X text 19 516 Quand toutes les procédures sont terminées \, allume le DSP, f 32;
+#X msg 404 306 6;
+#X msg 435 306 7;
 #X obj 8 558 delay 1000;
 #N canvas 575 105 549 388 effet_audio 0;
 #X obj 8 9 inlet;
@@ -1277,9 +1209,7 @@ le DSP, f 32;
 #X restore 441 61 pd setFxRight;
 #X text 57 6 Le filtre droit est éteint par défaut;
 #X msg 40 62 \; filterLeft onOff 1 \; filterRight onOff 0 \;;
-#X text 46 137 le côté gauche et droit sont traités indépendamment
-dans deux filtres séparés \, et les réglages peuvent être liés
-, f 27;
+#X text 46 137 le côté gauche et droit sont traités indépendamment dans deux filtres séparés \, et les réglages peuvent être liés, f 27;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 2 1 22 0;
@@ -1340,7 +1270,7 @@ dans deux filtres séparés \, et les réglages peuvent être liés
 #X text 367 473 abstractions;
 #X text 380 497 list tools;
 #X text 331 545 parametric filter;
-#X floatatom 90 646 5 0 0 0 - - -, f 5;
+#X floatatom 90 646 5 0 0 0 - - - 0;
 #X text 128 647 % cpu;
 #N canvas 63 88 450 492 dsp 0;
 #X obj 64 18 inlet;
@@ -1390,6 +1320,15 @@ dans deux filtres séparés \, et les réglages peuvent être liés
 #X connect 6 0 5 0;
 #X restore 90 621 pd dsp;
 #X obj 8 582 t b b;
+#X msg 572 240 1;
+#X msg 541 262 2;
+#X msg 572 262 3;
+#X msg 541 285 4;
+#X msg 541 240 0;
+#X msg 572 285 5;
+#X msg 543 306 6;
+#X msg 574 306 7;
+#X obj 541 332 s cue;
 #X connect 0 0 1 0;
 #X connect 1 0 23 0;
 #X connect 2 0 13 0;
@@ -1416,3 +1355,11 @@ dans deux filtres séparés \, et les réglages peuvent être liés
 #X connect 57 0 55 0;
 #X connect 58 0 36 0;
 #X connect 58 1 57 0;
+#X connect 59 0 67 0;
+#X connect 60 0 67 0;
+#X connect 61 0 67 0;
+#X connect 62 0 67 0;
+#X connect 63 0 67 0;
+#X connect 64 0 67 0;
+#X connect 65 0 67 0;
+#X connect 66 0 67 0;
