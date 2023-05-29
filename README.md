@@ -22,7 +22,7 @@ The most important externals are:
 >ggee <br />
 purest_json version >= 2.0.0 <br />
 list_abs <br />
-zexy
+zexy <br />
 else
 
 The compositions available in this repository needs those externals:
