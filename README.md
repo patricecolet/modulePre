@@ -335,3 +335,29 @@ $: rsync -avuP patch@"raspberry ip address":/home/patch/modulePre/PureData/compo
 On macos the following command will enable script execution:
 
 >%: chmod +x PureData/script/*.sh
+
+ssh X11 forwarding requires xquartz to work, this could be done by using following commands:
+
+* install xquartz
+
+>%: brew install --cask xquartz
+
+* launch xquartz
+
+>%: launchctl start org.xquartz.startx && export DISPLAY=:0
+
+Sometimes xquartz needs to be reloaded with these last command lines, it might be useful to create an alias for doing it:
+* add alias to ~/.zshrc file:
+
+>%: nano ~/.zshrc
+
+and add this line to the end of file:
+
+> alias xfor="launchctl start org.xquartz.startx && export DISPLAY=:0"
+
+save and exit and launch this command line for enabling the alias:
+
+> source ~/.zshrc
+
+then launching `xfor`in terminal will enable x11 forwarding.
+
