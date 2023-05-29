@@ -251,8 +251,8 @@ function makeJSON(obj,key,v) {
 function sendRaspConfig(ip) {
 	var computerInfo = moduleConfig.computerInfo;
 	var compositions = moduleConfig.compositions;
-	openStageServer.sendCommand("/ipAddresses", makeJSON(computerInfo,'ipAddress',''));
-	openStageServer.sendCommand("/compositions", makeJSON(compositions,'title','idx'));
+	openStageServer.sendCommand("/ipAddresses", makeJSON(computerInfo,'ipAddress',''),ip);
+	openStageServer.sendCommand("/compositions", makeJSON(compositions,'title','idx'),ip);
 	//  console.log(JSON.stringify(compositions));
 }
 serv.on('connection', function (ws) {
@@ -315,7 +315,7 @@ serv.on('connection', function (ws) {
 			case "sendOSCmessage":
 			if(debug1) console.log("--> sendOSCmessage: ", msgRecu.raspIP, msgRecu.OSCMessage, msgRecu.OSCValue);
 
-			sendOSCmessage( 
+			sendOSCmessage(
 				msgRecu.raspIP,
 				ipConfig.OSCPort,
 				 msgRecu.OSCMessage,
@@ -342,7 +342,11 @@ serv.on('connection', function (ws) {
 
 			case "requestConfig":
 			if(debug1) console.log("**** requestConfig: ");
-			sendRaspConfig(msgRecu.oscIP);
+			//sendRaspConfig(msgRecu.oscIP);
+			var address = ws._socket.remoteAddress;
+			address = address.replace(/^.*:/, '');
+			console.log('request addr:' + address);
+			sendRaspConfig(address);
 			break;
 
 			default:  console.log( "Web Socket Serveur: Type de message inconnu : " , msgRecu);

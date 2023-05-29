@@ -1,0 +1,525 @@
+{
+  "globalSettings" : {
+    "volume" : 90
+  },
+  "computer_41" : {
+    "Musician" : "Aurore",
+    "Instrument" : "Gametrak",
+    "CLX" : "0 4050 0 1",
+    "CLY" : "0 4010 0 1",
+    "CLZ" : "0 0 1",
+    "CRX" : "30 4095 0 1",
+    "CRY" : "60 4095 0 1",
+    "CRZ" : "0 0 1",
+    "gametrakID" : 38,
+    "sonMdj1Gauche" : "voices_Gametrak_ModeDeJeu1_son1.wav",
+    "gainMdj1Gauche" : 90,
+    "sonMdj1Droite" : "wind_Gametrak_ModeDeJeu1_son1.wav",
+    "gainMdj1Droite" : 90,
+    "sonMdj2DD" : "Deadend.wav",
+    "gainMdj2DD" : 70,
+    "sonMdj2GG" : "Exit.wav",
+    "gainMdj2GG" : 75,
+    "sonMdj2GF" : "Gametrak_Varak_son1..wav",
+    "gainMdj2GF" : 65,
+    "sonMdj2DF" : "Gametrak_Varak_son2..wav",
+    "gainMdj2DF" : 80,
+    "gametrakVolume" : 100,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Jeu1",
+        "calibrate" : {
+          "CLZ" : "0 0 1",
+          "CRZ" : "0 0 1"
+        }
+      },
+      "cue1": {
+        "cueName" : "Jeu2",
+        "calibrate" : {
+          "CLZ" : "3000 0 1",
+          "CRZ" : "3000 0 1",
+          "sensLeft" : 0,
+          "sensRight" : 0
+        }
+      },
+      "cue2": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_42" : {
+    "Musician" : "Zeynep",
+    "Instrument" : "Gametrak",
+    "CLX" : "0 4070 0 1",
+    "CLY" : "0 4030 0 1",
+    "CLZ" : "0 0 1",
+    "CRX" : "50 4080 0 1",
+    "CRY" : "50 4095 0 1",
+    "CRZ" : "0 0 1",
+    "gametrakID" : 39,
+    "sonMdj1Gauche" : "voices_Gametrak_ModeDeJeu1_son2.wav",
+    "gainMdj1Gauche" : 90,
+    "sonMdj1Droite" : "wind_Gametrak_ModeDeJeu1_son2.wav",
+    "gainMdj1Droite" : 90,
+    "sonMdj2DD" : "GoAhead.wav",
+    "gainMdj2DD" : 70,
+    "sonMdj2GG" : "GoBack.wav",
+    "gainMdj2GG" : 75,
+    "sonMdj2GF" : "Gametrak_Emma_son1..wav",
+    "gainMdj2GF" : 65,
+    "sonMdj2DF" : "Gametrak_Darshan_son2..wav",
+    "gainMdj2DF" : 80,
+    "gametrakVolume" : 100,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Jeu1",
+        "calibrate" : {
+          "CLZ" : "0 0 1",
+          "CRZ" : "0 0 1"
+        }
+      },
+      "cue1": {
+        "cueName" : "Jeu2",
+        "calibrate" : {
+          "CLZ" : "3000 0 1",
+          "CRZ" : "3000 0 1",
+          "sensLeft" : 0,
+          "sensRight" : 0
+        },
+        "cue2": {
+          "cueName" : "Off"
+        }
+      }
+    }
+  },
+  "computer_43" : {
+    "Musician" : "Jonathan",
+    "Instrument" : "Gametrak",
+    "CLX" : "5 4060 0 1",
+    "CLY" : "12 4030 0 1",
+    "CLZ" : "0 0 1",
+    "CRX" : "40 4090 0 1",
+    "CRY" : "50 4095 0 1",
+    "CRZ" : "0 0 1",
+    "gametrakID" : 40,
+    "sonMdj1Gauche" : "voices_Gametrak_ModeDeJeu1_son3.wav",
+    "gainMdj1Gauche" : 90,
+    "sonMdj1Droite" : "wind_Gametrak_ModeDeJeu1_son3.wav",
+    "gainMdj1Droite" : 90,
+    "sonMdj2DD" : "Jump.wav",
+    "gainMdj2DD" : 70,
+    "sonMdj2GG" : "Turn.wav",
+    "gainMdj2GG" : 70,
+    "sonMdj2GF" : "Gametrak_Jason_son2..wav",
+    "gainMdj2GF" : 70,
+    "sonMdj2DF" : "Gametrak_Linda_son2.wav",
+    "gainMdj2DF" : 70,
+    "gametrakVolume" : 100,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Jeu1",
+        "calibrate" : {
+          "CLZ" : "0 0 1",
+          "CRZ" : "0 0 1"
+        }
+      },
+      "cue1": {
+        "cueName" : "Jeu2",
+        "calibrate" : {
+          "CLZ" : "3000 0 1",
+          "CRZ" : "3000 0 1",
+          "sensLeft" : 0,
+          "sensRight" : 0
+        },
+        "cue2": {
+          "cueName" : "Off"
+        }
+      }
+    }
+  },
+  "computer_44" : {
+    "Musician" : "Eleonore",
+    "Instrument" : "Gametrak",
+    "CLX" : "20 4065 0 1",
+    "CLY" : "12 4025 0 1",
+    "CLZ" : "0 0 1",
+    "CRX" : "45 4030 0 1",
+    "CRY" : "60 4095 0 1",
+    "CRZ" : "0 0 1",
+    "gametrakID" : 41,
+    "sonMdj1Gauche" : "voices_Gametrak_ModeDeJeu1_son4.wav",
+    "gainMdj1Gauche" : 90,
+    "sonMdj1Droite" : "wind_Gametrak_ModeDeJeu1_son4.wav",
+    "gainMdj1Droite" : 90,
+    "sonMdj2DD" : "LevelUp.wav",
+    "gainMdj2DD" : 70,
+    "sonMdj2GG" : "Level.wav",
+    "gainMdj2GG" : 70,
+    "sonMdj2GF" : "Gametrak_Matteo_son1..wav",
+    "gainMdj2GF" : 77,
+    "sonMdj2DF" : "Gametrak_Matteo_son2.wav",
+    "gainMdj2DF" : 70,
+    "gametrakVolume" : 100,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Jeu1",
+        "calibrate" : {
+          "CLZ" : "0 0 1",
+          "CRZ" : "0 0 1"
+        }
+      },
+      "cue1": {
+        "cueName" : "Jeu2",
+        "calibrate" : {
+          "CLZ" : "3000 0 1",
+          "CRZ" : "3000 0 1",
+          "sensLeft" : 0,
+          "sensRight" : 0
+        },
+        "cue2": {
+          "cueName" : "Off"
+        }
+      }
+    }
+  },
+  "computer_45" : {
+    "Musician" : "Ece",
+    "Instrument" : "Gametrak",
+    "CLX" : "10 4065 0 1",
+    "CLY" : "0 4035 0 1",
+    "CLZ" : "0 0 1",
+    "CRX" : "45 4089 0 1",
+    "CRY" : "55 4095 0 1",
+    "CRZ" : "0 0 1",
+    "gametrakID" : 42,
+    "sonMdj1Gauche" : "voices_Gametrak_ModeDeJeu1_son5.wav",
+    "gainMdj1Gauche" : 90,
+    "sonMdj1Droite" : "wind_Gametrak_ModeDeJeu1_son5.wav",
+    "gainMdj1Droite" : 90,
+    "sonMdj2DD" : "Next.wav",
+    "gainMdj2DD" : 70,
+    "sonMdj2GG" : "TryAgain.wav",
+    "gainMdj2GG" : 72,
+    "sonMdj2GF" : "Gametrak_Nassim_son1..wav",
+    "gainMdj2GF" : 75,
+    "sonMdj2DF" : "Gametrak_Nassim_son2..wav",
+    "gainMdj2DF" : 65,
+    "gametrakVolume" : 100,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Jeu1",
+        "calibrate" : {
+          "CLZ" : "0 0 1",
+          "CRZ" : "0 0 1"
+        }
+      },
+      "cue1": {
+        "cueName" : "Jeu2",
+        "calibrate" : {
+          "CLZ" : "3000 0 1",
+          "CRZ" : "3000 0 1",
+          "sensLeft" : 0,
+          "sensRight" : 0
+        },
+        "cue2": {
+          "cueName" : "Off"
+        }
+      }
+    }
+  },
+  "computer_46" : {
+    "Musician" : "Alexandre",
+    "Instrument" : "Gametrak",
+    "CLX" : "0 4060 0 1",
+    "CLY" : "0 4035 0 1",
+    "CLZ" : "0 0 1",
+    "CRX" : "40 4080 0 1",
+    "CRY" : "45 4095 0 1",
+    "CRZ" : "0 0 1",
+    "gametrakID" : 43,
+    "sonMdj1Gauche" : "voices_Gametrak_ModeDeJeu1_son6.wav",
+    "gainMdj1Gauche" : 90,
+    "sonMdj1Droite" : "wind_Gametrak_ModeDeJeu1_son6.wav",
+    "gainMdj1Droite" : 90,
+    "sonMdj2DD" : "TurnLeft.wav",
+    "gainMdj2DD" : 70,
+    "sonMdj2GG" : "TurnAround.wav",
+    "gainMdj2GG" : 72,
+    "sonMdj2GF" : "Gametrak_Nesrine_son2..wav",
+    "gainMdj2GF" : 72,
+    "sonMdj2DF" : "Gametrak_Talel_son2..wav",
+    "gainMdj2DF" : 70,
+    "gametrakVolume" : 100,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Jeu1",
+        "calibrate" : {
+          "CLZ" : "0 0 1",
+          "CRZ" : "0 0 1"
+        }
+      },
+      "cue1": {
+        "cueName" : "Jeu2",
+        "calibrate" : {
+          "CLZ" : "3000 0 1",
+          "CRZ" : "3000 0 1",
+          "sensLeft" : 0,
+          "sensRight" : 0
+        },
+        "cue2": {
+          "cueName" : "Off"
+        }
+      }
+    }
+  },
+  "computer_47" : {
+    "Musician" : "Anaïs",
+    "Instrument" : "Gametrak",
+    "CLX" : "7 4061 0 1",
+    "CLY" : "0 4020 0 1",
+    "CLZ" : "0 0 1",
+    "CRX" : "65 4089 0 1",
+    "CRY" : "69 4095 0 1",
+    "CRZ" : "0 0 1",
+    "gametrakID" : 44,
+    "sonMdj1Gauche" : "voices_Gametrak_ModeDeJeu1_son7.wav",
+    "gainMdj1Gauche" : 90,
+    "sonMdj1Droite" : "wind_Gametrak_ModeDeJeu1_son7.wav",
+    "gainMdj1Droite" : 90,
+    "sonMdj2DD" : "Turn.wav",
+    "gainMdj2DD" : 70,
+    "sonMdj2GG" : "TurnRight.wav",
+    "gainMdj2GG" : 72,
+    "sonMdj2GF" : "Gametrak_Jason_son1..wav",
+    "gainMdj2GF" : 70,
+    "sonMdj2DF" : "Gametrak_Yasmine_son1..wav",
+    "gainMdj2DF" : 60,
+    "gametrakVolume" : 100,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Jeu1",
+        "calibrate" : {
+          "CLZ" : "0 0 1",
+          "CRZ" : "0 0 1"
+        }
+      },
+      "cue1": {
+        "cueName" : "Jeu2",
+        "calibrate" : {
+          "CLZ" : "3000 0 1",
+          "CRZ" : "3000 0 1",
+          "sensLeft" : 0,
+          "sensRight" : 0
+        },
+        "cue2": {
+          "cueName" : "Off"
+        }
+      }
+    }
+  },
+  "computer_48" : {
+    "Musician" : "Laurent",
+    "Instrument" : "Gametrak",
+    "CLX" : "5 4070 0 1",
+    "CLY" : "0 4030 0 1",
+    "CLZ" : "0 0 1",
+    "CRX" : "50 4095 0 1",
+    "CRY" : "60 4095 0 1",
+    "CRZ" : "0 0 1",
+    "gametrakID" : 46,
+    "sonMdj1Gauche" : "voices_Gametrak_ModeDeJeu1_son8.wav",
+    "gainMdj1Gauche" : 90,
+    "sonMdj1Droite" : "wind_Gametrak_ModeDeJeu1_son8.wav",
+    "gainMdj1Droite" : 90,
+    "sonMdj2DD" : "Warning.wav",
+    "gainMdj2DD" : 70,
+    "sonMdj2GG" : "WatchOut.wav",
+    "gainMdj2GG" : 72,
+    "sonMdj2GF" : "Gametrak_Charles_son1.wav",
+    "gainMdj2GF" : 70,
+    "sonMdj2DF" : "Gametrak_Charles_son2.wav",
+    "gainMdj2DF" : 70,
+    "gametrakVolume" : 100,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Jeu1",
+        "calibrate" : {
+          "CLZ" : "0 0 1",
+          "CRZ" : "0 0 1"
+        }
+      },
+      "cue1": {
+        "cueName" : "Jeu2",
+        "calibrate" : {
+          "CLZ" : "3000 0 1",
+          "CRZ" : "3000 0 1",
+          "sensLeft" : 0,
+          "sensRight" : 0
+        },
+        "cue2": {
+          "cueName" : "Off"
+        }
+      }
+    }
+  },
+  "computer_49" : {
+    "Musician" : "Adam",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "CRR1",
+    "soundFile1" : "Gamepad_Charles_son1.wav",
+    "soundFile2" : "Gamepad_Charles_son2.wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_50" : {
+    "Musician" : "Darshan",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "CRR2",
+    "soundFile1" : "Gamepad_Charles_son1.wav",
+    "soundFile2" : "Gamepad_Charles_son2.wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_51" : {
+    "Musician" : "Nassim",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "Rostand 1",
+    "soundFile1" : "Gamepad_Nassim_son2..wav",
+    "soundFile2" : "Gamepad_Talel_son2..wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_52" : {
+    "Musician" : "Linda",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "Rostand 2",
+    "soundFile1" : "Gamepad_Nassim_son2..wav",
+    "soundFile2" : "Gamepad_Talel_son2..wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_53" : {
+    "Musician" : "Matteo",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "Rostand 3",
+    "soundFile1" : "Gamepad_Jason_son2..wav",
+    "soundFile2" : "Gamepad_Matteo_son1..wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_54" : {
+    "Musician" : "Charles",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "Rostand 4",
+    "soundFile1" : "Gamepad_Jason_son2..wav",
+    "soundFile2" : "Gamepad_Matteo_son1..wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_55" : {
+    "Musician" : "Emma",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "Rostand 1",
+    "soundFile1" : "Gamepad_Darshan_son2..wav",
+    "soundFile2" : "Gamepad_Jason_son1..wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_56" : {
+    "Musician" : "Talel",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "Rostand 1",
+    "soundFile1" : "Gamepad_Darshan_son2..wav",
+    "soundFile2" : "Gamepad_Jason_son1..wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_57" : {
+    "Musician" : "Jason",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "Rostand 1",
+    "soundFile1" : "Gamepad_Varak_son2..wav",
+    "soundFile2" : "Gamepad_Yasmine_son1..wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  },
+  "computer_58" : {
+    "Musician" : "Rayhan",
+    "Instrument" : "Gamepad",
+    "gamepadID" : "Rostand 1",
+    "soundFile1" : "Gamepad_Varak_son2..wav",
+    "soundFile2" : "Gamepad_Yasmine_son1..wav",
+    "gamepadVolume" : 90,
+    "cueList" : {
+      "cue0": {
+        "cueName" : "Init"
+      },
+      "cue1": {
+        "cueName" : "Off"
+      }
+    }
+  }
+}

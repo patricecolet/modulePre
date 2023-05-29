@@ -1,0 +1,14 @@
+#N canvas 554 117 450 300 12;
+#X obj 83 25 inlet;
+#X obj 330 167 table \$1;
+#X msg 145 172 read -resize sons/\$1 \$2;
+#X obj 146 139 list append \$1;
+#X obj 145 196 soundfiler;
+#X obj 228 57 list trim;
+#X obj 295 104 list;
+#X obj 228 82 route none;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 7 0;
+#X connect 7 1 6 0;

@@ -1,5 +1,6 @@
 from head import *
 from mtc import *
+from rpn import *
 
 MIDI_TO_OSC = {
     NOTE_ON: '/note',
@@ -27,6 +28,12 @@ OSC_TO_MIDI = {
 
 if note_off_velocity:
     MIDI_TO_OSC[NOTE_OFF] = '/note_off'
+
+if not ignore_rpn:
+    MIDI_TO_OSC[NRPN] = '/nrpn'
+    MIDI_TO_OSC[RPN] = '/rpn'
+    OSC_TO_MIDI['/nrpn'] = NRPN
+    OSC_TO_MIDI['/rpn'] = RPN
 
 
 def midi_str(message, port):

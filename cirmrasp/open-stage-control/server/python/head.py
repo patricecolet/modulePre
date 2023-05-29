@@ -42,6 +42,8 @@ program_change_offset = 'pc_offset' in argv
 ignore_sysex = 'sysex' not in argv
 # option: parse mtc
 ignore_mtc = 'mtc' not in argv
+# option: parse (n)rpn
+ignore_rpn = 'rpn' not in argv and 'nrpn' not in argv
 # option: parse active sensing
 ignore_active_sensing = 'active_sensing' not in argv
 # option: note off velocity

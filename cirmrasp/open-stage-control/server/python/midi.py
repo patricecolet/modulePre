@@ -2,8 +2,9 @@ from head import *
 from list import *
 from utils import *
 from mtc import *
+from rpn import *
 
-ipc_send('version', '1.17.1')
+ipc_send('version', '1.23.0')
 
 argv = argv[argv.index('--params') + 1:]
 
@@ -130,6 +131,22 @@ def create_callback(name):
                 v = ' '.join([hex(x).replace('0x', '').zfill(2) for x in message])
                 osc['args'].append({'type': 'string', 'value': v})
 
+
+            elif mtype == CONTROL_CHANGE and not ignore_rpn and is_rpn(message):
+                rpn = rpn_decode(message, name)
+                if rpn is not None:
+                    osc['address'] = MIDI_TO_OSC[rpn[0]]
+                    osc['args'].append({'type': 'i', 'value': rpn[1]})
+                    osc['args'].append({'type': 'i', 'value': rpn[2]})
+                    osc['args'].append({'type': 'i', 'value': rpn[3]})
+                    ipc_send('osc', osc)
+                    if debug:
+                        t = 'NRPN' if rpn[0] == NRPN else 'RPN'
+                        s = '%s: channel=%i, parameter=%i, value=%i'% (t, rpn[1], rpn[2], rpn[3])
+                        ipc_send('debug','in: %s From: midi:%s' % (s, name))
+                # bypass (n)rpn CCs
+                return
+
             else:
 
                 status = message[0]
@@ -232,6 +249,16 @@ def send_midi(name, event, *args):
             except:
                 pass
 
+    elif mtype == NRPN or mtype == RPN:
+        m = rpn_encode(mtype, args)
+        if m is not None:
+            for x in m:
+                outputs[name].send_message(x)
+            if debug:
+                t = 'NRPN' if mtype == NRPN else 'RPN'
+                s = '%s: channel=%i, parameter=%i, value=%i'% (t, args[0], args[1], args[2])
+                ipc_send('debug','out: %s To: midi:%s' % (s, name))
+            return
     else:
 
         args = [int(round(x)) for x in args]
@@ -242,7 +269,7 @@ def send_midi(name, event, *args):
                 mtype = NOTE_OFF
 
         elif mtype == PITCH_BEND:
-            args = args[:1] + [args[1] & 0x7F, (args[1] >> 7) & 0x7F] # convert 0-16384 -> 0-127 pair
+            args = args[:1] + [args[1] & 0x7F, (args[1] >> 7) & 0x7F] # convert 0-16383 -> 0-127 pair
 
         elif mtype == PROGRAM_CHANGE and program_change_offset:
             args[-1] = args[-1] - 1
@@ -256,7 +283,6 @@ def send_midi(name, event, *args):
     else:
 
         outputs[name].send_message(m)
-
         if debug:
             ipc_send('debug','out: %s To: midi:%s' % (midi_str(m, name), name))
 

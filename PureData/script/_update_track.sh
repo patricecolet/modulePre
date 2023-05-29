@@ -26,7 +26,7 @@ fin=$3
 for((c=${debut}; c<=${fin}; c++))
 do
 	echo sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r $_NAMESPACE/$COMPO_DIR/$1
-	sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r $_NAMESPACE/$COMPO_DIR/$1
+#	sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r $_NAMESPACE/$COMPO_DIR/$1
 	echo sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$COMPO_DIR/$1 $_ADDRESS_HEADER.$c:$_NAMESPACE/$COMPO_DIR
 	sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$COMPO_DIR/$1 $_ADDRESS_HEADER.$c:$_NAMESPACE/$COMPO_DIR
 done

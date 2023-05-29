@@ -1,8 +1,36 @@
 
-- fixer OSC qui marche que après connection ssh -> raspi-confi console login
-- mise à jour cirmrasp pour open stage server
-+ tester make_dhcpd.conf.sh
-- implementer proprement freetouch lib dans projet arduino
-- ajouter ordi cirm dans github
-- ajouter else external
+
++ tester integrité pour make_dhcpd.conf.sh
+
+- implementer proprement freetouch lib dans control surface
++ voir calibrage
+
 - implementer filtre preset
+
+ Rotary encoder
+
+ mutable instrument mi4pd
+
+
+ grille qui indique si le patch est chargé (rouge vert)
+ avec indications (noms eleve, fonction, num de cue)
+ volume général, mute, calibrate
+ changement cue
+
+broadcast sendOSC -> fix ? -> bug report
+
+Studio Instrumental
+1 rue Miron
+06000 Nice
+
+_load_on_boot review:
+upper and lower case macAddress dans config.json
+revoir ouverture _load pour éviter sauvegarde ( avec pd menuopen)
+Activer sortie 2 modulePre pour LED
+
+Sarah Procissi 06 03 68 02 47
+
+apporter vis écrou
+faire un repo incredis
+
+Pourquoi le calibrage de qtouch ne se fait pas au démarrage

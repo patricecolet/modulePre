@@ -15,8 +15,8 @@ _DIR=$(dirname $(dirname $_DIR));
 . "$_DIR/namespace.sh";
 
 _COPY_COMMAND="rsync -avuPe ssh"
-
-_ABS_DIR="PureData/abs";
+_PD_DIR=PureData
+_ABS_DIR="$_PD_DIR/abs";
 
 if ! [ -z "$2" ]
 then
@@ -27,8 +27,8 @@ for((c=${debut}; c<=${fin}; c++))
 do
 	echo sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r $_NAMESPACE/$_ABS_DIR
 	sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r $_NAMESPACE/$_ABS_DIR
-	echo sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$_ABS_DIR $_ADDRESS_HEADER.$c:$_NAMESPACE/$_ABS_DIR
-	sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$_ABS_DIR $_ADDRESS_HEADER.$c:$_NAMESPACE/$_ABS_DIR
+	echo sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$_ABS_DIR $_ADDRESS_HEADER.$c:$_NAMESPACE/$_PD_DIR
+	sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$_ABS_DIR $_ADDRESS_HEADER.$c:$_NAMESPACE/$_PD_DIR
 done
 else
 

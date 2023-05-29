@@ -39,7 +39,7 @@
     "target": "",
     "ignoreDefaults": false,
     "bypass": false,
-    "onCreate": "let socket = new WebSocket(\"ws://localhost:8383\");\nsetTimeout(()=>socket.send(JSON.stringify({\"type\":\"requestConfig\",\"oscIP\" : \"localhost:5000\"})),1000);",
+    "onCreate": "let socket = new WebSocket(\"ws://localhost:8383\");\nsetTimeout(()=>socket.send(JSON.stringify({\"type\":\"requestConfig\"})),1000);",
     "onValue": "",
     "widgets": [
       {

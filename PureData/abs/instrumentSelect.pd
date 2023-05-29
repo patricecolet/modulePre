@@ -1,0 +1,11 @@
+#N canvas 63 88 450 300 12;
+#X obj 198 6 r Instrument;
+#X msg 136 99 1;
+#X msg 251 71 0;
+#X obj 198 48 sel \$1;
+#X obj 205 169 outlet bang;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
