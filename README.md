@@ -323,7 +323,7 @@ save and exit and launch this command line for enabling the alias:
 > source ~/.zshrc
 
 then launching `xfor`in terminal will enable x11 forwarding.
----------------------------------------------------------------
+
 
 A remote ssh session can be launched with X11 forwarding, with following command:
 
