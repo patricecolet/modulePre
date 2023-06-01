@@ -22,7 +22,8 @@ The most important externals are:
 >ggee <br />
 purest_json version >= 2.0.0 <br />
 list_abs <br />
-zexy
+zexy <br />
+else
 
 The compositions available in this repository needs those externals:
 >flite <br />
@@ -300,8 +301,29 @@ exec /usr/bin/jackd -t 2000 -R -P 95 -d alsa  -r $samplerate -p 64 -n 2 -X seq -
 On macos we recommend using Xquartz, see https://formulae.brew.sh/cask/xquartz <br />
 If you have trouble, try those command lines before launching SS session:
 
->$: launchctl start org.xquartz.startx
-$: export DISPLAY=:0
+* install xquartz
+
+>%: brew install --cask xquartz
+
+* launch xquartz
+
+>%: launchctl start org.xquartz.startx && export DISPLAY=:0
+
+Sometimes xquartz needs to be reloaded with these last command lines, it might be useful to create an alias for doing it:
+* add alias to ~/.zshrc file:
+
+>%: nano ~/.zshrc
+
+and add this line to the end of file:
+
+> alias xfor="launchctl start org.xquartz.startx && export DISPLAY=:0"
+
+save and exit and launch this command line for enabling the alias:
+
+> source ~/.zshrc
+
+then launching `xfor`in terminal will enable x11 forwarding.
+
 
 A remote ssh session can be launched with X11 forwarding, with following command:
 
@@ -338,26 +360,4 @@ On macos the following command will enable script execution:
 
 ssh X11 forwarding requires xquartz to work, this could be done by using following commands:
 
-* install xquartz
-
->%: brew install --cask xquartz
-
-* launch xquartz
-
->%: launchctl start org.xquartz.startx && export DISPLAY=:0
-
-Sometimes xquartz needs to be reloaded with these last command lines, it might be useful to create an alias for doing it:
-* add alias to ~/.zshrc file:
-
->%: nano ~/.zshrc
-
-and add this line to the end of file:
-
-> alias xfor="launchctl start org.xquartz.startx && export DISPLAY=:0"
-
-save and exit and launch this command line for enabling the alias:
-
-> source ~/.zshrc
-
-then launching `xfor`in terminal will enable x11 forwarding.
 
