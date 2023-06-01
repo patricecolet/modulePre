@@ -648,7 +648,7 @@
 #X restore 13 52 pd getconfig;
 #X obj 220 78 text define machineConfig;
 #X text 54 283 Cherche dans le fichier de configuration l'adresse MAC de la machine locale et récupère les informations \, continue même si l'adresse MAC n'a pas été trouvée., f 51;
-#X msg 37 440 \; ID 50:ed:3c:17:51:65 HIBEKOHIKEDO_hodike_bokoho mac silicon 192.168.1.70 computer_50 \; comment PatkoMacBook Air de Patko \;, f 66;
+#X msg 37 440 \; ID 50:ed:3c:17:51:65 HIBEKOHIKEDO_hodike_bokoho mac silicon 192.168.1.70 computer_50 \; comment MacBook Air de Patko \;, f 66;
 #X connect 0 0 1 0;
 #X connect 3 0 18 0;
 #X connect 4 0 32 0;
@@ -1181,7 +1181,7 @@
 #X obj 459 497 declare -path list-abs;
 #X obj 459 521 declare -path purest_json;
 #X msg 8 622 \; pd dsp 1;
-#N canvas 47 518 317 158 current_composition 1;
+#N canvas 47 518 317 158 current_composition 0;
 #X obj 10 10 compositions/dedale/_load;
 #X restore 44 251 pd current_composition;
 #X text 17 386 configuration MIDI;
