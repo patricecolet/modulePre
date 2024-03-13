@@ -1,0 +1,26 @@
+<global> loop_mode=loop_sustain
+
+<region> key=48 sample=samples/s1.wav
+<region> key=49 sample=samples/s2.wav
+<region> key=50 sample=samples/s3.wav
+<region> key=51 sample=samples/s4.wav
+<region> key=52 sample=samples/s5.wav
+<region> key=53 sample=samples/s6.wav
+<region> key=54 sample=samples/s7.wav
+<region> key=55 sample=samples/s8.wav
+<region> key=56 sample=samples/s9.wav
+<region> key=57 sample=samples/s10.wav
+<region> key=58 sample=samples/s11.wav
+<region> key=59 sample=samples/s12.wav
+<region> key=60 sample=samples/s13.wav
+<region> key=61 sample=samples/s14.wav
+<region> key=62 sample=samples/s15.wav
+<region> key=63 sample=samples/s16.wav
+<region> key=64 sample=samples/s17.wav
+<region> key=65 sample=samples/s18.wav
+<region> key=67 sample=samples/s20.wav
+<region> key=68 sample=samples/s21.wav
+<region> key=69 sample=samples/s22.wav
+<region> key=70 sample=samples/s23.wav
+<region> key=71 sample=samples/s24l.wav
+<region> key=72 sample=samples/s25.wav

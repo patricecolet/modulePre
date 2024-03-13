@@ -1,0 +1,75 @@
+{
+  "interface" : [
+    {
+      "name" : "Loader",
+      "left" : 0,
+      "top" : 0,
+      "widget" : "loader",
+      "objects" : "modules"
+    },
+    {
+      "name" : "Presets",
+      "left" : 800,
+      "top" : 400,
+      "widget" : "switch",
+      "objects" : "presets"
+    },
+    {
+      "name" : "Master",
+      "left" : 550,
+      "top" : 10,
+      "width": 80,
+      "height": 550,
+      "widget" : "master",
+      "objects" : "globalSettings"
+      }
+  ],
+  "globalSettings" : {
+    "volume" : 90,
+    "mute" : 0,
+    "soundPath": "sons"
+  },
+  "modules" : [
+    {
+      "computerID" : 1,
+      "Group" : "Hexapads",
+      "Musician" : "Pat",
+      "Instrument" : "Hexapad",
+      "samples" : [],
+      "volume" : 100,
+      "cueList" : {
+        "cue0": {
+          "cueName" : "Jeu1",
+          "calibrate" : {
+            "CLZ" : "0 0 1",
+            "CRZ" : "0 0 1"
+          }
+        },
+        "cue1": {
+          "cueName" : "Jeu2",
+          "calibrate" : {
+            "CLZ" : "3000 0 1",
+            "CRZ" : "3000 0 1",
+            "sensLeft" : 0,
+            "sensRight" : 0
+          }
+        },
+        "cue2": {
+          "cueName" : "Off"
+        }
+      }
+    }
+],
+  "presets" :  [
+  {
+    "id" : 0,
+    "title" : "Entrée",
+    "Hexapad" : 1
+  },
+  {
+    "id" : 1,
+    "title" : "8 Sphères",
+    "Hexapad" : 0
+  }
+  ]
+}

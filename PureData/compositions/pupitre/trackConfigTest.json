@@ -1,0 +1,254 @@
+{
+    "name": "pupitre",
+    "globalSettings": {
+        "maxPlayTime": 30000,
+        "midiDeviceIn": "Seeed XIAO M0",
+        "midiDeviceOut": "Seeed XIAO M0",
+        "volume": 100,
+        "mute": 0,
+        "soundPath": "sons"
+    },
+    "interface": [
+        {
+            "name": "Pupitres",
+            "top": 10,
+            "left": 10,
+            "widget": "pupitreMatrix",
+            "objects": "modules",
+            "group": "Pupitres"
+        },
+        {
+            "name": "Presets",
+            "left": 10,
+            "top": 320,
+            "widget": "switch",
+            "objects": "presets"
+        },
+        {
+            "name": "Master",
+            "left": 1200,
+            "top": 10,
+            "width": 80,
+            "height": 550,
+            "widget": "master",
+            "objects": "globalSettings"
+        },
+        {
+            "name": "Hexapad",
+            "left": 400,
+            "top": 350,
+            "widget": "hexagone",
+            "group": "Hexapad"
+        }
+    ],
+    "modules": [
+        {
+            "moduleID": "module_1",
+            "computerID": 80,
+            "Group": "Pupitres",
+            "Musician": "Gilles",
+            "Instrument": "hexapad",
+            "samples": [
+                {
+                    "id": 0,
+                    "name": "Mdj1Gauche",
+                    "path": "voices_Gametrak_ModeDeJeu1_son1.wav"
+                },
+                {
+                    "id": 1,
+                    "name": "Mdj1Droite",
+                    "path": "wind_Gametrak_ModeDeJeu1_son1.wav"
+                },
+                {
+                    "id": 2,
+                    "name": "Mdj2DD",
+                    "path": "Deadend.wav"
+                },
+                {
+                    "id": 3,
+                    "name": "Mdj2GG",
+                    "path": "Exit.wav"
+                },
+                {
+                    "id": 4,
+                    "name": "Mdj2GF",
+                    "path": "Gametrak_Varak_son1..wav"
+                },
+                {
+                    "id": 5,
+                    "name": "Mdj2DF",
+                    "path": "Gametrak_Varak_son2..wav"
+                }
+            ],
+            "moduleVolume": 100,
+            "cueList": [
+                {
+                    "id": 0,
+                    "name": "Jeu1",
+                    "triggers": [
+                        {
+                            "id": 0,
+                            "trig": "nseoc",
+                            "sampleID": 0,
+                            "playMode": "latch",
+                            "fadeIn": 0,
+                            "fadeOut": 2000,
+                            "loop": 1,
+                            "gain": 100,
+                            "onset": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "name": "Jeu2",
+                    "triggers": [
+                        {
+                            "id": 0,
+                            "trig": "nsc",
+                            "sampleID": 1,
+                            "playMode": "latch",
+                            "fadeIn": 0,
+                            "fadeOut": 2000,
+                            "loop": 1,
+                            "gain": 100,
+                            "onset": 0
+                        },
+                        {
+                            "id": 1,
+                            "trig": "ne",
+                            "sampleID": 2,
+                            "playMode": "latch",
+                            "fadeIn": 0,
+                            "fadeOut": 2000,
+                            "loop": 1,
+                            "gain": 100,
+                            "onset": 0
+                        },
+                        {
+                            "id": 2,
+                            "trig": "no",
+                            "sampleID": 3,
+                            "playMode": "latch",
+                            "fadeIn": 0,
+                            "fadeOut": 2000,
+                            "loop": 1,
+                            "gain": 100,
+                            "onset": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "moduleID": "module_2",
+            "computerID": 79,
+            "Group": "Pupitres",
+            "Musician": "Gael",
+            "Instrument": "hexapad",
+            "samples": [
+                {
+                    "id": 0,
+                    "name": "Mdj1Gauche",
+                    "path": "voices_Gametrak_ModeDeJeu1_son1.wav"
+                },
+                {
+                    "id": 1,
+                    "name": "Mdj1Droite",
+                    "path": "wind_Gametrak_ModeDeJeu1_son1.wav"
+                },
+                {
+                    "id": 2,
+                    "name": "Mdj2DD",
+                    "path": "Deadend.wav"
+                },
+                {
+                    "id": 3,
+                    "name": "Mdj2GG",
+                    "path": "Exit.wav"
+                },
+                {
+                    "id": 4,
+                    "name": "Mdj2GF",
+                    "path": "Gametrak_Varak_son1..wav"
+                },
+                {
+                    "id": 5,
+                    "name": "Mdj2DF",
+                    "path": "Gametrak_Varak_son2..wav"
+                }
+            ],
+            "moduleVolume": 100,
+            "cueList": [
+                {
+                    "id": 0,
+                    "name": "Jeu1",
+                    "triggers": [
+                        {
+                            "id": 0,
+                            "trig": "nseoc",
+                            "sampleID": 1,
+                            "playMode": "latch",
+                            "fadeIn": 0,
+                            "fadeOut": 2000,
+                            "loop": 1,
+                            "gain": 100,
+                            "onset": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "name": "Jeu2",
+                    "triggers": [
+                        {
+                            "id": 0,
+                            "trig": "nsc",
+                            "sampleID": 1,
+                            "playMode": "latch",
+                            "fadeIn": 0,
+                            "fadeOut": 2000,
+                            "loop": 1,
+                            "gain": 100,
+                            "onset": 0
+                        },
+                        {
+                            "id": 1,
+                            "trig": "e",
+                            "sampleID": 2,
+                            "playMode": "latch",
+                            "fadeIn": 0,
+                            "fadeOut": 2000,
+                            "loop": 1,
+                            "gain": 100,
+                            "onset": 0
+                        },
+                        {
+                            "id": 2,
+                            "trig": "o",
+                            "sampleID": 3,
+                            "playMode": "latch",
+                            "fadeIn": 0,
+                            "fadeOut": 2000,
+                            "loop": 1,
+                            "gain": 100,
+                            "onset": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "id": 0,
+            "title": "Présentation",
+            "Pupitres": 0
+        },
+        {
+            "id": 1,
+            "title": "Morceau1",
+            "Pupitres": 1
+        }
+    ]
+}

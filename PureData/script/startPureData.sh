@@ -25,5 +25,6 @@ audiobuf=$(echo $pdsettings | jq -r '.audiobuf');
 blocksize=$(echo $pdsettings | jq -r '.blocksize');
 echo "$pdsettings";
 # start PureData
-echo "pd -nogui  -$midiAPI -$audioAPI -r $samplerate -audiobuf $audiobuf -blocksize $blocksize $PD_PATCH_DIR/_load_on_boot.pd "
-pd -nogui -noadc -$midiAPI -$audioAPI -r $samplerate -audiobuf $audiobuf -blocksize $blocksize $PD_PATCH_DIR/_load_on_boot.pd >> $LOG_FILE 2>&1 &
+echo "pd -nogui  -$midiAPI -$audioAPI -r $samplerate -audiobuf 
+$audiobuf -blocksize $blocksize $PD_PATCH_DIR/_load_on_boot.pd "
+pd -nogui -noadc  -$midiAPI -$audioAPI -r $samplerate -audiobuf $audiobuf -blocksize $blocksize $PD_PATCH_DIR/_load_on_boot.pd >> $LOG_FILE 2>&1 &

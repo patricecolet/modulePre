@@ -1,4 +1,11 @@
+#macos files
 .DS_Store
+
+#modulePre files
 tempfile
 *.wav
 ._*
+backup_files
+
+#IDE files
+*.vscode

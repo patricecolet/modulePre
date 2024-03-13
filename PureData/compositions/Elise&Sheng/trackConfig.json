@@ -1,0 +1,64 @@
+{
+    "name": "Elise&Sheng",
+    "globalSettings": {
+        "volume": 100,
+        "mute": 0,
+        "soundPath": "sons"
+    },
+    "interface": [
+        {
+            "name": "Elise&Sheng",
+            "top": 10,
+            "left": 10,
+            "widget": "faderMatrix",
+            "objects": "modules",
+            "group": "Gametraks"
+        },
+        {
+            "name": "Presets",
+            "left": 980,
+            "top": 10,
+            "width": 100,
+            "widget": "switch",
+            "objects": "presets"
+        },
+        {
+            "name": "Master",
+            "left": 1100,
+            "top": 10,
+            "width": 80,
+            "height": 550,
+            "widget": "master",
+            "objects": "globalSettings"
+        }
+    ],
+    "modules": [
+        {
+            "computerID": 80,
+            "moduleID": "module_1",
+            "Group": "Gametraks",
+            "Instrument": "gametrak",
+            "moduleVolume": 100,
+            "sfz": "sfz_GT/SY_GT.sfz",
+            "cueList": [
+                {
+                    "id": 0,
+                    "name": "Jeu1",
+                    "triggers": [
+                        {
+                            "id": 0,
+                            "name": "Left Note",
+                            "note": 49
+                        },
+                        {
+                            "id": 1,
+                            "name": "Right Note",
+                            "note": 71
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+                

@@ -1,30 +1,39 @@
 		{
 			"pdsettings" : {
 				"samplerate" : "48000",
-				"audiobuf" : "25",
+				"audiobuf" : "50",
 				"blocksize" : "64",
 				"audioAPI"	:	"alsa",
-				"midiAPI"	:	"alsamidi"
+				"midiAPI"	:	"alsamidi",
+				"serverMachineId": 1
 			},
 			"compositions":[
-					{
-						"title":"dedale",
-						"comment":"Load at boot"
-					},
-					{
-						"title":"flite",
-						"comment":"Text To Speech"
-					},
+				{
+					"title":"Elise&Sheng",
+					"comment":"gametrak"
+				},
+				{
+					"title":"pupitre",
+					"comment":"Pupitre en Braille"
+				},
 					{
 						"title":"skini",
 						"comment":""
 					},
 					{
-						"title":"BLTMIDI",
-						"comment":"esp32-C3 bluetooth midi"
+						"title":"skini-link",
+						"comment":""
 					},
 					{
-						"title":"blank",
+						"title":"dedale",
+						"comment":"multiple interface project"
+					},
+					{
+						"title":"test_tone",
+						"comment":"gametrak"
+					},
+					{
+						"title":"skini-fork-cantini",
 						"comment":"template patch"
 					}
 			],
@@ -403,12 +412,12 @@
 					},
 				{
 					"ipAddress" : "192.168.1.40",
-					"macAddress": "b8:27:eb:64:a6:ab",
+					"macAddress": "e4:5f:01:9d:de:d1",
 					"bibi_binaire" : "KIKOHEBIDEKI_beboke_bekeke",
 					"machine"	:	"rpi",
 					"model"	: "3b+",
 					"machineId": 40,
-					"soundcard" : "hifiberry-dacplus",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
 					"comment" : ""
 				},
 				{
@@ -653,6 +662,166 @@
 					"comment" : ""
 				},
 				{
+					"ipAddress" : "192.168.1.65",
+					"macAddress": "e4:5f:01:f8:08:d1",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 65,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.66",
+					"macAddress": "e4:5f:01:f8:0b:dd",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 66,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.67",
+					"macAddress": "e4:5f:01:f8:0b:fe",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 67,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.68",
+					"macAddress": "e4:5f:01:f8:0b:bf",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 68,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.69",
+					"macAddress": "e4:5f:01:f8:0b:b9",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 69,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.70",
+					"macAddress": "e4:5f:01:f8:0b:c8",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 70,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.71",
+					"macAddress": "e4:5f:01:f8:0b:38",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 71,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.72",
+					"macAddress": "e4:5f:01:f8:0c:01",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 72,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.73",
+					"macAddress": "e4:5f:01:f8:0b:aa",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 73,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.74",
+					"macAddress": "e4:5f:01:f8:0b:8c",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 74,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.75",
+					"macAddress": "e4:5f:01:f8:0b:ad",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 75,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.76",
+					"macAddress": "e4:5f:01:f8:0b:fb",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 76,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.77",
+					"macAddress": "e4:5f:01:f8:0c:13",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 77,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.78",
+					"macAddress": "e4:5f:01:f8:0b:cb",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 78,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.79",
+					"macAddress": "e4:5f:01:f8:0b:d7",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 79,
+					"comment" : ""
+				},
+				{
+					"ipAddress" : "192.168.1.80",
+					"macAddress": "e4:5f:01:f8:0b:f8",
+					"bibi_binaire" : "",
+					"machine"	:	"rpi",
+					"model"	: "4b-2giga",
+					"soundcard" : "iqaudio-dacplus,unmute_amp",
+					"machineId": 80,
+					"comment" : ""
+				},
+				{
 					"ipAddress" : "192.168.1.101",
 					"macAddress": "b8:27:eb:f0:dd:29",
 					"bibi_binaire" : "",
@@ -672,34 +841,14 @@
 					"machineId": 102,
 					"comment" : ""
 				},
-				{
-					"ipAddress" : "192.168.1.70",
-					"macAddress": "50:ed:3c:17:51:65",
-					"bibi_binaire" : "HIBEKOHIKEDO_hodike_bokoho",
-					"machine"	:	"mac",
-					"model"	: "silicon",
-					"machineId": 50,
-					"comment" : "MacBook Air de Patko"
-				},
-				{
-					"ipAddress" : "192.168.1.71",
-					"macAddress": "b8:27:eb:18:0f:31",
-					"bibi_binaire" : "KIKOHEBIDEKI_hakoho_dihiha",
-					"machine"	:	"rpi",
-					"model"	: "3b+",
-					"soundcard" : "hifiberry-dac",
-					"machineId": 100,
-					"display" : "mopidy",
-					"comment" : "raspberry de patrice avec pirate-audio"
-				},
-				{
-					"ipAddress" : "192.168.1.72",
-					"macAddress": "38:f9:d3:ea:a6:7e",
-					"bibi_binaire" : "HIKODIKADAHI_dekeke_bebide",
-					"machine"	:	"mac",
-					"model"	: "intel",
-					"machineId": 2,
-					"comment" : "macbook air gael pour test (indiquer le machineId de la rpi à émuler)"
-				}
+        {
+            "ipAddress": "127.0.0.1",
+            "macAddress": "50:ed:3c:17:51:65",
+            "bibi_binaire": "HIBEKOHIKEDO_hodike_bokoho",
+            "machine": "mac",
+            "model": "silicon",
+            "machineId": 1,
+            "comment": " patko"
+        }
 			]
 		}

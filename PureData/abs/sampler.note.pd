@@ -161,7 +161,7 @@
 #X connect 22 0 16 0;
 #X connect 23 0 16 0;
 #X restore 229 27 pd test;
-#N canvas 591 196 487 506 sample 0;
+#N canvas 892 131 487 506 sample 1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0sample 176403 float 0;
 #X coords 0 1.02 176403 -1.02 200 130 1 0 0;
@@ -175,6 +175,8 @@
 #X obj 62 361 list append \$0;
 #X obj 62 332 list append;
 #X obj 284 199 t b a;
+#X obj 62 181 r realoadSample;
+#X obj 62 205 route \$3;
 #X connect 2 0 6 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
@@ -184,6 +186,8 @@
 #X connect 8 0 7 0;
 #X connect 9 0 3 0;
 #X connect 9 1 8 1;
+#X connect 10 0 11 0;
+#X connect 11 0 3 0;
 #X restore 231 65 pd sample;
 #N canvas 639 421 450 300 play.messages 0;
 #X obj 116 19 r play\$3;
@@ -208,7 +212,14 @@
 #X connect 8 0 9 0;
 #X connect 9 0 6 0;
 #X restore 304 25 pd play.messages;
+#X obj 283 143 r initSample;
+#X obj 283 167 route \$3;
+#X msg 283 191 const 0;
+#X obj 283 215 s \$0sample;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
 #X connect 3 0 0 0;
 #X connect 4 0 3 1;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;

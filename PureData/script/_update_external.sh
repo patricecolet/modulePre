@@ -18,22 +18,22 @@ _COPY_COMMAND="rsync -avuPe ssh"
 
 EXTERNAL_DIR="PureData/pd-externals";
 
-if ! [ -z "$3" ]
+if ! [ -z "$2" ]
 then
 
-debut=$2
-fin=$3
+debut=$1
+fin=$2
 for((c=${debut}; c<=${fin}; c++))
 do
 	echo sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r /home/${_USER}/pd-externals/$1
 	sshpass -p$_PASSWORD ssh $_ADDRESS_HEADER.$c rm -r /home/${_USER}/pd-externals/$1
-	echo sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$EXTERNAL_DIR/$1 $_ADDRESS_HEADER.$c:/home/${_USER}/pd-externals
-	sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$EXTERNAL_DIR/$1 $_ADDRESS_HEADER.$c:/home/${_USER}/pd-externals
+	echo sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$EXTERNAL_DIR $_ADDRESS_HEADER.$c:/home/${_USER}/pd-externals
+	sshpass -p$_PASSWORD $_COPY_COMMAND $_DIR/$EXTERNAL_DIR $_ADDRESS_HEADER.$c:/home/${_USER}/pd-externals
 done
 else
 
-	 echo "usage: _update_externals.sh <external name> <first raspberry number> <last raspberry number>\n
-eg: _update_externals.sh purest_json 1 32"
+	 echo "usage: _update_externals.sh <first raspberry number> <last raspberry number>\n
+eg: _update_externals.sh 1 32"
 fi
 
 # sshpass permet de se log à distance (-pmotdepasse)

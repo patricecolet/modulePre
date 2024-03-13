@@ -1,0 +1,8 @@
+#N canvas 233 157 543 506 12;
+#X obj 29 437 throw~ L_out;
+#X text 121 436 audio out;
+#X obj 29 411 *~;
+#X obj 9 16 init_track;
+#X obj 29 56 print LOADED;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;

@@ -17,7 +17,7 @@ const isObject = obj => {
 
 async function main() {
   const { stdout, stderr } = await exec(
-		'node open-stage-control --port 5000  --custom-module getConfig.js  --load open-stage-control/sessions/modulePre.json');
+		'node ../open-stage-control --port 5000  --custom-module ../OSC-modules/getConfig.js  --load ../OSC-modules/modulePre.json');
 
 	console.log("openStage started at localhost:" + ipConfig.openStagePort);
   }
