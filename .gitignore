@@ -9,3 +9,9 @@ backup_files
 
 #IDE files
 *.vscode
+
+#bash files
+nohup.out
+
+#npm files
+package-lock.json

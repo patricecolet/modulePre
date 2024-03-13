@@ -1,5 +1,0 @@
-** Message: 15:29:28.960: x-terminal-emulator has very limited support, consider choose another terminal
-
-(pcmanfm:1520): Gdk-WARNING **: 15:29:29.376: gdk_window_set_icon_list: icons too large
-Gdk-Message: 16:06:15.015: geany: Fatal IO error 11 (Ressource temporairement non disponible) on X server localhost:10.0.
-
